@@ -5,7 +5,7 @@ import { AboutSection } from "../Styled/Section.styled";
 export default function About() {
   return (
     <AboutSection>
-      <SectionHeading title="Projects" />
+      <SectionHeading title="About" />
     </AboutSection>
   );
 }
