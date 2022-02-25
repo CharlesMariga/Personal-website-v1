@@ -17,6 +17,29 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     overflow-x: hidden;
+
+    @media (${({ theme }) => theme.bp.desktopS}) {
+    }
+
+    @media (${({ theme }) => theme.bp.tabletXS}) {
+
+    }
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: 56.25%;
+    }
+
+    @media (${({ theme }) => theme.bp.tabletS}) {
+
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      font-size: 50%;
+    }
+
+    @media (${({ theme }) => theme.bp.mobileM}) {
+
+    }
   }
 
   body {  
@@ -31,24 +54,24 @@ const GlobalStyle = createGlobalStyle`
 
   /* Scroll bar */
   /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
+  body::-webkit-scrollbar {
+    width: 12px;
   }
 
   /* Track */
-  ::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track {
     background: transparent; 
   }
   
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb {
     background: var(--white); 
     border-radius: 1rem;
     transition: var(--transition);
   }
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  body::-webkit-scrollbar-thumb:hover {
     background: var(--primary-light); 
   }
 
