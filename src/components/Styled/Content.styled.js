@@ -8,7 +8,7 @@ const Content = styled.main`
   overflow: auto;
 
   @media (${({ theme }) => theme.bp.tabletL}) {
-    padding: 0 8rem;
+    padding: 0 6rem;
   }
 `;
 
