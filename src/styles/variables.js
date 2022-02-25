@@ -72,6 +72,7 @@ const variables = css`
     --font-74: 7.4rem;
     --font-86: 8.6rem;
     --font-98: 9.8rem;
+    --font-140: 14rem;
 
     /* Font weight */
     --font-weight-default: 400;

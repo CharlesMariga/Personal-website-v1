@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   /* Scroll bar */
   /* width */
   body::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
   }
 
   /* Track */
