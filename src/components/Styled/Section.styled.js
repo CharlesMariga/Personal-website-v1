@@ -16,16 +16,28 @@ export const HeroSection = styled.section`
     -webkit-background-clip: text;
     color: transparent;
     margin-top: 1.6rem;
-  }
 
-  h2 {
-    color: var(--primary);
-    line-height: var(--line-height-sm);
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-52);
+    }
   }
 
   h3 {
+    color: var(--primary);
+    line-height: var(--line-height-sm);
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-20);
+    }
+  }
+
+  h4 {
     font-size: var(--font-52);
     margin-top: 1.2rem;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-36);
+    }
   }
 
   p {

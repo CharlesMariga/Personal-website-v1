@@ -16,9 +16,9 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
 
-  const one = <h2>Hi, I'm</h2>;
+  const one = <h3>Hi, I'm</h3>;
   const two = <h1>Charles Mariga</h1>;
-  const three = <h3>I build things for the web</h3>;
+  const three = <h4>I build things for the web</h4>;
   const four = (
     <p>
       I'm a full stack software engineer specializing in creating goal-driven
