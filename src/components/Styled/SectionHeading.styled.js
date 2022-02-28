@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledSectionHeading = styled.div`
   display: flex;
   gap: 2rem;
+  margin-bottom: 8rem;
 
   p {
     color: var(--primary);

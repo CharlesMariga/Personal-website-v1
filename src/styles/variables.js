@@ -48,6 +48,8 @@ const variables = css`
     --primary: #e67e22;
     --primary-dark: #cf711f;
 
+    --secondary: "#0000bf";
+
     /* Line height */
     --line-height-default: 1;
     --line-height-sm: 1.05;
@@ -75,10 +77,11 @@ const variables = css`
     --font-140: 14rem;
 
     /* Font weight */
+    --font-weight-sm: 300;
     --font-weight-default: 400;
     --font-weight-md: 500;
     --font-weight-semi-bold: 600;
-    --font-weight-bod: 700;
+    --font-weight-bold: 700;
 
     /* Letter spacing */
     --letter-spacing-sm: 0.5px;

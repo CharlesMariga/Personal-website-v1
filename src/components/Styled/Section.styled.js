@@ -63,4 +63,77 @@ export const AboutSection = styled.section`
 
 export const PortfolioSection = styled.section`
   padding: 10rem 0;
+
+  .portfolios {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__overline {
+      margin: 1rem 0;
+      font-weight: var(--font-weight-sm);
+      letter-spacing: var(--letter-spacing-md);
+      color: var(--primary-light);
+    }
+
+    &__title {
+      font-size: var(--font-36);
+      margin-bottom: 2rem;
+
+      &:hover {
+        color: var(--primary-light);
+        transition: var(--transition);
+      }
+    }
+
+    &__description {
+      padding: 2.5rem;
+      background-color: #b8651b;
+      opacity: 0.75;
+      backdrop-filter: blur(24px);
+      border-radius: var(--border-radius-default);
+    }
+
+    &__tech-list {
+      margin: 2.5rem 1rem;
+      list-style: none;
+      display: flex;
+    }
+
+    &--left {
+      text-align: right;
+      .portfolio__content {
+        grid-column: 6 / -1;
+      }
+
+      .portfolio__image {
+        grid-column: 1 / 7;
+      }
+
+      .portfolio__tech-list {
+        justify-content: flex-end;
+        gap: 1.5rem;
+      }
+    }
+
+    &--right {
+      .portfolio__content {
+        grid-column: 1 / 7;
+      }
+
+      .portfolio__image {
+        grid-column: 6 / -1;
+      }
+
+      .portfolio__tech-list {
+        justify-content: flex-start;
+        gap: 1.5rem;
+      }
+    }
+  }
 `;
