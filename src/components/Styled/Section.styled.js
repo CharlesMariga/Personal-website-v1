@@ -13,12 +13,17 @@ export const HeroSection = styled.section`
     font-weight: var(--font-weight-semi-bold);
     display: inline-block;
     background-image: linear-gradient(to right, var(--white), var(--primary));
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     margin-top: 1.6rem;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-52);
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      font-size: var(--font-44);
     }
   }
 

@@ -13,9 +13,18 @@ const StyledSectionHeading = styled.div`
     letter-spacing: 2px;
     display: inline-flex;
     background-image: linear-gradient(to left, var(--white), var(--primary));
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     position: relative;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-36);
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      font-size: var(--font-30);
+    }
 
     &::before,
     &::after {
