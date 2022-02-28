@@ -18,26 +18,26 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     overflow-x: hidden;
 
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media screen and (${({ theme }) => theme.bp.desktopS}) {
     }
 
-    @media (${({ theme }) => theme.bp.tabletXS}) {
+    @media screen and (${({ theme }) => theme.bp.tabletXS}) {
 
     }
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: 56.25%;
     }
 
-    @media (${({ theme }) => theme.bp.tabletS}) {
+    @media screen and (${({ theme }) => theme.bp.tabletS}) {
 
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media screen and (${({ theme }) => theme.bp.mobileL}) {
       font-size: 50%;
     }
 
-    @media (${({ theme }) => theme.bp.mobileM}) {
+    @media screen and (${({ theme }) => theme.bp.mobileM}) {
 
     }
   }

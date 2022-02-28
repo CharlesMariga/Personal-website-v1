@@ -55,3 +55,7 @@ export const HeroSection = styled.section`
 export const AboutSection = styled.section`
   padding: 10rem 0;
 `;
+
+export const PortfolioSection = styled.section`
+  padding: 10rem 0;
+`;
