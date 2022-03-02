@@ -64,15 +64,33 @@ export const AboutSection = styled.section`
 export const PortfolioSection = styled.section`
   padding: 10rem 0;
 
-  .portfolios {
+  .projects {
     display: flex;
     flex-direction: column;
     gap: 10rem;
   }
 
-  .portfolio {
+  .project {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+
+    &__content {
+      z-index: 10;
+
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        grid-column: 1 / -1 !important;
+        background-color: var(--primary-dark);
+        opacity: 0.95;
+        height: 100%;
+      }
+    }
+
+    &__img {
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        grid-column: 1 / -1 !important;
+      }
+    }
 
     &__overline {
       margin: 1rem 0;
@@ -92,11 +110,22 @@ export const PortfolioSection = styled.section`
     }
 
     &__description {
+      color: white;
       padding: 2.5rem;
-      background-color: #b8651b;
-      opacity: 0.75;
+      background-color: var(--primary-dark);
+      opacity: 0.95;
       backdrop-filter: blur(24px);
       border-radius: var(--border-radius-default);
+
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      &::selection {
+        background-color: var(--white);
+        color: var(--primary-dark);
+      }
     }
 
     &__tech-list {
@@ -105,34 +134,63 @@ export const PortfolioSection = styled.section`
       display: flex;
     }
 
+    &__links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    &__link {
+      display: inline-flex;
+      width: 2rem;
+      height: 2rem;
+      color: var(--white);
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
     &--left {
       text-align: right;
-      .portfolio__content {
-        grid-column: 6 / -1;
+      .project__content {
+        grid-column: 7 / -1;
+        grid-row: 1 / -1;
       }
 
-      .portfolio__image {
-        grid-column: 1 / 7;
+      .project__img {
+        grid-column: 1 / 8;
+        grid-row: 1 / -1;
       }
 
-      .portfolio__tech-list {
+      .project__tech-list {
         justify-content: flex-end;
         gap: 1.5rem;
+      }
+
+      .project__links {
+        justify-content: flex-end;
       }
     }
 
     &--right {
-      .portfolio__content {
+      .project__content {
         grid-column: 1 / 7;
+        grid-row: 1 / -1;
       }
 
-      .portfolio__image {
+      .project__img {
         grid-column: 6 / -1;
+        grid-row: 1 / -1;
       }
 
-      .portfolio__tech-list {
+      .project__tech-list {
         justify-content: flex-start;
         gap: 1.5rem;
+      }
+
+      .project__links {
+        justify-content: flex-start;
       }
     }
   }
