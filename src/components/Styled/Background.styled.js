@@ -6,4 +6,5 @@ export const BackgroundContentContainer = styled.div`
   background-attachment: fixed;
   backdrop-filter: blur(24px);
   background: rgba(1, 1, 1, 0.75);
+  display: flex;
 `;
