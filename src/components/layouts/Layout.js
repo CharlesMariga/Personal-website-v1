@@ -15,10 +15,11 @@ export default function Layout({ location, children }) {
     <>
       <Head />
       <div id="root">
+        <Loader finishedLoading={() => setIsLoading(false)} />
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           {isLoading && isHome ? (
-            <Loader finishedLoading={() => setIsLoading(false)} />
+            <div>Hello world</div>
           ) : (
             <StyledBackgroundImage>
               <SocialLinks isHome={isHome} />
