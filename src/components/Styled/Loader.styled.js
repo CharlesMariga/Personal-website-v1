@@ -13,6 +13,10 @@ const StyledLoader = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+
+  svg {
+    stroke-width: 2px;
+  }
 `;
 
 export default StyledLoader;
