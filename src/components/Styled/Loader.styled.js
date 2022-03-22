@@ -20,7 +20,7 @@ const StyledLoader = styled.div`
       stroke-width: 2;
       stroke-dasharray: 522;
       stroke-dashoffset: 522;
-      animation: animateLogo 3s forwards ease, fillIt 0.8s 3s forwards;
+      animation: 3s ease 1s forwards animateLogo, 0.8s fillIt 4s forwards;
     }
   }
 `;

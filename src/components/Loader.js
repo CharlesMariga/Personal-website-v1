@@ -4,7 +4,7 @@ import StyledLoader from "./Styled/Loader.styled";
 export default function Loader({ finishedLoading }) {
   setTimeout(() => {
     finishedLoading();
-  }, 4000);
+  }, 5000);
 
   return (
     <StyledLoader>
