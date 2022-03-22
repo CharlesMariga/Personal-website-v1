@@ -15,7 +15,13 @@ const StyledLoader = styled.div`
   font-size: 2rem;
 
   svg {
-    stroke-width: 2px;
+    path {
+      stroke: var(--primary);
+      stroke-width: 2;
+      stroke-dasharray: 522;
+      stroke-dashoffset: 522;
+      animation: animateLogo 3s forwards ease, fillIt 0.8s 3s forwards;
+    }
   }
 `;
 
