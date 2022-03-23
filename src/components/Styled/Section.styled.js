@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const HeroSection = styled.section`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   min-height: 100vh;
-  justify-content: center;
-  align-items: flex-start;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 
   h1 {
     font-size: var(--font-62);
@@ -39,6 +38,7 @@ export const HeroSection = styled.section`
   h4 {
     font-size: var(--font-52);
     margin-top: 1.2rem;
+    width: max-content;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-36);
@@ -54,6 +54,17 @@ export const HeroSection = styled.section`
 
   .btn {
     margin-top: 4.8rem;
+  }
+`;
+
+export const HeroTextSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  overflow: hidden;
+
+  div {
+    width: 100%;
   }
 `;
 

@@ -3,8 +3,9 @@ import { CSSTransition } from "react-transition-group";
 import { TransitionGroup } from "react-transition-group";
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
-import { HeroSection } from "../Styled/Section.styled";
+import { HeroSection, HeroTextSection } from "../Styled/Section.styled";
 import resume from "../../assets/documents/resume.pdf";
+import { BackgroundAnimation } from "../index";
 
 export default function Hero() {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -40,24 +41,33 @@ export default function Hero() {
   const items = [one, two, three, four, five];
 
   return (
-    <HeroSection className="flex flex-col min-h-screen justify-center lg:mx-24">
-      {prefersReducedMotion ? (
-        items.map((item, i) => <div key={i}>{item}</div>)
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition
-                in={isMounted}
-                key={i}
-                classNames="fadeup"
-                timeout={loaderDelay}
-              >
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      )}
+    <HeroSection>
+      <HeroTextSection>
+        <div>
+          {prefersReducedMotion ? (
+            items.map((item, i) => <div key={i}>{item}</div>)
+          ) : (
+            <TransitionGroup component={null}>
+              {isMounted &&
+                items.map((item, i) => (
+                  <CSSTransition
+                    in={isMounted}
+                    key={i}
+                    classNames="fadeup"
+                    timeout={loaderDelay}
+                  >
+                    <div style={{ transitionDelay: `${i + 1}00ms` }}>
+                      {item}
+                    </div>
+                  </CSSTransition>
+                ))}
+            </TransitionGroup>
+          )}
+        </div>
+      </HeroTextSection>
+      <div>
+        <BackgroundAnimation />
+      </div>
     </HeroSection>
   );
 }

@@ -6,3 +6,4 @@ export { default as Loader } from "./Loader";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as Side } from "./Side";
 export { default as SocialLinks } from "./SocialLinks";
+export { default as BackgroundAnimation } from "./BackgroundAnimation";
