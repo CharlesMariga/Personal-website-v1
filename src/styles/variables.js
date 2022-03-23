@@ -48,7 +48,8 @@ const variables = css`
     --primary: #e67e22;
     --primary-dark: #cf711f;
 
-    --secondary: "#0000bf";
+    /* Bg colors */
+    --bg-dark: rgb(22, 23, 27);
 
     /* Line height */
     --line-height-default: 1;

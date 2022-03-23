@@ -2,9 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
 import animations from "./animations";
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
-  
+const GlobalStyle = createGlobalStyle`  
   ${variables}
 
   ${animations}

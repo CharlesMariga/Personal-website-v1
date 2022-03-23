@@ -7,7 +7,7 @@ const StyledLoader = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #010101;
+  background: var(--bg-dark);
   z-index: 10000;
   display: flex;
   align-items: center;

@@ -26,10 +26,11 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `assets`, `images`),
+        google: {
+          families: ["Rubik"],
+        },
       },
     },
   ],

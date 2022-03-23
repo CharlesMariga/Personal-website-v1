@@ -22,7 +22,7 @@
     "gatsby-plugin-react-helmet": "^5.9.0",
     "gatsby-plugin-sharp": "^4.5.2",
     "gatsby-plugin-styled-components": "^5.5.0",
-    "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-transformer-sharp": "^4.5.0",
     "gbimage-bridge": "^0.2.1",
     "react": "^17.0.1",

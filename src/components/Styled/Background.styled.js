@@ -1,9 +1,34 @@
 import styled from "styled-components";
+import bgImage from "../../assets/images/orange_circle.png";
 
 export const BackgroundContentContainer = styled.div`
+  position: relative;
   max-height: 100vh;
   overflow: hidden;
-  background-attachment: fixed;
-  backdrop-filter: blur(24px);
-  background: rgba(1, 1, 1, 0.75);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    z-index: -2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 5.5%;
+    background-image: ${`url(${bgImage})`};
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(141px);
+    width: 645px;
+    height: 645px;
+    opacity: 0.2;
+    z-index: -1;
+  }
 `;

@@ -7,9 +7,6 @@ const animations = css`
     }
   }
 
-  @keyframes identifier {
-  }
-
   @keyframes fillIt {
     100% {
       fill: var(--primary);
