@@ -4,6 +4,7 @@ import { TransitionGroup } from "react-transition-group";
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
 import { HeroSection } from "../Styled/Section.styled";
+import resume from "../../assets/documents/resume.pdf";
 
 export default function Hero() {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -28,7 +29,7 @@ export default function Hero() {
   const five = (
     <a
       className="btn btn--full"
-      href="./resume.pdf"
+      href={resume}
       target="_blank"
       rel="noopener noreferrer"
     >
