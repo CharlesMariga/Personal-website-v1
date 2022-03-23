@@ -26,7 +26,12 @@ export default function Hero() {
     </p>
   );
   const five = (
-    <a className="btn btn--full" href="/" target="_blank" rel="noreferrer">
+    <a
+      className="btn btn--full"
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Checkout my resume
     </a>
   );
