@@ -62,6 +62,7 @@ export default function Hero() {
                     <div
                       style={{
                         transitionDelay: `${i + 1}00ms`,
+                        opacity: 0,
                       }}
                     >
                       {item}
