@@ -108,19 +108,6 @@ const GlobalStyle = createGlobalStyle`
       background-color: var(--primary-dark);
     }
   }
-
-  /* Animations */
-  .fadeup-enter {
-    opacity: 0.01;
-    transform: translateY(20px);
-    transition: opacity 300ms ease-in, transform 300ms ease-in;
-  }
-
-  .fadeup-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms ease-in, transform 300ms ease-in;
-  } 
 `;
 
 export default GlobalStyle;

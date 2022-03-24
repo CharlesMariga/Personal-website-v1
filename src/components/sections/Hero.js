@@ -51,16 +51,19 @@ export default function Hero() {
           {prefersReducedMotion ? (
             items.map((item, i) => <div key={i}>{item}</div>)
           ) : (
-            <TransitionGroup component={null}>
+            <TransitionGroup component={null} in={false}>
               {isMounted &&
                 items.map((item, i) => (
                   <CSSTransition
-                    in={isMounted}
                     key={i}
                     classNames="fadeup"
                     timeout={loaderDelay}
                   >
-                    <div style={{ transitionDelay: `${i + 1}00ms` }}>
+                    <div
+                      style={{
+                        transitionDelay: `${i + 1}00ms`,
+                      }}
+                    >
                       {item}
                     </div>
                   </CSSTransition>
@@ -69,6 +72,7 @@ export default function Hero() {
           )}
         </div>
       </HeroTextSection>
+
       <BackgroundAnimationWrapper>
         <BackgroundAnimation />
       </BackgroundAnimationWrapper>
