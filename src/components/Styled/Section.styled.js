@@ -49,6 +49,10 @@ export const HeroSection = styled.section`
     @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-36);
     }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      width: auto;
+    }
   }
 
   p {
