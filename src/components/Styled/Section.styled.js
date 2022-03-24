@@ -6,6 +6,12 @@ export const HeroSection = styled.section`
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+  }
+
   h1 {
     font-size: var(--font-62);
     line-height: var(--line-height-md);
@@ -63,8 +69,22 @@ export const HeroTextSection = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    margin: 0;
+  }
+
   div {
     width: 100%;
+  }
+`;
+
+export const BackgroundAnimationWrapper = styled.div`
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    position: absolute;
+    top: 27%;
+    right: -39%;
+    width: 210px;
+    height: 210px;
   }
 `;
 

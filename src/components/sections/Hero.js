@@ -3,7 +3,11 @@ import { CSSTransition } from "react-transition-group";
 import { TransitionGroup } from "react-transition-group";
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
-import { HeroSection, HeroTextSection } from "../Styled/Section.styled";
+import {
+  HeroSection,
+  HeroTextSection,
+  BackgroundAnimationWrapper,
+} from "../Styled/Section.styled";
 import resume from "../../assets/documents/resume.pdf";
 import { BackgroundAnimation } from "../index";
 
@@ -65,9 +69,9 @@ export default function Hero() {
           )}
         </div>
       </HeroTextSection>
-      <div>
+      <BackgroundAnimationWrapper>
         <BackgroundAnimation />
-      </div>
+      </BackgroundAnimationWrapper>
     </HeroSection>
   );
 }
