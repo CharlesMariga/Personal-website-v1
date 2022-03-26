@@ -1,4 +1,14 @@
+import React from "react";
 import styled from "styled-components";
+
+const SectionHeading = ({ title, number }) => {
+  return (
+    <StyledSectionHeading>
+      <p>{number}</p>
+      <h2>{title}</h2>
+    </StyledSectionHeading>
+  );
+};
 
 const StyledSectionHeading = styled.div`
   display: flex;
@@ -48,4 +58,4 @@ const StyledSectionHeading = styled.div`
   }
 `;
 
-export default StyledSectionHeading;
+export default SectionHeading;

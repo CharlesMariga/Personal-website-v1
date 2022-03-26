@@ -3,15 +3,11 @@ import { CSSTransition } from "react-transition-group";
 import { TransitionGroup } from "react-transition-group";
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
-import {
-  HeroSection,
-  HeroTextSection,
-  BackgroundAnimationWrapper,
-} from "../Styled/Section.styled";
 import resume from "../../assets/documents/resume.pdf";
 import { BackgroundAnimation } from "../index";
+import styled from "styled-components";
 
-export default function Hero() {
+const Hero = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -79,4 +75,98 @@ export default function Hero() {
       </BackgroundAnimationWrapper>
     </HeroSection>
   );
-}
+};
+
+const HeroSection = styled.section`
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+  }
+
+  h1 {
+    font-size: var(--font-62);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-semi-bold);
+    display: inline-block;
+    background-image: linear-gradient(to right, var(--white), var(--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 1.6rem;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-52);
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      font-size: var(--font-44);
+    }
+  }
+
+  h3 {
+    color: var(--primary);
+    line-height: var(--line-height-sm);
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-20);
+    }
+  }
+
+  h4 {
+    font-size: var(--font-52);
+    margin-top: 1.2rem;
+    width: max-content;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--font-36);
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      width: auto;
+    }
+  }
+
+  p {
+    margin-top: 2rem;
+    max-width: 54rem;
+    /* font-size: var(--font-16); */
+    line-height: var(--line-height-md);
+  }
+
+  .btn {
+    margin-top: 4.8rem;
+  }
+`;
+
+const HeroTextSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    margin: 0;
+  }
+
+  div {
+    width: 100%;
+  }
+`;
+
+const BackgroundAnimationWrapper = styled.div`
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    position: absolute;
+    top: 27%;
+    right: -39%;
+    width: 210px;
+    height: 210px;
+  }
+`;
+
+export default Hero;

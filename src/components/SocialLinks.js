@@ -1,13 +1,9 @@
 import React from "react";
 import { socialLinks } from "../config";
 import { Side, Icon } from ".";
-import {
-  SocialLink,
-  SocialLinkItem,
-  SocialLinkList,
-} from "./Styled/SoclialLinks.styled";
+import styled from "styled-components";
 
-export default function SocialLinks({ isHome }) {
+const SocialLinks = ({ isHome }) => {
   return (
     <Side isHome={isHome} orientation="left">
       <SocialLinkList>
@@ -27,4 +23,42 @@ export default function SocialLinks({ isHome }) {
       </SocialLinkList>
     </Side>
   );
-}
+};
+
+const SocialLinkList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 9rem;
+    margin: 0 auto;
+    background-color: white;
+  }
+`;
+
+const SocialLinkItem = styled.li`
+  padding: 2rem 1rem;
+
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+`;
+
+const SocialLink = styled.a`
+  color: var(--white);
+  display: inline-block;
+  transition: var(--transition);
+  letter-spacing: var(--letter-spacing-md);
+
+  &:hover {
+    transform: translateY(-3px);
+    color: var(--primary);
+  }
+`;
+
+export default SocialLinks;

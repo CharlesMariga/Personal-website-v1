@@ -1,19 +1,47 @@
 import React from "react";
 import { Side } from ".";
 import { email } from "../config";
-import { StyledEmail, EmailLink } from "./Styled/Email.styled";
+import styled from "styled-components";
 
-export default function Email({ isHome }) {
+const Email = ({ isHome }) => {
   return (
     <Side isHome={isHome} orientation="right">
       <StyledEmail>
-        <EmailLink
-          href={`mailto:${email}`}
-          className="mx-auto my-5 tracking-wider writing-mode-vertial-rl hover:text-vermillion-700 hover:-translate-y-1 transition-transform ease-in"
-        >
-          {email}
-        </EmailLink>
+        <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
       </StyledEmail>
     </Side>
   );
-}
+};
+
+const StyledEmail = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 9rem;
+    margin: 0 auto;
+    background-color: white;
+  }
+`;
+
+const EmailLink = styled.a`
+  color: var(--white);
+  display: inline-block;
+  transition: var(--transition);
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: var(--font-16);
+
+  &:hover {
+    transform: translateY(-3px);
+    color: var(--primary);
+  }
+`;
+
+export default Email;

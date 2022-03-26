@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { usePreferredReducedMotion } from "../hooks";
 import { loaderDelay } from "../utils";
-import { StyledSide } from "./Styled/Side.styled";
+import styled from "styled-components";
 
-export default function Side({ children, orientation, isHome }) {
+const Side = ({ children, orientation, isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const prefersReducedMotion = usePreferredReducedMotion();
 
@@ -36,4 +36,18 @@ export default function Side({ children, orientation, isHome }) {
       )}
     </StyledSide>
   );
-}
+};
+
+const StyledSide = styled.div`
+  width: 4rem;
+  position: fixed;
+  bottom: 0;
+  left: ${({ orientation }) => (orientation === "left" ? "4rem" : "auto")};
+  right: ${({ orientation }) => (orientation === "right" ? "4rem" : "auto")};
+
+  @media (${({ theme }) => theme.bp.tabletL}) {
+    display: none;
+  }
+`;
+
+export default Side;

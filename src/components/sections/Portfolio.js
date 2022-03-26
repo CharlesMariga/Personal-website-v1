@@ -1,8 +1,8 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { PortfolioSection } from "../Styled/Section.styled";
 import { SectionHeading } from "..";
 import { IconGitHub, IconExternal } from "../icons";
+import styled from "styled-components";
 
 const Portfolio = () => {
   return (
@@ -96,5 +96,140 @@ const Portfolio = () => {
     </PortfolioSection>
   );
 };
+
+const PortfolioSection = styled.section`
+  padding: 10rem 0;
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+
+    &__content {
+      z-index: 10;
+
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        grid-column: 1 / -1 !important;
+        background-color: var(--primary-dark);
+        opacity: 0.95;
+        height: 100%;
+      }
+    }
+
+    &__img {
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        grid-column: 1 / -1 !important;
+      }
+    }
+
+    &__overline {
+      margin: 1rem 0;
+      font-weight: var(--font-weight-sm);
+      letter-spacing: var(--letter-spacing-md);
+      color: var(--primary-light);
+    }
+
+    &__title {
+      font-size: var(--font-36);
+      margin-bottom: 2rem;
+
+      &:hover {
+        color: var(--primary-light);
+        transition: var(--transition);
+      }
+    }
+
+    &__description {
+      color: white;
+      padding: 2.5rem;
+      background-color: var(--primary-dark);
+      opacity: 0.95;
+      backdrop-filter: blur(24px);
+      border-radius: var(--border-radius-default);
+
+      @media screen and (${({ theme }) => theme.bp.tabletL}) {
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      &::selection {
+        background-color: var(--white);
+        color: var(--primary-dark);
+      }
+    }
+
+    &__tech-list {
+      margin: 2.5rem 1rem;
+      list-style: none;
+      display: flex;
+    }
+
+    &__links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    &__link {
+      display: inline-flex;
+      width: 2rem;
+      height: 2rem;
+      color: var(--white);
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    &--left {
+      text-align: right;
+      .project__content {
+        grid-column: 7 / -1;
+        grid-row: 1 / -1;
+      }
+
+      .project__img {
+        grid-column: 1 / 8;
+        grid-row: 1 / -1;
+      }
+
+      .project__tech-list {
+        justify-content: flex-end;
+        gap: 1.5rem;
+      }
+
+      .project__links {
+        justify-content: flex-end;
+      }
+    }
+
+    &--right {
+      .project__content {
+        grid-column: 1 / 7;
+        grid-row: 1 / -1;
+      }
+
+      .project__img {
+        grid-column: 6 / -1;
+        grid-row: 1 / -1;
+      }
+
+      .project__tech-list {
+        justify-content: flex-start;
+        gap: 1.5rem;
+      }
+
+      .project__links {
+        justify-content: flex-start;
+      }
+    }
+  }
+`;
 
 export default Portfolio;
