@@ -38,7 +38,8 @@ const Content = styled.main`
   flex-direction: column;
   height: 100vh;
   padding: 0 16rem;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 6px;

@@ -14,7 +14,6 @@ const NavigationDots = ({ idName }) => {
             idName === item.id ? { backgroundColor: "var(--primary)" } : {}
           }
         >
-          {console.log(idName === item.id)}
           {""}
         </NavDot>
       ))}
@@ -30,7 +29,6 @@ const NavDots = styled.div`
   top: 0;
   right: -20vw;
   height: 100%;
-  margin-top: -5rem;
   justify-content: center;
 
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
