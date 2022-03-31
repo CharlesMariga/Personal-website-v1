@@ -7,3 +7,4 @@ export { default as SectionHeading } from "./global/SectionHeading";
 export { default as Side } from "./Side";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as BackgroundAnimation } from "./BackgroundAnimation";
+export { default as NavigationDots } from "./NavigationDots";

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Head, StyledBackgroundImage } from "../../components";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles, theme } from "../../styles";
-import Loader from "../Loader";
-import SocialLinks from "../SocialLinks";
-import Email from "../Email";
 import styled from "styled-components";
+
+import { GlobalStyles, theme } from "../../styles";
+import { SocialLinks, Email, Head, StyledBackgroundImage, Loader } from "..";
 
 const Layout = ({ location, children }) => {
   const isHome = location.pathname === "/";

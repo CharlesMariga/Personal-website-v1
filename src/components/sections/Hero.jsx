@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { TransitionGroup } from "react-transition-group";
+import styled from "styled-components";
+
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
 import resume from "../../assets/documents/resume.pdf";
 import { BackgroundAnimation } from "../index";
-import styled from "styled-components";
+import { SectionWrap } from "../layouts";
 
 const Hero = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -41,49 +43,51 @@ const Hero = () => {
   const items = [one, two, three, four, five];
 
   return (
-    <HeroSection>
-      <HeroTextSection>
-        <div>
-          {prefersReducedMotion ? (
-            items.map((item, i) => <div key={i}>{item}</div>)
-          ) : (
-            <TransitionGroup component={null} in={false}>
-              {isMounted &&
-                items.map((item, i) => (
-                  <CSSTransition
-                    key={i}
-                    classNames="fadeup"
-                    timeout={loaderDelay}
-                  >
-                    <div
-                      style={{
-                        transitionDelay: `${i + 1}00ms`,
-                        opacity: 0,
-                      }}
+    <SectionWrap idName="home">
+      <HeroSection id="home">
+        <HeroTextSection>
+          <div>
+            {prefersReducedMotion ? (
+              items.map((item, i) => <div key={i}>{item}</div>)
+            ) : (
+              <TransitionGroup component={null} in={false}>
+                {isMounted &&
+                  items.map((item, i) => (
+                    <CSSTransition
+                      key={i}
+                      classNames="fadeup"
+                      timeout={loaderDelay}
                     >
-                      {item}
-                    </div>
-                  </CSSTransition>
-                ))}
-            </TransitionGroup>
-          )}
-        </div>
-      </HeroTextSection>
+                      <div
+                        style={{
+                          transitionDelay: `${i + 1}00ms`,
+                          opacity: 0,
+                        }}
+                      >
+                        {item}
+                      </div>
+                    </CSSTransition>
+                  ))}
+              </TransitionGroup>
+            )}
+          </div>
+        </HeroTextSection>
 
-      <BackgroundAnimationWrapper>
-        <BackgroundAnimation />
-      </BackgroundAnimationWrapper>
-    </HeroSection>
+        <BackgroundAnimationWrapper>
+          <BackgroundAnimation />
+        </BackgroundAnimationWrapper>
+      </HeroSection>
+    </SectionWrap>
   );
 };
 
 const HeroSection = styled.section`
   display: grid;
-  min-height: 100vh;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  padding: 6rem 0;
 
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
@@ -100,11 +104,11 @@ const HeroSection = styled.section`
     color: transparent;
     margin-top: 1.6rem;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-52);
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media screen and (${({ theme }) => theme.bp.mobileL}) {
       font-size: var(--font-44);
     }
   }
@@ -113,7 +117,7 @@ const HeroSection = styled.section`
     color: var(--primary);
     line-height: var(--line-height-sm);
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-20);
     }
   }
@@ -123,11 +127,11 @@ const HeroSection = styled.section`
     margin-top: 1.2rem;
     width: max-content;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-36);
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media screen and (${({ theme }) => theme.bp.mobileL}) {
       width: auto;
     }
   }
@@ -150,7 +154,7 @@ const HeroTextSection = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
     margin: 0;
   }
 
@@ -160,7 +164,7 @@ const HeroTextSection = styled.div`
 `;
 
 const BackgroundAnimationWrapper = styled.div`
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
     position: absolute;
     top: 27%;
     right: -39%;

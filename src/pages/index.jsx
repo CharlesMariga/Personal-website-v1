@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layouts/Layout";
+import { Layout } from "../components/layouts";
 import { Hero, About } from "../components/sections";
 
 export default function Home({ location }) {

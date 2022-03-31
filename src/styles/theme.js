@@ -9,8 +9,8 @@ const theme = {
     tabletL: `max-width: 768px`,
     desktopXS: `max-width: 900px`,
     desktopS: `max-width: 1080px`,
-    desktopM: `max-width: 1200px`,
-    desktopL: `max-width: 1400px`,
+    desktopM: `min-width: 1200px`,
+    desktopL: `min-width: 1400px`,
   },
 
   mixins,

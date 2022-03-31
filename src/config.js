@@ -18,4 +18,22 @@ module.exports = {
       url: "https://www.linkedin.com/in/charlesnjenga",
     },
   ],
+  navLinks: [
+    {
+      name: "Home",
+      id: "home",
+    },
+    {
+      name: "About",
+      id: "about",
+    },
+    {
+      name: "Portfolio",
+      id: "portfolio",
+    },
+    {
+      name: "Contact",
+      id: "contact",
+    },
+  ],
 };
