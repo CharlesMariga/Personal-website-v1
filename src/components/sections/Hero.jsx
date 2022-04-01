@@ -87,10 +87,14 @@ const HeroSection = styled.section`
   align-items: center;
   padding: 6rem 0;
 
-  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+  @media screen and (${({ theme }) => theme.bp.tabletS}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+    text-align: center;
   }
 
   h1 {
@@ -164,7 +168,7 @@ const HeroTextSection = styled.div`
 `;
 
 const BackgroundAnimationWrapper = styled.div`
-  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+  @media screen and (${({ theme }) => theme.bp.tabletS}) {
     position: absolute;
     top: 27%;
     right: -39%;

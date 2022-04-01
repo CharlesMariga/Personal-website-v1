@@ -44,14 +44,16 @@ const NavDots = styled.div`
   }
 `;
 
-// desktopM
-
 const NavDot = styled.a`
   text-decoration: none;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: var(--white);
+
+  &:hover {
+    background-color: var(--primary);
+  }
 `;
 
 export default NavigationDots;

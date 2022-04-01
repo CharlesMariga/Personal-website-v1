@@ -59,6 +59,21 @@ const AvaterFigure = styled.figure`
   position: relative;
   box-shadow: 0 0 25px 0 rgb(0 0 0 / 80%);
 
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    float: none;
+    margin: 0 auto;
+    transform: translateX(0);
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+    width: 28rem;
+    height: 28rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -83,10 +98,21 @@ const AvaterImage = styled.img`
 const AboutText = styled.p`
   line-height: var(--line-height-md);
   margin-top: 2rem;
+
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+    text-align: center;
+  }
 `;
 
 const Signature = styled.img`
   margin-top: 4rem;
+  width: 35%;
+
+  @media screen and (${({ theme }) => theme.bp.tabletS}) {
+    display: flex;
+    width: 60%;
+    margin: 4rem auto;
+  }
 `;
 
 export default About;
