@@ -26,18 +26,18 @@ const About = () => {
             <AboutText>
               Hello! My name is Charles and I enjoy building things that reside
               on the internet. My interest in programming started back in 2017
-              after I finished hight school, and I wanted to learn about how the
-              internet works. That's what led me to discovering what webpages
+              after I finished high school, and I wanted to learn about how the
+              internet works. That's what led me to discovering what web-pages
               are and knowing that they are made using HTML &amp; CSS. This
               sparked my interest in programming which led me to pursue a
               Bachelor's degree in Information Technology.
             </AboutText>
             <AboutText>
-              I've have been building note-worthy websites and webapps that are
-              compliant with the latest web deign trends. I help convert a
-              vision and an idea into a meaningful and useful product. I am
+              I've since have been building note-worthy websites and webapps
+              that comply with the latest web design trends. I help convert a
+              vision or an idea into a meaningful and useful product. I am
               passionate about developing excelent software that helps to
-              improve wht world around me.
+              improve the world around me.
             </AboutText>
             <AboutText>
               My main focus these days is building accessible, inclusive
