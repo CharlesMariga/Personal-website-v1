@@ -22,6 +22,7 @@ const Layout = ({ location, children }) => {
               <SocialLinks isHome={isHome} />
               <Email isHome={isHome} />
               <Content>
+                <div id="home"></div>
                 {children}
                 {/* Footer goes here */}
               </Content>
