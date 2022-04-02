@@ -28,9 +28,9 @@ const About = () => {
               on the internet. My interest in programming started back in 2017
               after I finished high school, and I wanted to learn about how the
               internet works. That's what led me to discovering what web-pages
-              are and knowing that they are made using HTML &amp; CSS. This
-              sparked my interest in programming which led me to pursue a
-              Bachelor's degree in Information Technology.
+              are and knowing that they are made using HTML, CSS &amp;
+              JavaScript. This sparked my interest in programming which led me
+              to pursue a Bachelor's degree in Information Technology.
             </AboutText>
             <AboutText>
               I've since have been building note-worthy websites and webapps
@@ -51,8 +51,8 @@ const About = () => {
               </a>
               . I also have a great interest on blockchain technology and I am
               working on creating an arbitrage crypto bot on the ethereum main
-              network using Solidity for smart contracts, aave and pancake for
-              flashloans, uniswap for swapping tokens and The-graph for fetching
+              network using Solidity for smart contracts, aave for flashloans,
+              uniswap and pancake for swapping tokens and The-graph for fetching
               data.
             </AboutText>
             <SignatureContainer>

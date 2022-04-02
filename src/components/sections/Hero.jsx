@@ -44,7 +44,7 @@ const Hero = () => {
 
   return (
     <SectionWrap idName="home">
-      <HeroSection id="home">
+      <HeroSection>
         <HeroTextSection>
           <div>
             {prefersReducedMotion ? (
