@@ -1,6 +1,19 @@
+import React from "react";
+import { Side } from ".";
+import { email } from "../config";
 import styled from "styled-components";
 
-export const StyledEmail = styled.div`
+const Email = ({ isHome }) => {
+  return (
+    <Side isHome={isHome} orientation="right">
+      <StyledEmail>
+        <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
+      </StyledEmail>
+    </Side>
+  );
+};
+
+const StyledEmail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +29,7 @@ export const StyledEmail = styled.div`
   }
 `;
 
-export const EmailLink = styled.a`
+const EmailLink = styled.a`
   color: var(--white);
   display: inline-block;
   transition: var(--transition);
@@ -30,3 +43,5 @@ export const EmailLink = styled.a`
     color: var(--primary);
   }
 `;
+
+export default Email;

@@ -1,7 +1,12 @@
+import React from "react";
 import styled from "styled-components";
-import bgImage from "../../assets/images/orange_circle.png";
+import bgImage from "../assets/images/orange_circle.png";
 
-export const BackgroundContentContainer = styled.div`
+const StyledBackgroundImage = ({ children }) => {
+  return <BackgroundContentContainer>{children}</BackgroundContentContainer>;
+};
+
+const BackgroundContentContainer = styled.div`
   position: relative;
   max-height: 100vh;
   overflow: hidden;
@@ -32,3 +37,5 @@ export const BackgroundContentContainer = styled.div`
     z-index: -1;
   }
 `;
+
+export default StyledBackgroundImage;

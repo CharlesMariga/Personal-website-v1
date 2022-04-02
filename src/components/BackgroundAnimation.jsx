@@ -35,7 +35,7 @@ const BackgroundAnimation = () => (
         ry="1.07433"
         fill="#e67e22"
       >
-        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_2" />
         </animateMotion>
       </ellipse>
@@ -44,7 +44,7 @@ const BackgroundAnimation = () => (
         transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
         stroke="url(#paint3_linear)"
       >
-        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_2" />
         </animateMotion>
       </path>
@@ -57,7 +57,7 @@ const BackgroundAnimation = () => (
         fill="#46737"
       >
         <animateMotion
-          dur="5s"
+          dur="15s"
           begin="1"
           repeatCount="indefinite"
           rotate="auto"
@@ -71,7 +71,7 @@ const BackgroundAnimation = () => (
         stroke="url(#paint7_linear)"
       >
         <animateMotion
-          dur="5s"
+          dur="15s"
           begin="1"
           repeatCount="indefinite"
           rotate="auto"
@@ -87,7 +87,7 @@ const BackgroundAnimation = () => (
         transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
         fill="#e67e22"
       >
-        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </ellipse>
@@ -96,7 +96,7 @@ const BackgroundAnimation = () => (
         transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
         stroke="url(#paint4_linear)"
       >
-        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </path>
@@ -109,7 +109,7 @@ const BackgroundAnimation = () => (
         fill="#F46737"
       >
         <animateMotion
-          dur="10s"
+          dur="20s"
           begin="1"
           repeatCount="indefinite"
           rotate="auto"
@@ -123,7 +123,7 @@ const BackgroundAnimation = () => (
         stroke="url(#paint5_linear)"
       >
         <animateMotion
-          dur="10s"
+          dur="20s"
           begin="1"
           repeatCount="indefinite"
           rotate="auto"
@@ -140,7 +140,7 @@ const BackgroundAnimation = () => (
         fill="#F46737"
       >
         <animateMotion
-          dur="5s"
+          dur="15s"
           begin="0"
           repeatCount="indefinite"
           rotate="auto"
@@ -154,7 +154,7 @@ const BackgroundAnimation = () => (
         stroke="url(#paint6_linear)"
       >
         <animateMotion
-          dur="5s"
+          dur="15s"
           begin="0"
           repeatCount="indefinite"
           rotate="auto"
@@ -171,7 +171,7 @@ const BackgroundAnimation = () => (
         fill="#F46737"
       >
         <animateMotion
-          dur="10s"
+          dur="20s"
           begin="3"
           repeatCount="indefinite"
           rotate="auto"
@@ -185,7 +185,7 @@ const BackgroundAnimation = () => (
         stroke="url(#paint7_linear)"
       >
         <animateMotion
-          dur="10s"
+          dur="20s"
           begin="3"
           repeatCount="indefinite"
           rotate="auto"
