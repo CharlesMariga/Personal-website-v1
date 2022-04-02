@@ -29,6 +29,12 @@ const animations = css`
       fill: var(--primary);
     }
   }
+
+  @keyframes animateBgAnim {
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export default animations;

@@ -22,6 +22,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-styled-components`,
     },
@@ -31,6 +32,13 @@ module.exports = {
         google: {
           families: ["Rubik"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/featured`,
       },
     },
   ],

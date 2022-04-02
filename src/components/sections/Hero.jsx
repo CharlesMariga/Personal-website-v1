@@ -169,6 +169,9 @@ const HeroTextSection = styled.div`
 `;
 
 const BackgroundAnimationWrapper = styled.div`
+  opacity: 0;
+  animation: animateBgAnim 1s ease-in-out 2.5s forwards;
+
   @media screen and (${({ theme }) => theme.bp.tabletS}) {
     position: absolute;
     top: 27%;
