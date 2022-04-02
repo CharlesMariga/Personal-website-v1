@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import SectionHeading from "../global/SectionHeading";
 import { SectionWrap } from "../layouts";
 import avater from "../../assets/images/avater.jpg";
 import signature from "../../assets/images/image2vector.svg";
+import { usePreferredReducedMotion } from "../../hooks";
 
 const About = () => {
+  const prefersReducedMotion = usePreferredReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+  }, [prefersReducedMotion]);
+
   return (
     <SectionWrap idName="about">
       <AboutSection id="about">
@@ -17,25 +24,40 @@ const About = () => {
           </AvaterFigure>
           <div>
             <AboutText>
-              Hello! My name is Brittany and I enjoy creating things that live
-              on the internet. My interest in web development started back in
-              2012 when I decided to try editing custom Tumblr themes — turns
-              out hacking together a custom reblog button taught me a lot about
-              HTML &amp; CSS!
+              Hello! My name is Charles and I enjoy building things that reside
+              on the internet. My interest in programming started back in 2017
+              after I finished hight school, and I wanted to learn about how the
+              internet works. That's what led me to discovering what webpages
+              are and knowing that they are made using HTML &amp; CSS. This
+              sparked my interest in programming which led me to pursue a
+              Bachelor's degree in Information Technology.
             </AboutText>
             <AboutText>
-              Fast-forward to today, and I&apos;ve had the privilege of working
-              at an advertising agency, a start-up, a huge corporation, and a
-              student-led design studio. My main focus these days is building
-              accessible, inclusive products and digital experiences at
-              Upstatement for a variety of clients.
+              I've have been building note-worthy websites and webapps that are
+              compliant with the latest web deign trends. I help convert a
+              vision and an idea into a meaningful and useful product. I am
+              passionate about developing excelent software that helps to
+              improve wht world around me.
             </AboutText>
             <AboutText>
-              I also recently launched a course that covers everything you need
-              to build a web app with the Spotify API using Node &amp; React.
-              Here are a few technologies I&apos;ve been working with recently:
+              My main focus these days is building accessible, inclusive
+              products and digital experiences at{" "}
+              <a
+                href="https://soop.co.nz/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SOOP (Software Operations), NZ
+              </a>
+              . I also have a great interest on blockchain technology and I am
+              working on creating an arbitrage crypto bot on the ethereum main
+              network using Solidity for smart contracts, aave and pancake for
+              flashloans, uniswap for swapping tokens and The-graph for fetching
+              data.
             </AboutText>
-            <Signature src={signature} alt="Signature" />
+            <SignatureContainer>
+              <Signature src={signature} alt="Signature" />
+            </SignatureContainer>
           </div>
         </AboutContainer>
       </AboutSection>
@@ -43,7 +65,9 @@ const About = () => {
   );
 };
 
-const AboutSection = styled.section``;
+const AboutSection = styled.section`
+  margin: 6rem 0;
+`;
 
 const AboutContainer = styled.div``;
 
@@ -102,6 +126,18 @@ const AboutText = styled.p`
   @media screen and (${({ theme }) => theme.bp.mobileL}) {
     text-align: center;
   }
+
+  a {
+    &:link,
+    &:visited {
+      color: var(--primary);
+    }
+  }
+`;
+
+const SignatureContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Signature = styled.img`
