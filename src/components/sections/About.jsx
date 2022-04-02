@@ -89,13 +89,13 @@ const AvaterFigure = styled.figure`
     transform: translateX(0);
     margin-bottom: 4rem;
     margin-top: 4rem;
-    width: 30rem;
-    height: 30rem;
+    width: 27rem;
+    height: 27rem;
   }
 
   @media screen and (${({ theme }) => theme.bp.mobileL}) {
-    width: 28rem;
-    height: 28rem;
+    width: 20rem;
+    height: 20rem;
   }
 
   &::before {
