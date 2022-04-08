@@ -8,3 +8,4 @@ export { default as Side } from "./Side";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as BackgroundAnimation } from "./BackgroundAnimation";
 export { default as NavigationDots } from "./NavigationDots";
+export { default as FeaturedProject } from "./FeaturedProject";

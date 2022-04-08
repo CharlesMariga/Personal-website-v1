@@ -55,6 +55,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Rubik', sans-serif;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   /* Scroll bar */
   /* width */
   body::-webkit-scrollbar {

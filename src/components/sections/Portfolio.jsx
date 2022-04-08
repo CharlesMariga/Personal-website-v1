@@ -5,6 +5,7 @@ import { SectionHeading } from "..";
 import styled from "styled-components";
 import { SectionWrap } from "../layouts";
 import { graphql, useStaticQuery } from "gatsby";
+import FeaturedProject from "../FeaturedProject";
 
 const Portfolio = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
@@ -17,7 +18,14 @@ const Portfolio = () => {
             github
             title
             tech
-            cover
+            cover {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  formats: [AUTO, AVIF, WEBP]
+                )
+              }
+            }
           }
           html
         }
@@ -27,11 +35,13 @@ const Portfolio = () => {
 
   const data = allMarkdownRemark.nodes;
 
-  console.log("Data: ", data);
   return (
     <SectionWrap idName="portfolio">
       <PortfolioSection id="portfolio">
         <SectionHeading title="Portfolio" number="02" />
+        {data.map((node, index) => (
+          <FeaturedProject project={node} key={index} />
+        ))}
       </PortfolioSection>
     </SectionWrap>
   );

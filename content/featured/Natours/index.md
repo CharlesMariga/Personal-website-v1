@@ -1,9 +1,9 @@
 ---
 date: "1"
 title: "Natours (NodeJs)"
-cover: ""
+cover: "./natours.png"
 github: "https://github.com/CharlesMariga/Natours-nodejs"
-external: ""
+external: "https://charlesmariga.github.io/Natours/"
 tech:
   - NodeJs
   - Express
