@@ -13,7 +13,7 @@ const FeaturedProject = ({ project }) => {
       <ProjectContent>
         <ProjectOverline>Featured Project</ProjectOverline>
         <ProjectTitle>
-          <a href={external} target="_blank" rel="noreferrer noopener">
+          <a href={external} target="_blank" rel="noreferrer">
             {title}
           </a>
         </ProjectTitle>
@@ -27,21 +27,17 @@ const FeaturedProject = ({ project }) => {
         )}
         <ProjectLinks>
           {cta && (
-            <CtaLink href={cta} target="_blank" rel="noreferrer noopener">
+            <CtaLink href={cta} target="_blank" rel="noreferrer">
               Learn More
             </CtaLink>
           )}
           {github && (
-            <GithubLink href={github} target="_blank" rel="noreferrer noopener">
+            <GithubLink href={github} target="_blank" rel="noreferrer">
               <Icon name="GitHub" />
             </GithubLink>
           )}
           {external && !cta && (
-            <ExternalLink
-              href={external}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <ExternalLink href={external} target="_blank" rel="noreferrer">
               <Icon name="External" />
             </ExternalLink>
           )}
@@ -51,7 +47,7 @@ const FeaturedProject = ({ project }) => {
         <ProjectImageLink
           href={external ? external : github ? github : "#"}
           target="_blank"
-          rel="noreferrer noopener"
+          rel="noreferrer"
         >
           <GatsbyImage image={image} alt={title} className="img" />
         </ProjectImageLink>
@@ -64,6 +60,7 @@ const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
+  align-items: center;
 
   &:not(:last-child) {
     margin-bottom: 10rem;
@@ -73,6 +70,7 @@ const StyledProject = styled.div`
 const ProjectContent = styled.div`
   grid-column: 1 / 7;
   grid-row: 1 / -1;
+  z-index: 1;
 
   @media screen and (${({ theme }) => theme.bp.desktopS}) {
     grid-column: 1 / 9;
@@ -107,15 +105,15 @@ const ProjectDescription = styled.div`
   padding: 2.5rem;
   background-color: var(--primary);
   border-radius: var(--border-radius-default);
-  line-height: var(--line-height-sm);
-  z-index: 2;
+  line-height: var(--line-height-md);
+  font-size: var(--font-16);
+  opacity: 0.95;
 `;
 
 const ProjectTechList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  z-index: 2;
   margin: 2.5rem 0 1rem;
   gap: 2rem;
 `;
@@ -153,13 +151,24 @@ const ProjectImage = styled.div`
   grid-column: 6 / -1;
   grid-row: 1 / -1;
   position: relative;
-  z-index: -1;
+  height: 100%;
+  width: 100%;
 `;
 
 const ProjectImageLink = styled.a`
   width: 100%;
   height: 100%;
-  vertical-align: middle;
+  display: block;
+
+  .img {
+    border-radius: var(--border-radius-default);
+
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
+      object-fit: cover;
+      width: auto;
+      height: 100%;
+    }
+  }
 `;
 
 export default FeaturedProject;
