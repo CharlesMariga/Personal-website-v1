@@ -158,7 +158,8 @@ const ProjectImage = styled.div`
 const ProjectImageLink = styled.a`
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
 
   .img {
     border-radius: var(--border-radius-default);
