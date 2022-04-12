@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import SectionHeading from "../global/SectionHeading";
+import { SectionHeading } from "../global";
 import { SectionWrap } from "../layouts";
 import avater from "../../assets/images/avater.jpg";
 import signature from "../../assets/images/image2vector.svg";

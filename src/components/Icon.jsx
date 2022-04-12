@@ -6,6 +6,7 @@ import {
   IconInstagram,
   IconLinkedin,
   IconTwitter,
+  IconFolder,
 } from "./icons";
 
 export default function Icon({ name, width, height }) {
@@ -18,6 +19,8 @@ export default function Icon({ name, width, height }) {
       return <IconTwitter width={width} height={height} />;
     case "LinkedIn":
       return <IconLinkedin width={width} height={height} />;
+    case "Folder":
+      return <IconFolder width={width} height={height} />;
     default:
       return <IconExternal width={width} height={height} />;
   }

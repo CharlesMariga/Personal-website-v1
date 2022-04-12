@@ -1,16 +1,18 @@
 import React from "react";
-// import { StaticImage } from "gatsby-plugin-image";
-import { SectionHeading } from "..";
-// import { IconGitHub, IconExternal } from "../icons";
 import styled from "styled-components";
 import { SectionWrap } from "../layouts";
 import { graphql, useStaticQuery } from "gatsby";
-import FeaturedProject from "../FeaturedProject";
+import { SectionHeading } from "../global";
+import { FeaturedProject } from "..";
+import { OtherProjects } from ".";
 
 const Portfolio = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/featured/" } }
+        sort: { order: ASC, fields: frontmatter___date }
+      ) {
         nodes {
           frontmatter {
             date
@@ -42,6 +44,7 @@ const Portfolio = () => {
         {data.map((node, index) => (
           <FeaturedProject project={node} key={index} />
         ))}
+        <OtherProjects />
       </PortfolioSection>
     </SectionWrap>
   );
