@@ -137,7 +137,7 @@ const ProjectContent = styled.div`
     grid-column: 1 / -1;
     padding: 4rem 4rem 3rem;
     text-align: left;
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     border-radius: var(--border-radius-md);
     opacity: 0.9;
     width: 100%;
@@ -175,7 +175,7 @@ const ProjectTitle = styled.h3`
 
 const ProjectDescription = styled.div`
   padding: 2.5rem;
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
   border-radius: var(--border-radius-default);
   line-height: var(--line-height-md);
   font-size: var(--font-16);

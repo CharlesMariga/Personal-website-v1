@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import { SectionHeading } from "../global";
 import { SectionWrap } from "../layouts";
-import avater from "../../assets/images/avater.jpg";
 import signature from "../../assets/images/image2vector.svg";
 import { usePreferredReducedMotion } from "../../hooks";
+import { StaticImage } from "gatsby-plugin-image";
 
 const About = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -20,7 +20,11 @@ const About = () => {
         <SectionHeading title="About Me" number="01" />
         <AboutContainer>
           <AvaterFigure>
-            <AvaterImage src={avater} alt="Charles Mariga" />
+            <StaticImage
+              src="../../assets/images/avater.jpg"
+              alt="Charles Mariga"
+              className="avater-img"
+            />
           </AvaterFigure>
           <div>
             <AboutText>
@@ -82,6 +86,7 @@ const AvaterFigure = styled.figure`
   transform: translateX(-5rem);
   position: relative;
   box-shadow: 0 0 25px 0 rgb(0 0 0 / 80%);
+  overflow: hidden;
 
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
     float: none;
@@ -96,6 +101,12 @@ const AvaterFigure = styled.figure`
   @media screen and (${({ theme }) => theme.bp.mobileL}) {
     width: 20rem;
     height: 20rem;
+  }
+
+  .avater-img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
 
   &::before {
@@ -113,11 +124,11 @@ const AvaterFigure = styled.figure`
   }
 `;
 
-const AvaterImage = styled.img`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-`;
+// const AvaterImage = styled(StaticImage)`
+//   object-fit: cover;
+//   width: 100%;
+//   height: 100%;
+// `;
 
 const AboutText = styled.p`
   line-height: var(--line-height-md);

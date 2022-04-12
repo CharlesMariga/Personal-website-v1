@@ -50,6 +50,7 @@ const variables = css`
 
     /* Bg colors */
     --bg-dark: rgb(22, 23, 27);
+    --bg-primary-light: rgba(240, 178, 122, 0.1);
 
     /* Line height */
     --line-height-default: 1;
@@ -96,6 +97,9 @@ const variables = css`
     /* Box-shadow */
     --box-shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
       0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --box-shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --box-shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 `;
 

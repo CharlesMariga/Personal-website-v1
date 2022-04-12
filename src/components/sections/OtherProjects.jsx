@@ -54,7 +54,7 @@ const OtherProjects = () => {
               ))}
           </>
         ) : (
-          <TransitionGroup component={null}>
+          <TransitionGroup component={null} in={false}>
             {projectsToShow.length &&
               projectsToShow.map((project, index) => (
                 <CSSTransition
@@ -66,7 +66,9 @@ const OtherProjects = () => {
                   <ProjectCard
                     project={project}
                     style={{
-                      transitionDelay: `${index * 100}ms`,
+                      transitionDelay: `${
+                        index >= gridLimit ? (index - gridLimit) * 100 : 0
+                      }ms`,
                     }}
                   />
                 </CSSTransition>
@@ -74,12 +76,14 @@ const OtherProjects = () => {
           </TransitionGroup>
         )}
       </OtherProjectsCardsContainer>
-      <ShowMoreButton
-        className="btn btn--full"
-        onClick={() => setShowMore(!showMore)}
-      >
-        Show {showMore ? "Less" : "More"}
-      </ShowMoreButton>
+      {projects.length > 6 && (
+        <ShowMoreButton
+          className="btn btn--full"
+          onClick={() => setShowMore(!showMore)}
+        >
+          Show {showMore ? "Less" : "More"}
+        </ShowMoreButton>
+      )}
     </OtherProjectsWrap>
   );
 };
