@@ -47,7 +47,7 @@ const Portfolio = () => {
   );
 };
 
-const PortfolioSection = styled.section`
+const PortfolioSection = styled.div`
   padding: 6rem 0;
 `;
 

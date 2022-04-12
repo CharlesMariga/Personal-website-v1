@@ -81,7 +81,7 @@ const Hero = () => {
   );
 };
 
-const HeroSection = styled.section`
+const HeroSection = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

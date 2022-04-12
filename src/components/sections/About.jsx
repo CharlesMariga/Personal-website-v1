@@ -65,7 +65,7 @@ const About = () => {
   );
 };
 
-const AboutSection = styled.section`
+const AboutSection = styled.div`
   margin: 6rem 0;
 `;
 

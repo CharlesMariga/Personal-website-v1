@@ -10,22 +10,27 @@ const FeaturedProject = ({ project }) => {
 
   return (
     <StyledProject>
-      <ProjectContent>
-        <ProjectOverline>Featured Project</ProjectOverline>
-        <ProjectTitle>
+      <ProjectContent className="project-content">
+        <ProjectOverline className="project-overline">
+          Featured Project
+        </ProjectOverline>
+        <ProjectTitle className="project-title">
           <a href={external} target="_blank" rel="noreferrer">
             {title}
           </a>
         </ProjectTitle>
-        <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+        <ProjectDescription
+          dangerouslySetInnerHTML={{ __html: html }}
+          className="project-description"
+        />
         {tech.length && (
-          <ProjectTechList>
+          <ProjectTechList className="project-tech-list">
             {tech.map((item, i) => (
               <ProjectTechListItem key={i}>{item}</ProjectTechListItem>
             ))}
           </ProjectTechList>
         )}
-        <ProjectLinks>
+        <ProjectLinks className="project-links">
           {cta && (
             <CtaLink href={cta} target="_blank" rel="noreferrer">
               Learn More
@@ -43,7 +48,7 @@ const FeaturedProject = ({ project }) => {
           )}
         </ProjectLinks>
       </ProjectContent>
-      <ProjectImage>
+      <ProjectImage className="project-image">
         <ProjectImageLink
           href={external ? external : github ? github : "#"}
           target="_blank"
@@ -62,18 +67,85 @@ const StyledProject = styled.div`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 
+  @media screen and (${({ theme }) => theme.bp.tabletL}) {
+    box-shadow: var(--box-shadow-sm);
+  }
+
   &:not(:last-child) {
     margin-bottom: 10rem;
+
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
+      margin-bottom: 8rem;
+    }
+
+    @media screen and (${({ theme }) => theme.bp.mobileL}) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &:nth-child(odd) {
+    .project-content {
+      grid-column: 6 / -1;
+      grid-row: 1 / -1;
+
+      @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .project-image {
+      grid-column: 1 / 8;
+      grid-row: 1 / -1;
+      text-align: right;
+
+      @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .project-overline,
+    .project-title,
+    .project-description {
+      text-align: right;
+
+      @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+        text-align: left;
+      }
+    }
+
+    .project-tech-list,
+    .project-links {
+      justify-content: flex-end;
+
+      @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+        justify-content: flex-start;
+      }
+    }
   }
 `;
 
 const ProjectContent = styled.div`
-  grid-column: 1 / 7;
+  grid-column: 1 / 8;
   grid-row: 1 / -1;
   z-index: 1;
 
   @media screen and (${({ theme }) => theme.bp.desktopS}) {
-    grid-column: 1 / 9;
+    grid-column: 1 / 8;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    grid-column: 1 / -1;
+    padding: 4rem 4rem 3rem;
+    text-align: left;
+    background-color: var(--primary);
+    border-radius: var(--border-radius-md);
+    opacity: 0.95;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+    padding: 2.5rem 2.5re 2rem;
   }
 `;
 
@@ -96,7 +168,7 @@ const ProjectTitle = styled.h3`
 
     &:hover,
     &:active {
-      color: var(--primary);
+      color: var(--primary-light);
     }
   }
 `;
@@ -108,6 +180,12 @@ const ProjectDescription = styled.div`
   line-height: var(--line-height-md);
   font-size: var(--font-16);
   opacity: 0.95;
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    background-color: transparent;
+    opacity: 1;
+    padding: 0;
+  }
 `;
 
 const ProjectTechList = styled.ul`
@@ -153,6 +231,12 @@ const ProjectImage = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    grid-column: 1 / -1;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+  }
 `;
 
 const ProjectImageLink = styled.a`
@@ -163,9 +247,10 @@ const ProjectImageLink = styled.a`
 
   .img {
     border-radius: var(--border-radius-default);
+    width: 100%;
+    height: 100%;
 
     @media screen and (${({ theme }) => theme.bp.tabletL}) {
-      object-fit: cover;
       width: auto;
       height: 100%;
     }
