@@ -65,11 +65,9 @@ const OtherProjects = () => {
                 >
                   <ProjectCard
                     project={project}
-                    style={{
-                      transitionDelay: `${
-                        index >= gridLimit ? (index - gridLimit) * 100 : 0
-                      }ms`,
-                    }}
+                    delay={`${
+                      index >= gridLimit ? (index - gridLimit) * 150 : 0
+                    }ms`}
                   />
                 </CSSTransition>
               ))}

@@ -2,65 +2,63 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from ".";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, delay }) => {
   const { github, external, title, tech } = project.frontmatter;
   const html = project.html;
 
   return (
-    <>
-      <Card>
-        <CardHeader>
-          <IconContainer className="folder">
-            <Icon name="Folder" />
-          </IconContainer>
-          <CardProjectLinks>
-            {github && (
-              <CardProjectLink
-                href={github}
-                aria-label="GitHub Link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <IconContainer className="github">
-                  <Icon name="GitHub" />
-                </IconContainer>
-              </CardProjectLink>
-            )}
-            {external && (
-              <CardProjectLink
-                href={external}
-                aria-label="GitHub Link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <IconContainer className="external">
-                  <Icon name="External" />
-                </IconContainer>
-              </CardProjectLink>
-            )}
-          </CardProjectLinks>
-        </CardHeader>
-        <ProjectTitle>
-          <ProjectTitleLink
-            href={external || github}
-            target="_blank"
-            rel="noreferrer"
-            className="project-title-link"
-          >
-            {title}
-          </ProjectTitleLink>
-        </ProjectTitle>
-        <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-        <CardFooter>
-          <ProjectTechList>
-            {tech.length &&
-              tech.map((tech, index) => (
-                <ProjectTechListItem key={index}>{tech}</ProjectTechListItem>
-              ))}
-          </ProjectTechList>
-        </CardFooter>
-      </Card>
-    </>
+    <Card delay={delay}>
+      <CardHeader>
+        <IconContainer className="folder">
+          <Icon name="Folder" />
+        </IconContainer>
+        <CardProjectLinks>
+          {github && (
+            <CardProjectLink
+              href={github}
+              aria-label="GitHub Link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconContainer className="github">
+                <Icon name="GitHub" />
+              </IconContainer>
+            </CardProjectLink>
+          )}
+          {external && (
+            <CardProjectLink
+              href={external}
+              aria-label="GitHub Link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconContainer className="external">
+                <Icon name="External" />
+              </IconContainer>
+            </CardProjectLink>
+          )}
+        </CardProjectLinks>
+      </CardHeader>
+      <ProjectTitle>
+        <ProjectTitleLink
+          href={external || github}
+          target="_blank"
+          rel="noreferrer"
+          className="project-title-link"
+        >
+          {title}
+        </ProjectTitleLink>
+      </ProjectTitle>
+      <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+      <CardFooter>
+        <ProjectTechList>
+          {tech.length &&
+            tech.map((tech, index) => (
+              <ProjectTechListItem key={index}>{tech}</ProjectTechListItem>
+            ))}
+        </ProjectTechList>
+      </CardFooter>
+    </Card>
   );
 };
 
@@ -74,6 +72,7 @@ const Card = styled.div`
   flex-direction: column;
   box-shadow: var(--box-shadow-sm);
   transition: var(--transition);
+  transition-delay: ${({ delay }) => delay};
 
   &:hover {
     transform: translateY(-1rem);
@@ -159,7 +158,7 @@ const ProjectDescription = styled.div`
 
   p {
     font-size: var(--font-16);
-    line-height: var(--line-height-sm);
+    line-height: var(--line-height-md);
   }
 `;
 
@@ -176,6 +175,7 @@ const ProjectTechList = styled.ul`
 const ProjectTechListItem = styled.li`
   font-size: var(--font-14);
   font-weight: lighter;
+  color: var(--primary-light);
 `;
 
 export default ProjectCard;

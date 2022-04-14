@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import { ScrollContainer } from "react-scroll-motion";
 
 import { GlobalStyles, theme } from "../../styles";
 import { SocialLinks, Email, Head, StyledBackgroundImage, Loader } from "..";
@@ -21,11 +22,13 @@ const Layout = ({ location, children }) => {
             <StyledBackgroundImage>
               <SocialLinks isHome={isHome} />
               <Email isHome={isHome} />
-              <Content>
-                <div id="home"></div>
-                {children}
-                {/* Footer goes here */}
-              </Content>
+              <ScrollContainer>
+                <Content>
+                  <div id="home"></div>
+                  {children}
+                  {/* Footer goes here */}
+                </Content>
+              </ScrollContainer>
             </StyledBackgroundImage>
           )}
         </ThemeProvider>
