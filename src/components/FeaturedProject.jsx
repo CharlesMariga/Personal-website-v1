@@ -1,5 +1,6 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
+
 import styled from "styled-components";
 import Icon from "./Icon";
 

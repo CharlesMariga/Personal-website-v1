@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 import { SectionHeading } from "../global";
 import { SectionWrap } from "../layouts";
@@ -11,89 +10,74 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const About = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
-  const { ref, inView } = useInView({ threshold: 0.4 });
-  const animation = useAnimation();
 
   useEffect(() => {
     if (prefersReducedMotion) return;
-
-    if (inView)
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: {
-          ease: [0.645, 0.045, 0.355, 1],
-          duration: 1,
-        },
-      });
-
-    if (!inView)
-      animation.start({
-        y: "40px",
-        opacity: 0,
-        transition: {
-          ease: [0.645, 0.045, 0.355, 1],
-          duration: 1,
-        },
-      });
   });
 
   return (
     <SectionWrap idName="about">
-      <div ref={ref}>
-        <AboutSection id="about">
-          <motion.div animate={animation}>
-            <SectionHeading title="About Me" number="01" />
-            <AboutContainer>
-              <AvaterFigure>
-                <StaticImage
-                  src="../../assets/images/avater.jpg"
-                  alt="Charles Mariga"
-                  className="avater-img"
-                />
-              </AvaterFigure>
-              <div>
-                <AboutText>
-                  Hello! My name is Charles and I enjoy building things that
-                  reside on the internet. My interest in programming started
-                  back in 2017 after I finished high school, and I wanted to
-                  learn about how the internet works. That's what led me to
-                  discovering what web-pages are and knowing that they are made
-                  using HTML, CSS &amp; JavaScript. This sparked my interest in
-                  programming which led me to pursue a Bachelor's degree in
-                  Information Technology.
-                </AboutText>
-                <AboutText>
-                  I've since have been building note-worthy websites and webapps
-                  that comply with the latest web design trends. I help convert
-                  a vision or an idea into a meaningful and useful product. I am
-                  passionate about developing excelent software that helps to
-                  improve the world around me.
-                </AboutText>
-                <AboutText>
-                  My main focus these days is building accessible, inclusive
-                  products and digital experiences at{" "}
-                  <a
-                    href="https://soop.co.nz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SOOP (Software Operations), NZ
-                  </a>
-                  . I also have a great interest on blockchain technology and I
-                  am working on creating an arbitrage crypto bot on the ethereum
-                  main network using Solidity for smart contracts, aave for
-                  flashloans, uniswap and pancake for swapping tokens and
-                  The-graph for fetching data.
-                </AboutText>
-                <SignatureContainer>
-                  <Signature src={signature} alt="Signature" />
-                </SignatureContainer>
-              </div>
-            </AboutContainer>
-          </motion.div>
-        </AboutSection>
-      </div>
+      <AboutSection id="about">
+        <motion.div
+          whileInView={{ opacity: [0, 1], y: [40, 0] }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+            ease: [0.645, 0.045, 0.355, 1],
+          }}
+          viewport={{ once: true }}
+          className="app__skills-item app__flex"
+        >
+          <SectionHeading title="About Me" number="01" />
+          <AboutContainer>
+            <AvaterFigure>
+              <StaticImage
+                src="../../assets/images/avater.jpg"
+                alt="Charles Mariga"
+                className="avater-img"
+              />
+            </AvaterFigure>
+            <div>
+              <AboutText>
+                Hello! My name is Charles and I enjoy building things that
+                reside on the internet. My interest in programming started back
+                in 2017 after I finished high school, and I wanted to learn
+                about how the internet works. That's what led me to discovering
+                what web-pages are and knowing that they are made using HTML,
+                CSS &amp; JavaScript. This sparked my interest in programming
+                which led me to pursue a Bachelor's degree in Information
+                Technology.
+              </AboutText>
+              <AboutText>
+                I've since have been building note-worthy websites and webapps
+                that comply with the latest web design trends. I help convert a
+                vision or an idea into a meaningful and useful product. I am
+                passionate about developing excelent software that helps to
+                improve the world around me.
+              </AboutText>
+              <AboutText>
+                My main focus these days is building accessible, inclusive
+                products and digital experiences at{" "}
+                <a
+                  href="https://soop.co.nz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  SOOP (Software Operations), NZ
+                </a>
+                . I also have a great interest on blockchain technology and I am
+                working on creating an arbitrage crypto bot on the ethereum main
+                network using Solidity for smart contracts, aave for flashloans,
+                uniswap and pancake for swapping tokens and The-graph for
+                fetching data.
+              </AboutText>
+              <SignatureContainer>
+                <Signature src={signature} alt="Signature" />
+              </SignatureContainer>
+            </div>
+          </AboutContainer>
+        </motion.div>
+      </AboutSection>
     </SectionWrap>
   );
 };

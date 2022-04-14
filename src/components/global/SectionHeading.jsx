@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SectionHeading = ({ title, number }) => {
   return (
     <StyledSectionHeading>
-      <p>{number}</p>
+      {number && <p>{number}</p>}
       <h2>{title}</h2>
     </StyledSectionHeading>
   );

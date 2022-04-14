@@ -155,10 +155,22 @@ const ProjectTitleLink = styled.a`
 
 const ProjectDescription = styled.div`
   margin-bottom: 2rem;
+  z-index: 1;
 
   p {
     font-size: var(--font-16);
     line-height: var(--line-height-md);
+
+    a {
+      &:link,
+      &:visited &:active {
+        color: var(--primary-light);
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
   }
 `;
 

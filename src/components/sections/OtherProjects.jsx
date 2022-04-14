@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import { SecondaryHeading } from "../global";
 import { ProjectCard } from "..";
-import { graphql, useStaticQuery } from "gatsby";
 import { usePreferredReducedMotion } from "../../hooks";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const OtherProjects = () => {
   const [showMore, setShowMore] = useState(false);
@@ -44,7 +45,22 @@ const OtherProjects = () => {
 
   return (
     <OtherProjectsWrap>
-      <SecondaryHeading title="Other projects worth a mention" />
+      <motion.div
+        whileInView={{ opacity: [0, 1], y: [40, 0] }}
+        transition={{
+          delay: 0.5,
+          duration: 0.5,
+          ease: [0.645, 0.045, 0.355, 1],
+        }}
+        viewport={{ once: true }}
+      >
+        <SecondaryHeading title="Other projects worth a mention" />
+        <ArchiveLinkContainer>
+          <Link to="/archive" className="archive-link">
+            View the archive
+          </Link>
+        </ArchiveLinkContainer>
+      </motion.div>
       <OtherProjectsCardsContainer>
         {prefersReducedMotion ? (
           <>
@@ -54,24 +70,24 @@ const OtherProjects = () => {
               ))}
           </>
         ) : (
-          <TransitionGroup component={null} in={false}>
+          <>
             {projectsToShow.length &&
               projectsToShow.map((project, index) => (
-                <CSSTransition
+                <motion.div
+                  className="card-motion-div"
+                  whileInView={{ opacity: [0, 1], y: [40, 0] }}
+                  transition={{
+                    delay: `${0.1 * index}`,
+                    duration: 0.5,
+                    ease: [0.645, 0.045, 0.355, 1],
+                  }}
                   key={index}
-                  classNames="fadeup"
-                  timeout={index > gridLimit ? (index - gridLimit) * 300 : 300}
-                  exit={false}
+                  viewport={{ once: true }}
                 >
-                  <ProjectCard
-                    project={project}
-                    delay={`${
-                      index >= gridLimit ? (index - gridLimit) * 150 : 0
-                    }ms`}
-                  />
-                </CSSTransition>
+                  <ProjectCard project={project} />
+                </motion.div>
               ))}
-          </TransitionGroup>
+          </>
         )}
       </OtherProjectsCardsContainer>
       {projects.length > 6 && (
@@ -90,11 +106,33 @@ const OtherProjectsWrap = styled.div`
   padding: 6rem 0;
 `;
 
+const ArchiveLinkContainer = styled.div`
+  text-align: center;
+  margin: 3rem 4rem;
+
+  .archive-link {
+    &:link,
+    &:visited,
+    &:active {
+      display: inline-block;
+      text-align: center;
+      color: var(--primary);
+      text-decoration: underline;
+      margin: 0 auto;
+    }
+  }
+`;
+
 const OtherProjectsCardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
   margin-top: 5rem;
+
+  .card-motion-div {
+    display: flex;
+    opacity: 0;
+  }
 
   @media screen and (${({ theme }) => theme.bp.desktopS}) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
