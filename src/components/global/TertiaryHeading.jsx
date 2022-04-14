@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const TertiaryHeading = ({ title }) => {
-  return <Heading>{title}</Heading>;
+const TertiaryHeading = ({ title, className }) => {
+  return <Heading className={`${className}`}>{title}</Heading>;
 };
 
 const Heading = styled.h5`
