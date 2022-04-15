@@ -5,9 +5,11 @@ import styled from "styled-components";
 import { GlobalStyles, theme } from "../../styles";
 import { SocialLinks, Email, Head, StyledBackgroundImage, Loader } from "..";
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children, page }) => {
   const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
+
+  console.log("Page: ", page);
 
   return (
     <>
@@ -19,8 +21,8 @@ const Layout = ({ location, children }) => {
             <Loader finishedLoading={() => setIsLoading(false)} />
           ) : (
             <StyledBackgroundImage>
-              <SocialLinks isHome={isHome} />
-              <Email isHome={isHome} />
+              {page !== "404" && <SocialLinks isHome={isHome} />}
+              {page !== "404" && <Email isHome={isHome} />}
               <Content>
                 <div id="home"></div>
                 {children}
