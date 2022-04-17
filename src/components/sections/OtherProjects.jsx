@@ -133,10 +133,6 @@ const OtherProjectsCardsContainer = styled.div`
     display: flex;
     opacity: 0;
   }
-
-  @media screen and (${({ theme }) => theme.bp.desktopS}) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
 `;
 
 const ShowMoreButton = styled.button`

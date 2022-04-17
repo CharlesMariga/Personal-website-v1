@@ -47,10 +47,12 @@ const variables = css`
     --primary-light: #f0b27a;
     --primary: #e67e22;
     --primary-dark: #cf711f;
+    --black: rgb(22, 23, 27);
 
     /* Bg colors */
     --bg-dark: rgb(22, 23, 27);
     --bg-primary-light: rgba(240, 178, 122, 0.1);
+    --bg-primary-dark: rgba(207, 113, 31, 0.95);
 
     /* Line height */
     --line-height-default: 1;

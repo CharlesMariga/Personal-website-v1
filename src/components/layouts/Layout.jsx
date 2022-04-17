@@ -9,8 +9,6 @@ const Layout = ({ location, children, page }) => {
   const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
 
-  console.log("Page: ", page);
-
   return (
     <>
       <Head />

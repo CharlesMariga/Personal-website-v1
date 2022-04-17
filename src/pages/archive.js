@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 
 import { Layout } from "../components/layouts";
 import { Archive } from "../components/sections";
@@ -13,26 +14,27 @@ const archive = ({ location, data }) => {
   );
 };
 
-// export const query = graphql`
-//   {
-//     allMarkdownRemark(
-//       filter: { fileAbsolutePath: { regex: "/projects/" } }
-//       sort: { order: ASC, fields: frontmatter___date }
-//     ) {
-//       nodes {
-//         frontmatter {
-//           company
-//           date
-//           external
-//           tech
-//           github
-//           title
-//           playstore
-//         }
-//         html
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { order: ASC, fields: frontmatter___date }
+    ) {
+      nodes {
+        frontmatter {
+          company
+          date
+          external
+          tech
+          github
+          title
+          android
+          ios
+        }
+        html
+      }
+    }
+  }
+`;
 
 export default archive;

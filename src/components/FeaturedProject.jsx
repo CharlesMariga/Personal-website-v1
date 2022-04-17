@@ -3,6 +3,7 @@ import React from "react";
 
 import styled from "styled-components";
 import Icon from "./Icon";
+import { lightSelection } from "../styles/mixins";
 
 const FeaturedProject = ({ project }) => {
   const { frontmatter, html } = project;
@@ -138,7 +139,7 @@ const ProjectContent = styled.div`
     grid-column: 1 / -1;
     padding: 4rem 4rem 3rem;
     text-align: left;
-    background-color: var(--primary-dark);
+    background-color: var(--bg-primary-dark);
     border-radius: var(--border-radius-md);
     opacity: 0.9;
     width: 100%;
@@ -154,11 +155,17 @@ const ProjectOverline = styled.p`
   margin: 10px 0;
   color: var(--primary);
   font-weight: 400;
+
+  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+    color: var(--white);
+    ${lightSelection}
+  }
 `;
 
 const ProjectTitle = styled.h3`
   font-size: var(--font-36);
   margin-bottom: 2rem;
+  transition: var(--transition);
 
   a {
     &:link,
@@ -176,16 +183,22 @@ const ProjectTitle = styled.h3`
 
 const ProjectDescription = styled.div`
   padding: 2.5rem;
-  background-color: var(--primary-dark);
   border-radius: var(--border-radius-default);
   line-height: var(--line-height-md);
   font-size: var(--font-16);
   opacity: 0.95;
+  background-color: var(--bg-primary-light);
+  backdrop-filter: blur(120px);
+  overflow: hidden;
 
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
     background-color: transparent;
-    opacity: 1;
     padding: 0;
+    border-radius: 0;
+
+    p {
+      ${lightSelection}
+    }
   }
 `;
 
@@ -200,6 +213,10 @@ const ProjectTechList = styled.ul`
 const ProjectTechListItem = styled.li`
   font-size: var(--font-16);
   font-weight: var(--font-weight-sm);
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    ${lightSelection}
+  }
 `;
 
 const ProjectLinks = styled.div`
@@ -213,9 +230,14 @@ const CtaLink = styled.a``;
 const GithubLink = styled.a`
   color: var(--white);
   margin-top: 1rem;
+  transition: var(--transition);
 
   &:hover {
     color: var(--primary);
+
+    @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+      color: var(--black);
+    }
   }
 
   svg {
@@ -245,6 +267,16 @@ const ProjectImageLink = styled.a`
   height: 100%;
   display: flex;
   align-items: center;
+  opacity: 0.5;
+  transition: var(--transition);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    opacity: 1;
+  }
 
   .img {
     border-radius: var(--border-radius-default);
