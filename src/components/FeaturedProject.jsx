@@ -189,6 +189,19 @@ const ProjectDescription = styled.div`
   backdrop-filter: blur(120px);
   overflow: hidden;
 
+  a {
+    &:link,
+    &:visited {
+      color: var(--primary-light);
+      transition: var(--transition);
+    }
+
+    &:hover,
+    &:active {
+      color: var(--primary);
+    }
+  }
+
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
     background-color: transparent;
     padding: 0;
