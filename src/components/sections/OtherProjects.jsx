@@ -129,6 +129,11 @@ const OtherProjectsCardsContainer = styled.div`
   grid-gap: 15px;
   margin-top: 5rem;
 
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-column: 1 / -1;
+  }
+
   .card-motion-div {
     display: flex;
     opacity: 0;

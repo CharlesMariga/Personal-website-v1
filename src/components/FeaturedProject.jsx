@@ -3,8 +3,6 @@ import React from "react";
 
 import styled from "styled-components";
 import Icon from "./Icon";
-import { lightSelection } from "../styles/mixins";
-
 const FeaturedProject = ({ project }) => {
   const { frontmatter, html } = project;
   const { external, title, tech, github, cover, cta } = frontmatter;
@@ -158,7 +156,7 @@ const ProjectOverline = styled.p`
 
   @media screen and (${({ theme }) => theme.bp.desktopS}) {
     color: var(--white);
-    ${lightSelection}
+    ${({ theme }) => theme.mixins.lightSelection}
   }
 `;
 
@@ -197,7 +195,7 @@ const ProjectDescription = styled.div`
     border-radius: 0;
 
     p {
-      ${lightSelection}
+      ${({ theme }) => theme.mixins.lightSelection}
     }
   }
 `;
@@ -215,7 +213,7 @@ const ProjectTechListItem = styled.li`
   font-weight: var(--font-weight-sm);
 
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
-    ${lightSelection}
+    ${({ theme }) => theme.mixins.lightSelection}
   }
 `;
 

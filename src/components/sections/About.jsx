@@ -141,10 +141,6 @@ const AboutText = styled.p`
   line-height: var(--line-height-md);
   margin-top: 2rem;
 
-  @media screen and (${({ theme }) => theme.bp.mobileL}) {
-    text-align: center;
-  }
-
   a {
     &:link,
     &:visited {
