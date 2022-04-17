@@ -46,7 +46,7 @@ const Archive = ({ data }) => {
               >
                 <TableHead>Year</TableHead>
                 <TableHead>Title</TableHead>
-                <TableHead className="hide-on-mobile">Made at</TableHead>
+                <TableHead className="hide-on-mobile">Made while at</TableHead>
                 <TableHead className="hide-on-mobile">Build with</TableHead>
                 <TableHead>Link</TableHead>
               </motion.tr>

@@ -13,4 +13,4 @@ company: ""
 showInProjects: true
 ---
 
-Omnifood is a premium food develivery service that focuses on delivering healthy food to people who are busy and don't have time to cook, but would like to enjoy a healthy meal.
+Trillo is a booking agency for hotels, flights, car rentals and tours. Whaterver you want to book for your travel, they've got you covered.
