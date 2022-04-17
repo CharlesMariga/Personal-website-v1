@@ -134,6 +134,11 @@ const OtherProjectsCardsContainer = styled.div`
     grid-column: 1 / -1;
   }
 
+  @media screen and (${({ theme }) => theme.bp.tabletS}) {
+    grid-template-columns: 1fr;
+    grid-column: 1 / -1;
+  }
+
   .card-motion-div {
     display: flex;
     opacity: 0;

@@ -73,6 +73,8 @@ const Card = styled.div`
   box-shadow: var(--box-shadow-sm);
   transition: var(--transition);
   transition-delay: ${({ delay }) => delay};
+  width: 100%;
+  height: 100%;
 
   &:hover {
     transform: translateY(-1rem);
