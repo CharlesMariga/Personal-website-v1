@@ -13,4 +13,4 @@ company: "SOOP"
 showInProjects: true
 ---
 
-Bankist (Minimalist Banking) is an online banking interface that assists users to track transactions involving their account, such as transfering money, receiving money, requesting loans and closing and account.
+Bankist (Minimalist Banking) is an online banking interface that assists users to track transactions involving their account, such as transfering money, receiving money, requesting loans and closing an account.

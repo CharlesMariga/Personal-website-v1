@@ -157,6 +157,7 @@ const ProjectTitleLink = styled.a`
 
 const ProjectDescription = styled.div`
   margin-bottom: 2rem;
+  z-index: 1;
 
   p {
     font-size: var(--font-16);
@@ -164,7 +165,8 @@ const ProjectDescription = styled.div`
 
     a {
       &:link,
-      &:visited &:active {
+      &:visited,
+      &:active {
         color: var(--primary-light);
       }
 
