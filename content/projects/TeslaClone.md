@@ -13,4 +13,4 @@ company: "SOOP"
 showInProjects: true
 ---
 
-This is a clone of the [Tesla](https://www.tesla.com/) automotive company website.
+This is a clone of the [Tesla](https://www.tesla.com/) automotive company website, which is an American automotive and clean energy company based in Austin, Texas.

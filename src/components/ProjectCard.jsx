@@ -185,6 +185,7 @@ const ProjectTechList = styled.ul`
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 `;
 
 const ProjectTechListItem = styled.li`
