@@ -9,7 +9,7 @@ tech:
   - React
   - React icons
   - Styled components
-company: ""
+company: "SOOP"
 showInProjects: true
 ---
 
