@@ -14,4 +14,4 @@ company: "SOOP"
 showInProjects: true
 ---
 
-This is a clone of the [Disney +](https://www.disneyplus.com/) website, whic is a video on-demand over-the-top streaming service owned and operated by the Media and Entertainment Distribution division of The Walt Disney Company.
+This is a clone of the [Disney +](https://www.disneyplus.com/) website, which is a video on-demand over-the-top streaming service owned and operated by the Media and Entertainment Distribution division of The Walt Disney Company.
