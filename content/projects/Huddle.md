@@ -7,7 +7,6 @@ ios: ""
 android: ""
 tech:
   - React
-  - React icons
   - Styled components
 company: "SOOP"
 showInProjects: true
