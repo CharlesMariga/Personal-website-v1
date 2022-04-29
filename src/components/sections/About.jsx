@@ -28,7 +28,7 @@ const About = () => {
           viewport={{ once: true }}
           className="app__skills-item app__flex"
         >
-          <SectionHeading title="About Me" number="01" />
+          <SectionHeading title="About Me" number="02" />
           <AboutContainer>
             <AvaterFigure>
               <StaticImage

@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
 import animations from "./animations";
+import TransitionStyles from "./transitionTyles";
 
 const GlobalStyle = createGlobalStyle`  
   ${variables}
 
-  ${animations}
 
   *,
   *::before,
@@ -114,6 +114,10 @@ const GlobalStyle = createGlobalStyle`
       background-color: var(--primary-dark);
     }
   }
+
+   ${animations}
+
+   ${TransitionStyles}
 `;
 
 export default GlobalStyle;

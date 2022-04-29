@@ -36,7 +36,6 @@ const OtherProjects = () => {
 
   const gridLimit = 6;
   const projects = allMarkdownRemark.nodes;
-  console.log("Projects: ", projects);
   const firstSixProjects = projects.slice(0, gridLimit);
   const projectsToShow = showMore ? projects : firstSixProjects;
 

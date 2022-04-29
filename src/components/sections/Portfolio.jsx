@@ -51,7 +51,7 @@ const Portfolio = () => {
         viewport={{ once: true }}
       >
         <PortfolioSection id="portfolio">
-          <SectionHeading title="Portfolio" number="02" />
+          <SectionHeading title="Portfolio" number="03" />
           {data.map((node, index) => (
             <FeaturedProject project={node} key={index} />
           ))}
