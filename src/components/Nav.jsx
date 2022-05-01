@@ -6,30 +6,31 @@ import styled, { css } from "styled-components";
 import { navLinks } from "../config";
 import { loaderDelay } from "../utils";
 import { IconLogo } from "./icons";
-// import { useScrollDirection } from "../hooks";
+import { useScrollDirection } from "../hooks";
 
 const Nav = ({ isHome, scrollElement }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const [scrollToTop, setScrollToTop] = useState(true);
-  const [scrollDirection, setscrollDirection] = useState("down");
   const scrollContent = scrollElement.current;
+  const scrollDirection = useScrollDirection(scrollContent);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
     }, 500);
 
-    console.log("Scroll content: ", scrollContent);
-    scrollContent &&
-      scrollContent.addEventListener("scroll", () => {
-        setScrollToTop(window.pageXOffset < 50);
-      });
+    const handleScroll = function () {
+      setScrollToTop(window.pageXOffset < 50);
+    };
+
+    scrollContent && scrollContent.addEventListener("scroll", handleScroll);
 
     return () => {
       clearTimeout(timeout);
-      scrollContent && scrollContent.removeEventListener("scroll");
+      scrollContent &&
+        scrollContent.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollDirection, scrollContent]);
+  }, [scrollContent]);
 
   const timeout = isHome ? loaderDelay : 0;
   const fadeClass = isHome ? "fade" : "";
@@ -88,6 +89,15 @@ const StyledHeader = styled.header`
       !scrollToTop &&
       css`
         transform: translateY(0px);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--box-shadow-sm);
+      `}
+
+    ${({ scrollDirection, scrollToTop }) =>
+      scrollDirection === "down" &&
+      !scrollToTop &&
+      css`
+        transform: translateY(-100%);
         backdrop-filter: blur(10px);
         box-shadow: var(--box-shadow-sm);
       `}

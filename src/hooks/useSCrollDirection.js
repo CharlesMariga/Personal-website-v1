@@ -5,12 +5,14 @@ const ScrollDirection = {
   down: "down",
 };
 
-const useScrollDirection = () => {
+const useScrollDirection = scrollContent => {
   const threshold = 100;
   const [scrollDir, setScrollDir] = useState(ScrollDirection.up);
 
+  console.log("Scroll content: ", scrollContent);
+
   useEffect(() => {
-    let previousScrollYPosition = window.scrollY;
+    let previousScrollYPosition = scrollContent ? scrollContent.scrollY : 0;
 
     const scrolledMoreThanThreshold = currentScrollYPosition =>
       Math.abs(currentScrollYPosition - previousScrollYPosition) > threshold;
@@ -21,7 +23,7 @@ const useScrollDirection = () => {
       !(currentScrollYPosition > 0 && previousScrollYPosition === 0);
 
     const updateScrollDirection = () => {
-      const currentScrollYPosition = window.scrollY;
+      const currentScrollYPosition = scrollContent ? scrollContent.scrollY : 0;
 
       if (scrolledMoreThanThreshold(currentScrollYPosition)) {
         const newScrollDirection = isScrollingUp(currentScrollYPosition)
@@ -33,12 +35,14 @@ const useScrollDirection = () => {
       }
     };
 
-    const onScroll = () => window.requestAnimationFrame(updateScrollDirection);
+    const onScroll = () =>
+      scrollContent && window.requestAnimationFrame(updateScrollDirection);
 
-    window.addEventListener("scroll", onScroll);
+    scrollContent && scrollContent.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () =>
+      scrollContent && scrollContent.removeEventListener("scroll", onScroll);
+  }, [scrollContent]);
 
   return scrollDir;
 };
