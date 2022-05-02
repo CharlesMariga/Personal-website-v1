@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 
@@ -15,7 +15,6 @@ import {
 const Layout = ({ location, children, page }) => {
   const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
-  const scrollContent = useRef(scrollContent);
 
   return (
     <>
@@ -29,8 +28,8 @@ const Layout = ({ location, children, page }) => {
             <StyledBackgroundImage>
               {page !== "404" && <SocialLinks isHome={isHome} />}
               {page !== "404" && <Email isHome={isHome} />}
-              <Nav isHome={isHome} scrollElement={scrollContent} />
-              <Content ref={scrollContent}>
+              <Content>
+                <Nav isHome={isHome} />
                 <div id="home"></div>
                 {children}
                 {/* Footer goes here */}
