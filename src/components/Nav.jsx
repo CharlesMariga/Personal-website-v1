@@ -62,7 +62,9 @@ const Nav = ({ isHome }) => {
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <HireMeBtn
                     style={{
-                      transitionDelay: `${isHome ? navLinks.length * 100 : 0}`,
+                      transitionDelay: `${
+                        isHome ? (navLinks.length + 1) * 100 : 0
+                      }ms`,
                     }}
                     href="mailTo:charlesmariga37@gmail.com?subject=Job%20opportunity"
                   >
@@ -186,7 +188,7 @@ const StyledNavLink = styled.li`
     color: var(--white);
 
     @media screen and (${({ theme }) => theme.bp.tabletL}) {
-      font-size: var(--font-24);
+      font-size: var(--font-20);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -200,7 +202,7 @@ const StyledNavLink = styled.li`
       font-size: var(--font-14);
 
       @media screen and (${({ theme }) => theme.bp.tabletL}) {
-        font-size: var(--font-18);
+        font-size: var(--font-16);
       }
     }
   }
@@ -222,7 +224,7 @@ const HireMeBtn = styled.a`
   display: inline-block;
 
   @media screen and (${({ theme }) => theme.bp.tabletL}) {
-    font-size: var(--font-20);
+    font-size: var(--font-18);
   }
 
   &:hover {
@@ -245,7 +247,7 @@ const MenuBtn = styled.button`
 `;
 
 const MenuIcon = styled.div`
-  width: 28px;
+  width: 2.8rem;
   height: 2px;
   background-color: var(--primary);
   position: relative;
@@ -270,7 +272,7 @@ const MenuIcon = styled.div`
   &::before,
   &::after {
     content: "";
-    width: 32px;
+    width: 3.2rem;
     height: 2px;
     background-color: var(--primary);
     position: absolute;
