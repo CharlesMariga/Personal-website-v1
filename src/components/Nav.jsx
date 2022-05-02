@@ -230,6 +230,7 @@ const HireMeBtn = styled.a`
 
   @media screen and (${({ theme }) => theme.bp.tabletL}) {
     font-size: var(--font-18);
+    transition: none;
   }
 
   &:hover {
@@ -248,7 +249,6 @@ const MenuBtn = styled.button`
 
   @media screen and (${({ theme }) => theme.bp.tabletL}) {
     display: block;
-    transition: none;
   }
 `;
 
