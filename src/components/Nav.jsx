@@ -23,6 +23,10 @@ const Nav = ({ isHome }) => {
     return () => clearTimeout(timeOut);
   }, []);
 
+  const closeModal = e => {
+    e.target.classList.contains("navLinksContainer") && setModalOpen(false);
+  };
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -34,7 +38,8 @@ const Nav = ({ isHome }) => {
           )}
         </TransitionGroup>
         <StyledHeaderNavLinkContainer
-          className={`${modalOpen ? "active" : ""}`}
+          className={`navLinksContainer ${modalOpen ? "active" : ""}`}
+          onClick={e => closeModal(e)}
         >
           <StyledNavLinks className={`${modalOpen ? "active" : ""}`}>
             <TransitionGroup component={null}>
@@ -237,7 +242,7 @@ const MenuBtn = styled.button`
   background-color: transparent;
   display: none;
   cursor: pointer;
-  padding: 15px;
+  padding: 1.5rem;
   z-index: 100;
   margin-right: -3rem;
 
@@ -265,7 +270,7 @@ const MenuIcon = styled.div`
     }
 
     &.active::after {
-      transform: rotate(-90deg) translateX(10px);
+      transform: rotate(-90deg) translateX(1rem);
     }
   }
 
@@ -281,11 +286,11 @@ const MenuIcon = styled.div`
   }
 
   &::before {
-    top: -10px;
+    top: -1rem;
   }
 
   &::after {
-    bottom: -10px;
+    bottom: -1rem;
   }
 `;
 
