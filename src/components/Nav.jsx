@@ -7,9 +7,11 @@ import { navLinks } from "../config";
 import { loaderDelay } from "../utils";
 import { IconLogo } from "./icons";
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, contentToScroll }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const [modalOpen, setModalOpen] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const [oldScrollTop, setoldScrollTop] = useState(0);
 
   const timeout = isHome ? loaderDelay : 0;
   const fadeClass = isHome ? "fade" : "";
@@ -17,18 +19,38 @@ const Nav = ({ isHome }) => {
 
   useEffect(() => {
     let timeOut;
+    const element = contentToScroll.current;
     setTimeout(() => {
       timeOut = setIsMounted(true);
     }, 500);
-    return () => clearTimeout(timeOut);
-  }, []);
+
+    const handleScroll = e => {
+      let scrollTop = e.target.scrollTop;
+
+      if (scrollTop > oldScrollTop) setScrollDirection("down");
+      else setScrollDirection("up");
+
+      setoldScrollTop(scrollTop);
+    };
+
+    element.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timeOut);
+      element.removeEventListener("scroll", handleScroll);
+    };
+  }, [contentToScroll, oldScrollTop]);
 
   const closeModal = e => {
     e.target.classList.contains("navLinksContainer") && setModalOpen(false);
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader
+      className={`${modalOpen ? "active" : ""}`}
+      scrollDirection={scrollDirection}
+      scrollToTop={!oldScrollTop}
+    >
       <StyledNav>
         <TransitionGroup component={null}>
           {isMounted && (
@@ -103,16 +125,16 @@ const StyledHeader = styled.header`
   z-index: 11;
   background-color: transparent;
   padding: 0 5rem;
-
-  height: 10rem;
+  height: 8rem;
   display: flex;
+  transition: var(--transition);
 
   @media screen and (prefers-reduced-motion: no-preference) {
     ${({ scrollDirection, scrollToTop }) =>
       scrollDirection === "up" &&
       !scrollToTop &&
       css`
-        transform: translateY(0px);
+        transform: translateY(0);
         backdrop-filter: blur(10px);
         box-shadow: var(--box-shadow-sm);
       `}
@@ -122,7 +144,7 @@ const StyledHeader = styled.header`
       !scrollToTop &&
       css`
         transform: translateY(-100%);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0);
         box-shadow: var(--box-shadow-sm);
       `}
   }

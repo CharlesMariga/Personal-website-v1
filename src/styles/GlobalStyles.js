@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    scroll-margin-top: 140px;
+    scroll-margin-top: 10rem;
   }
 
   html {
