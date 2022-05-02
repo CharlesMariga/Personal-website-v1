@@ -248,6 +248,7 @@ const MenuBtn = styled.button`
 
   @media screen and (${({ theme }) => theme.bp.tabletL}) {
     display: block;
+    transition: none;
   }
 `;
 
