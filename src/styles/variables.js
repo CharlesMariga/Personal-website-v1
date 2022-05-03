@@ -51,6 +51,7 @@ const variables = css`
 
     /* Bg colors */
     --bg-dark: rgb(22, 23, 27);
+    --bg-dark-light: rgba(22, 23, 27, 0.5);
     --bg-primary-light: rgba(240, 178, 122, 0.1);
     --bg-primary-dark: rgba(207, 113, 31, 0.95);
 

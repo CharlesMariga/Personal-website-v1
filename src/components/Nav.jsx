@@ -151,6 +151,11 @@ const StyledHeader = styled.header`
 
   svg {
     fill: var(--primary);
+
+    @media screen and (${({ theme }) => theme.bp.tabletL}) {
+      margin-left: -2rem;
+      width: 30px;
+    }
   }
 `;
 
@@ -176,6 +181,7 @@ const StyledHeaderNavLinkContainer = styled.div`
     &.active {
       opacity: 1;
       visibility: visible;
+      background-color: var(--bg-dark-light);
     }
   }
 `;
