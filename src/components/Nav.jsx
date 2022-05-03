@@ -6,8 +6,10 @@ import styled, { css } from "styled-components";
 import { navLinks } from "../config";
 import { loaderDelay } from "../utils";
 import { IconLogo } from "./icons";
+import { usePreferredReducedMotion } from "../hooks";
 
 const Nav = ({ isHome, contentToScroll }) => {
+  const prefersReducedMotion = usePreferredReducedMotion();
   const [isMounted, setIsMounted] = useState(!isHome);
   const [modalOpen, setModalOpen] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
@@ -18,6 +20,8 @@ const Nav = ({ isHome, contentToScroll }) => {
   const fadeDownClass = isHome ? "fadedown" : "";
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     let timeOut;
     const element = contentToScroll.current;
     setTimeout(() => {
@@ -39,7 +43,7 @@ const Nav = ({ isHome, contentToScroll }) => {
       clearTimeout(timeOut);
       element.removeEventListener("scroll", handleScroll);
     };
-  }, [contentToScroll, oldScrollTop]);
+  });
 
   const closeModal = e => {
     e.target.classList.contains("navLinksContainer") && setModalOpen(false);
@@ -84,6 +88,7 @@ const Nav = ({ isHome, contentToScroll }) => {
                   </CSSTransition>
                 ))}
             </TransitionGroup>
+
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
@@ -103,15 +108,21 @@ const Nav = ({ isHome, contentToScroll }) => {
           </StyledNavLinks>
         </StyledHeaderNavLinkContainer>
 
-        <TransitionGroup component={null}>
-          {isMounted && (
-            <CSSTransition classNames={fadeClass} timeout={timeout}>
-              <MenuBtn onClick={() => setModalOpen(!modalOpen)}>
-                <MenuIcon className={`${modalOpen ? "active" : ""}`} />
-              </MenuBtn>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
+        {prefersReducedMotion ? (
+          <MenuBtn onClick={() => setModalOpen(!modalOpen)}>
+            <MenuIcon className={`${modalOpen ? "active" : ""}`} />
+          </MenuBtn>
+        ) : (
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition classNames={fadeClass} timeout={timeout}>
+                <MenuBtn onClick={() => setModalOpen(!modalOpen)}>
+                  <MenuIcon className={`${modalOpen ? "active" : ""}`} />
+                </MenuBtn>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+        )}
       </StyledNav>
     </StyledHeader>
   );
