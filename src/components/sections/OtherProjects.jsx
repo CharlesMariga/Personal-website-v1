@@ -45,22 +45,34 @@ const OtherProjects = () => {
 
   return (
     <OtherProjectsWrap>
-      <motion.div
-        whileInView={{ opacity: [0, 1], y: [40, 0] }}
-        transition={{
-          delay: 0.5,
-          duration: 0.5,
-          ease: [0.645, 0.045, 0.355, 1],
-        }}
-        viewport={{ once: true }}
-      >
-        <SecondaryHeading title="Other projects worth a mention" />
-        <ArchiveLinkContainer>
-          <Link to="/archive" className="archive-link">
-            View the archive
-          </Link>
-        </ArchiveLinkContainer>
-      </motion.div>
+      {prefersReducedMotion ? (
+        <>
+          <SecondaryHeading title="Other projects worth a mention" />
+          <ArchiveLinkContainer>
+            <Link to="/archive" className="archive-link">
+              View the archive
+            </Link>
+          </ArchiveLinkContainer>
+        </>
+      ) : (
+        <motion.div
+          whileInView={{ opacity: [0, 1], y: [40, 0] }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+            ease: [0.645, 0.045, 0.355, 1],
+          }}
+          viewport={{ once: true }}
+        >
+          <SecondaryHeading title="Other projects worth a mention" />
+          <ArchiveLinkContainer>
+            <Link to="/archive" className="archive-link">
+              View the archive
+            </Link>
+          </ArchiveLinkContainer>
+        </motion.div>
+      )}
+
       <OtherProjectsCardsContainer>
         {prefersReducedMotion ? (
           <>
