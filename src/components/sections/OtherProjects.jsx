@@ -159,7 +159,7 @@ const OtherProjectsCardsContainer = styled.div`
 
 const ShowMoreButton = styled.button`
   margin: 0 auto;
-  display: block;
+  display: block !important;
   margin-top: 8rem;
 `;
 
