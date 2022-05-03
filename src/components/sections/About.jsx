@@ -49,8 +49,8 @@ const About = () => {
                 Technology.
               </AboutText>
               <AboutText>
-                I've since have been building note-worthy websites and webapps
-                that comply with the latest web design trends. I help convert a
+                I've since been building note-worthy websites and webapps that
+                comply with the latest web design trends. I help convert a
                 vision or an idea into a meaningful and useful product. I am
                 passionate about developing excelent software that helps to
                 improve the world around me.
