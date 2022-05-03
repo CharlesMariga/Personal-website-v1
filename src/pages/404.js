@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Layout } from "../components/layouts";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
 
 export default function Error({ location }) {
   return (
     <Layout location={location} page="404">
+      <Helmet title="404 | Page not found" />
       <PageNotFoundSection>
         <PageContent>
           <PageHeading>Oops! Page not found</PageHeading>

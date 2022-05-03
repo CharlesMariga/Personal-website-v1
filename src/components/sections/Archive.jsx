@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { SectionHeading, TertiaryHeading } from "../global";
 import Icon from "../Icon";
+import { Link } from "gatsby";
 
 const Archive = ({ data }) => {
   return (
@@ -19,10 +20,15 @@ const Archive = ({ data }) => {
           viewport={{ once: true }}
         >
           <SectionHeading title="Archive" />
-          <TertiaryHeading
-            title="My long list of projects"
-            className="tertiary-heading"
-          />
+          <FlexContainer>
+            <TertiaryHeading
+              title="My long list of projects"
+              className="tertiary-heading"
+            />
+            <Link to="/" className="back-link">
+              &larr; Back to home
+            </Link>
+          </FlexContainer>
         </motion.div>
         <motion.div
           whileInView={{ opacity: [0, 1], y: [40, 0] }}
@@ -162,9 +168,18 @@ const ArchiveSection = styled.div`
   }
 
   .tertiary-heading {
-    margin-top: -3rem;
-    margin-bottom: 5rem;
     font-weight: 200;
+  }
+`;
+
+const FlexContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rem;
+
+  .back-link {
+    display: block;
+    color: var(--primary);
   }
 `;
 
