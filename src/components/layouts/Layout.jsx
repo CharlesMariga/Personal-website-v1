@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 
 import { GlobalStyles, theme } from "../../styles";
+import { Footer } from "../sections";
 import {
   SocialLinks,
   Email,
@@ -35,7 +36,7 @@ const Layout = ({ location, children, page }) => {
               <Content ref={scrollContent}>
                 <div id="home"></div>
                 {children}
-                {/* Footer goes here */}
+                <Footer />
               </Content>
             </StyledBackgroundImage>
           )}
