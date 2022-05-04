@@ -20,7 +20,7 @@ const Contact = () => {
               className="btn btn--full"
               href="mailTo:charlesmariga37@gmail.com"
             >
-              Contact
+              Contact Me
             </Button>
           </TextBox>
         </Card>
