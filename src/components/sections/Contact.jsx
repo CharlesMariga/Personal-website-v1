@@ -38,6 +38,10 @@ const Card = styled.div`
   background-color: var(--bg-primary-light);
   backdrop-filter: blur(120px);
   border-radius: var(--border-radius-md);
+
+  @media screen and (${({ theme }) => theme.bp.mobileL}) {
+    padding: 3.2rem 2.8rem;
+  }
 `;
 
 const Number = styled.div`
