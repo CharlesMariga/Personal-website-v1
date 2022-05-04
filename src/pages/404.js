@@ -34,6 +34,7 @@ const PageNotFoundSection = styled.div`
 const PageHeading = styled.h1`
   font-weight: 200;
   margin-bottom: 3rem;
+  color: var(--primary-light);
 `;
 
 const PageContent = styled.div`
