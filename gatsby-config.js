@@ -48,5 +48,17 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `CharlesMariga`,
+        short_name: `CharlesM`,
+        start_url: `/`,
+        background_color: `#fae5d3`,
+        theme_color: `#e67e22`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
   ],
 };
