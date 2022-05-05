@@ -26,7 +26,8 @@ const Archive = ({ data }) => {
               className="tertiary-heading"
             />
             <Link to="/" className="back-link">
-              &larr; Back to home
+              <span>&larr;</span>
+              <span>Back to home</span>
             </Link>
           </FlexContainer>
         </motion.div>
@@ -169,6 +170,7 @@ const ArchiveSection = styled.div`
 
   .tertiary-heading {
     font-weight: 200;
+    line-height: var(--line-height-md);
   }
 `;
 
@@ -178,8 +180,10 @@ const FlexContainer = styled.div`
   margin-bottom: 8rem;
 
   .back-link {
-    display: block;
+    display: flex;
     color: var(--primary);
+    gap: 1rem;
+    line-height: var(--line-height-md);
   }
 `;
 
