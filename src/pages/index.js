@@ -4,7 +4,7 @@ import { Hero, About, Portfolio, Contact } from "../components/sections";
 
 export default function Home({ location }) {
   return (
-    <Layout location={location}>
+    <Layout location={location} page="home">
       <Hero />
       <About />
       <Portfolio />

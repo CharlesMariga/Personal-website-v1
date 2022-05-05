@@ -7,7 +7,7 @@ import { Archive } from "../components/sections";
 
 const archive = ({ location, data }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} page="archive">
       <Helmet title="Archive" />
       <Archive data={data?.allMarkdownRemark?.nodes || []} />
     </Layout>

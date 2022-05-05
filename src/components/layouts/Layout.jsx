@@ -30,13 +30,13 @@ const Layout = ({ location, children, page }) => {
             <StyledBackgroundImage>
               {page !== "404" && <SocialLinks isHome={isHome} />}
               {page !== "404" && <Email isHome={isHome} />}
-              {page !== "404" && (
+              {page !== "404" && page !== "archive" && (
                 <Nav isHome={isHome} contentToScroll={scrollContent} />
               )}
               <Content ref={scrollContent}>
                 <div id="home"></div>
                 {children}
-                <Footer />
+                {page !== "404" && page !== "archive" && <Footer />}
               </Content>
             </StyledBackgroundImage>
           )}

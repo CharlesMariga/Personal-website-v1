@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import bgImage from "../../assets/images/footer-bg.png";
 import { navLinks } from "../../config";
 import { Link } from "gatsby";
 
 const Footer = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const submitForm = e => {
+    e.preventDefault();
+
+    console.log("Name: ", name);
+    console.log("Email: ", email);
+  };
+
   return (
     <FooterSection>
       <TopContainer>
@@ -17,8 +27,17 @@ const Footer = () => {
           </Text>
           <NewsLetterContainer>
             <ColumnHeading>Join my newsletter</ColumnHeading>
-            <SubscriptionForm>
-              <input type="email" placeholder="Email" />
+            <SubscriptionForm onSubmit={e => submitForm(e)}>
+              <input
+                type="text"
+                placeholder="Name"
+                onChange={e => setName(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                onChange={e => setEmail(e.target.value)}
+              />
               <input type="submit" value="Join" className="btn btn--full" />
             </SubscriptionForm>
           </NewsLetterContainer>
@@ -28,19 +47,22 @@ const Footer = () => {
           <ul>
             {navLinks.length &&
               navLinks.map(({ name, id }, index) => (
-                <Link to={`/${id}`} key={index}>
-                  {name}
-                </Link>
+                <li key={index}>
+                  <Link to={`/#${id}`}>{name}</Link>
+                </li>
               ))}
           </ul>
         </SecondColumn>
-        <ThirdColumn>
+        <ThridColumn>
           <ColumnHeading>Contact me</ColumnHeading>
           <address>
             <p>Email: charlesmariga37@gmail.com</p>
           </address>
-        </ThirdColumn>
+        </ThridColumn>
       </TopContainer>
+      <BottomContainer>
+        <p>Copyright &copy; {new Date().getFullYear()}. All rights reserved.</p>
+      </BottomContainer>
     </FooterSection>
   );
 };
@@ -58,11 +80,24 @@ const TopContainer = styled.div`
   padding: 9rem 0;
   padding-top: 0;
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr;
-  grid-gap: 4rem;
+  grid-template-columns: 5fr 1fr 2fr;
+  grid-template-rows: auto;
+  grid-gap: 6rem;
+
+  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+    grid-template-columns: 6fr 3fr;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FirstColumn = styled.div`
+  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+    grid-row: 1 / 3;
+  }
+
   .logo {
     fill: var(--primary);
   }
@@ -73,14 +108,28 @@ const NewsLetterContainer = styled.div``;
 const ColumnHeading = styled.h4`
   color: var(--primary-light);
   margin-bottom: 2rem;
+  letter-spacing: 1px;
 `;
 
 const SubscriptionForm = styled.form`
   display: grid;
-  grid-template-columns: 5fr 2fr;
   grid-gap: 1rem;
+  grid-template-rows: auto;
 
-  input[type="email"] {
+  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+    grid-template-columns: 5fr 3fr;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (${({ theme }) => theme.bp.desktopL}) {
+    grid-template-columns: 5fr 5fr 2fr;
+  }
+
+  input[type="email"],
+  input[type="text"] {
     padding: 1.2rem;
     font-size: var(--font-16);
     background-color: transparent;
@@ -96,13 +145,49 @@ const SubscriptionForm = styled.form`
   }
 `;
 
-const SecondColumn = styled.div``;
+const SecondColumn = styled.div`
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    margin-bottom: 5rem;
 
-const ThirdColumn = styled.div``;
+    @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+      margin-bottom: 0;
+    }
+
+    li {
+      a {
+        color: var(--white);
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
 
 const Text = styled.div`
   line-height: var(--line-height-md);
   margin-bottom: 3rem;
+`;
+
+const BottomContainer = styled.div`
+  padding: 4rem 0;
+
+  p {
+    text-align: center;
+    opacity: 0.6;
+  }
+`;
+
+const ThridColumn = styled.div`
+  address {
+    opacity: 0.6;
+  }
 `;
 
 export default Footer;
