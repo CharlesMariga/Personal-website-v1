@@ -53,6 +53,7 @@ const FeaturedProject = ({ project }) => {
           href={external ? external : github ? github : "#"}
           target="_blank"
           rel="noreferrer"
+          aria-label={title}
         >
           <GatsbyImage image={image} alt={title} className="img" />
         </ProjectImageLink>

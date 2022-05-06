@@ -53,11 +53,18 @@ module.exports = {
       options: {
         name: `CharlesMariga`,
         short_name: `CharlesM`,
+        description: `Charles Mariga portfolio website`,
+        lang: `en`,
         start_url: `/`,
         background_color: `#fae5d3`,
         theme_color: `#e67e22`,
         display: `standalone`,
         icon: `src/images/icon.png`,
+        icon_options: {
+          // For all the options available,
+          // please see the section "Additional Resources" below.
+          purpose: `maskable`,
+        },
       },
     },
     `gatsby-plugin-offline`,

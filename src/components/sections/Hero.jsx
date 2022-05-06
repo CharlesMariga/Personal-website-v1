@@ -22,7 +22,7 @@ const Hero = () => {
 
   const one = <h3>Hi, I'm</h3>;
   const two = <h1>Charles Mariga</h1>;
-  const three = <h4>I build things for the web</h4>;
+  const three = <h2>I build things for the web</h2>;
   const four = (
     <p>
       I'm a full stack software engineer specializing in creating goal-driven
@@ -126,7 +126,7 @@ const HeroSection = styled.div`
     }
   }
 
-  h4 {
+  h2 {
     font-size: var(--font-52);
     margin-top: 1.2rem;
     width: max-content;

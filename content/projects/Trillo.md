@@ -9,7 +9,7 @@ tech:
   - HTML
   - SASS
   - Flexbox
-company: ""
+company: "SOOP"
 showInProjects: true
 ---
 

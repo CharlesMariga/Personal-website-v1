@@ -116,7 +116,10 @@ const Nav = ({ isHome, contentToScroll }) => {
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
-                <MenuBtn onClick={() => setModalOpen(!modalOpen)}>
+                <MenuBtn
+                  aria-label="Menu button"
+                  onClick={() => setModalOpen(!modalOpen)}
+                >
                   <MenuIcon className={`${modalOpen ? "active" : ""}`} />
                 </MenuBtn>
               </CSSTransition>

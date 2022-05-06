@@ -10,7 +10,7 @@ tech:
   - CSS
   - JavaScript
   - Parcel
-company: ""
+company: "SOOP"
 showInProjects: true
 ---
 
