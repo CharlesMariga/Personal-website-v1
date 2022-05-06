@@ -63,7 +63,7 @@ module.exports = {
         icon_options: {
           // For all the options available,
           // please see the section "Additional Resources" below.
-          purpose: `maskable`,
+          purpose: `any maskable`,
         },
       },
     },
