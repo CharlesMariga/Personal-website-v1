@@ -25,17 +25,12 @@ const Hero = () => {
   const three = <h2>I build things for the web</h2>;
   const four = (
     <p>
-      I'm a full stack software engineer specializing in creating goal-driven
-      products that provide exceptional experiences to their users.
+      I'm a full stack software engineer specializing in creating goal-driven products that provide exceptional
+      experiences to their users.
     </p>
   );
   const five = (
-    <a
-      className="btn btn--full"
-      href={resume}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a className="btn btn--full" href={resume} target="_blank" rel="noopener noreferrer">
       Checkout my resume
     </a>
   );
@@ -53,11 +48,7 @@ const Hero = () => {
               <TransitionGroup component={null} in={false}>
                 {isMounted &&
                   items.map((item, i) => (
-                    <CSSTransition
-                      key={i}
-                      classNames="fadeup"
-                      timeout={loaderDelay}
-                    >
+                    <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
                       <div
                         style={{
                           transitionDelay: `${i + 1}00ms`,
