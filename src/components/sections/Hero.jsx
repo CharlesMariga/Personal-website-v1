@@ -122,6 +122,7 @@ const HeroSection = styled.div`
     margin-top: 1.2rem;
     width: max-content;
     line-height: var(--line-height-md);
+    color: var(--text-color);
 
     @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-36);
@@ -135,8 +136,8 @@ const HeroSection = styled.div`
   p {
     margin-top: 2rem;
     max-width: 54rem;
-    /* font-size: var(--font-16); */
     line-height: var(--line-height-md);
+    color: var(--text-color);
   }
 
   .btn {

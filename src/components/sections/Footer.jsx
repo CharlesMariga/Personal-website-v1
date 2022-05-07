@@ -20,24 +20,14 @@ const Footer = () => {
       <TopContainer>
         <FirstColumn>
           <Text>
-            If you might be interested in what I might have to say in topics
-            such as software development, productivity, and tech in general,
-            please consider subscribing to my monthly newsletter, which I am
-            looking starting soon.
+            If you might be interested in what I might have to say in topics such as software development, productivity,
+            and tech in general, please consider subscribing to my monthly newsletter, which I am looking starting soon.
           </Text>
           <NewsLetterContainer>
             <ColumnHeading>Join my newsletter</ColumnHeading>
             <SubscriptionForm onSubmit={e => submitForm(e)}>
-              <input
-                type="text"
-                placeholder="Name"
-                onChange={e => setName(e.target.value)}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={e => setEmail(e.target.value)}
-              />
+              <input type="text" placeholder="Name" onChange={e => setName(e.target.value)} />
+              <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} />
               <input type="submit" value="Join" className="btn btn--full" />
             </SubscriptionForm>
           </NewsLetterContainer>
@@ -106,7 +96,7 @@ const FirstColumn = styled.div`
 const NewsLetterContainer = styled.div``;
 
 const ColumnHeading = styled.h4`
-  color: var(--primary-light);
+  color: var(--second-text-color);
   margin-bottom: 2rem;
   letter-spacing: 1px;
 `;
@@ -133,9 +123,9 @@ const SubscriptionForm = styled.form`
     padding: 1.2rem;
     font-size: var(--font-16);
     background-color: transparent;
-    border: 2px solid var(--white);
+    border: 2px solid var(--second-text-color);
     outline: none;
-    color: var(--white);
+    color: var(--text-color);
     transition: var(--transition);
     border-radius: var(--border-radius-default);
 
@@ -159,7 +149,7 @@ const SecondColumn = styled.div`
 
     li {
       a {
-        color: var(--white);
+        color: var(--text-color);
         opacity: 0.6;
 
         &:hover {

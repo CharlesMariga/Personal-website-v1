@@ -51,6 +51,7 @@ const variables = css`
     --black: #16171b;
     --grey-white: #fbfbfb;
     --pure-white: #ffffff;
+    --Secondary-light: #cf711f;
 
     --to-right-light-text-linear-gradient: linear-gradient(to right, var(--white), var(--primary));
     --to-left-light-text-linear-gradient: linear-gradient(to left, var(--white), var(--primary));
@@ -61,6 +62,7 @@ const variables = css`
     --bg-dark: #16171b;
     --bg-dark-light: rgba(22, 23, 27, 0.5);
     --bg-light: #f6f8fa;
+    --bg-white-light: rgba(255, 255, 255, 0.7);
     --bg-primary-light: rgba(240, 178, 122, 0.1);
     --bg-primary-dark: rgba(207, 113, 31, 0.95);
 
