@@ -123,7 +123,7 @@ const SubscriptionForm = styled.form`
     padding: 1.2rem;
     font-size: var(--font-16);
     background-color: transparent;
-    border: 2px solid var(--second-text-color);
+    border: 2px solid var(--primary-light);
     outline: none;
     color: var(--text-color);
     transition: var(--transition);

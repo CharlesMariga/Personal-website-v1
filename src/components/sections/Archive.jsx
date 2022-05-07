@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { SectionHeading, TertiaryHeading } from "../global";
 import Icon from "../Icon";
 import { usePreferredReducedMotion } from "../../hooks";
+import { ThemeToggle } from "..";
 
 const Archive = ({ data }) => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -20,6 +21,10 @@ const Archive = ({ data }) => {
     <Wrapper>
       {isMounted && (
         <ArchiveSection>
+          <ThemeToggleContainer>
+            <ThemeToggle />
+          </ThemeToggleContainer>
+
           {/* Header */}
           {prefersReducedMotion ? (
             <>
@@ -218,6 +223,13 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+`;
+
+const ThemeToggleContainer = styled.div`
+  position: absolute;
+  top: 5rem;
+  right: 0;
 `;
 
 const ArchiveSection = styled.div`
@@ -253,7 +265,7 @@ const Table = styled.table`
 `;
 
 const TableHeader = styled.thead`
-  color: var(--primary-light);
+  color: var(--second-text-color);
 `;
 
 const TableBody = styled.tbody``;
@@ -280,7 +292,7 @@ const TableData = styled.td`
   }
 
   &.year {
-    color: var(--primary-light);
+    color: var(--second-text-color);
   }
 
   &.title {
@@ -311,7 +323,7 @@ const TableData = styled.td`
     }
 
     svg {
-      color: var(--primary-light);
+      color: var(--second-text-color);
       width: 2.5rem;
       width: 2.5rem;
       transition: var(--transition);

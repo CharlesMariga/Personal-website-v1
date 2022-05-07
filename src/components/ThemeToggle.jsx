@@ -13,11 +13,15 @@ const ThemeToggle = ({ closeModal }) => {
     const newMode = mode === "light" ? "dark" : "light";
     localStorage.setItem("themeMode", newMode);
     dispatch(setMode(newMode));
-    closeModal();
+    if (closeModal) closeModal();
   };
 
   return (
-    <Toggle aria-label="toggle mode" onClick={changeMode}>
+    <Toggle
+      aria-label="toggle mode"
+      onClick={changeMode}
+      title={`Change to ${mode === "light" ? "dark" : "light"} mode`}
+    >
       {mode === "dark" && <Icon name="Sun" width={38} height={38} />}
       {mode === "light" && <Icon name="Moon" width={28} height={28} />}
     </Toggle>

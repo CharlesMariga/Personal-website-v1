@@ -204,6 +204,7 @@ const ProjectDescription = styled.div`
     background-color: transparent;
     padding: 0;
     border-radius: 0;
+    backdrop-filter: unset;
 
     p {
       ${({ theme }) => theme.mixins.lightSelection}
