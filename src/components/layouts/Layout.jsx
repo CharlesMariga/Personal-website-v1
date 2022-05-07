@@ -1,22 +1,37 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import { setMode, selectMode } from "../../features/theme/themeSlice";
 
 import { GlobalStyles, theme } from "../../styles";
 // import { Footer } from "../sections";
-import {
-  SocialLinks,
-  Email,
-  Head,
-  StyledBackgroundImage,
-  Loader,
-  Nav,
-} from "..";
+import { SocialLinks, Email, Head, StyledBackgroundImage, Loader, Nav } from "..";
+import { useDispatch, useSelector } from "react-redux";
 
 const Layout = ({ location, children, page }) => {
   const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
   const scrollContent = useRef(null);
+
+  const mode = useSelector(selectMode);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let themeClass = localStorage.getItem("themeMode", "theme-mode-dark");
+
+    if (!themeClass) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("themeMode", "dark");
+        themeClass = "dark";
+      } else {
+        localStorage.setItem("themeMode", "light");
+        themeClass = "light";
+      }
+    }
+
+    dispatch(setMode(themeClass));
+  }, [dispatch]);
 
   return (
     <>
@@ -27,12 +42,10 @@ const Layout = ({ location, children, page }) => {
           {isLoading && isHome ? (
             <Loader finishedLoading={() => setIsLoading(false)} />
           ) : (
-            <StyledBackgroundImage>
+            <StyledBackgroundImage mode={mode}>
               {page !== "404" && <SocialLinks isHome={isHome} />}
               {page !== "404" && <Email isHome={isHome} />}
-              {page !== "404" && page !== "archive" && (
-                <Nav isHome={isHome} contentToScroll={scrollContent} />
-              )}
+              {page !== "404" && page !== "archive" && <Nav isHome={isHome} contentToScroll={scrollContent} />}
               <Content ref={scrollContent}>
                 <div id="home"></div>
                 {children}

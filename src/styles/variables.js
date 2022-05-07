@@ -47,11 +47,16 @@ const variables = css`
     --primary-light: #f0b27a;
     --primary: #e67e22;
     --primary-dark: #cf711f;
-    --black: rgb(22, 23, 27);
+    --primary-dark-2: #5c320e;
+    --black: #16171b;
+
+    --light-text-liner-gradient: linear-gradient(to right, var(--white), var(--primary));
+    --dark-text-liner-gradient: linear-gradient(to right, var(--primary-dark-2), var(--primary));
 
     /* Bg colors */
-    --bg-dark: rgb(22, 23, 27);
+    --bg-dark: #16171b;
     --bg-dark-light: rgba(22, 23, 27, 0.5);
+    --bg-light: #f6f8fa;
     --bg-primary-light: rgba(240, 178, 122, 0.1);
     --bg-primary-dark: rgba(207, 113, 31, 0.95);
 
@@ -98,10 +103,8 @@ const variables = css`
     --border-radius-md: 1.1rem;
 
     /* Box-shadow */
-    --box-shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --box-shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --box-shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --box-shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
     --box-shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 `;

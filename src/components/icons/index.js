@@ -5,5 +5,7 @@ export { default as IconGitHub } from "./IconGitHub";
 export { default as IconInstagram } from "./IconInstagram";
 export { default as IconLinkedin } from "./IconLinkedin";
 export { default as IconLogo } from "./IconLogo";
+export { default as IconMoon } from "./IconMoon";
 export { default as IconPlayStore } from "./IconPlayStore";
+export { default as IconSun } from "./IconSun";
 export { default as IconTwitter } from "./IconTwitter";

@@ -93,7 +93,7 @@ const HeroSection = styled.div`
     line-height: var(--line-height-md);
     font-weight: var(--font-weight-semi-bold);
     display: inline-block;
-    background-image: linear-gradient(to right, var(--white), var(--primary));
+    background-image: var(--text-linear-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -162,6 +162,14 @@ const HeroTextSection = styled.div`
 const BackgroundAnimationWrapper = styled.div`
   opacity: 0;
   animation: animateBgAnim 1s ease-in-out 2.5s forwards;
+
+  svg {
+    g {
+      path {
+        stroke: var(--primary);
+      }
+    }
+  }
 
   @media screen and (${({ theme }) => theme.bp.tabletS}) {
     position: absolute;

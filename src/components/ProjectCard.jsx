@@ -66,7 +66,10 @@ const Card = styled.div`
   position: relative;
   padding: 3.2rem 2.8rem;
   background-color: var(--bg-primary-light);
-  backdrop-filter: blur(120px);
+  /* backdrop-filter: blur(120px); */
+  backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+     background-color: rgba(255, 255, 255, 0.75);
   border-radius: var(--border-radius-md);
   display: flex;
   flex-direction: column;

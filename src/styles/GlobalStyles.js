@@ -50,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: var(--font-weight-default);
     overflow-x: hidden;
     box-sizing: inherit;
-    color: var(--white);
     font-size: var(--font-18);
     font-family: 'Rubik', sans-serif;
   }

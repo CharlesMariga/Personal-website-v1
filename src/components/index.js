@@ -10,3 +10,4 @@ export { default as ProjectCard } from "./ProjectCard";
 export { default as Side } from "./Side";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as StyledBackgroundImage } from "./StyledBackgroundImage";
+export { default as ThemeToggle } from "./ThemeToggle";
