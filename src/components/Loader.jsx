@@ -3,26 +3,28 @@ import styled from "styled-components";
 
 import { IconLogo } from "./icons";
 
-const Loader = ({ finishedLoading }) => {
+const Loader = ({ finishedLoading, mode }) => {
   setTimeout(() => {
     finishedLoading();
   }, 5000);
 
   return (
-    <StyledLoader>
+    <StyledLoader mode={mode}>
       <IconLogo width={125} />
     </StyledLoader>
   );
 };
 
 const StyledLoader = styled.div`
+  ${({ mode, theme }) => (mode === "light" ? theme.mixins.lightMode : theme.mixins.darkMode)}
+
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: var(--main-bg);
+  background-color: var(--main-bg);
   z-index: 10000;
   display: flex;
   align-items: center;

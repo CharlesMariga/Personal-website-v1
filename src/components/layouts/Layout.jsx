@@ -40,7 +40,7 @@ const Layout = ({ location, children, page }) => {
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           {isLoading && isHome ? (
-            <Loader finishedLoading={() => setIsLoading(false)} />
+            <Loader mode={mode} finishedLoading={() => setIsLoading(false)} />
           ) : (
             <StyledBackgroundImage mode={mode}>
               {page !== "404" && <SocialLinks isHome={isHome} />}
