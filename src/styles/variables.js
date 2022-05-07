@@ -52,8 +52,10 @@ const variables = css`
     --grey-white: #fbfbfb;
     --pure-white: #ffffff;
 
-    --light-text-liner-gradient: linear-gradient(to right, var(--white), var(--primary));
-    --dark-text-liner-gradient: linear-gradient(to right, var(--primary-dark-2), var(--primary));
+    --to-right-light-text-linear-gradient: linear-gradient(to right, var(--white), var(--primary));
+    --to-left-light-text-linear-gradient: linear-gradient(to left, var(--white), var(--primary));
+    --to-right-dark-text-linear-gradient: linear-gradient(to right, var(--primary-dark-2), var(--primary));
+    --to-left-dark-text-linear-gradient: linear-gradient(to left, var(--primary-dark-2), var(--primary));
 
     /* Bg colors */
     --bg-dark: #16171b;
