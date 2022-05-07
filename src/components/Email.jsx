@@ -25,12 +25,12 @@ const StyledEmail = styled.div`
     width: 1px;
     height: 9rem;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--text-color);
   }
 `;
 
 const EmailLink = styled.a`
-  color: var(--white);
+  color: var(--text-color);
   display: inline-block;
   transition: var(--transition);
   writing-mode: vertical-rl;

@@ -7,6 +7,7 @@ import { navLinks } from "../config";
 import { loaderDelay } from "../utils";
 import { IconLogo } from "./icons";
 import { usePreferredReducedMotion } from "../hooks";
+import { ThemeToggle } from ".";
 
 const Nav = ({ isHome, contentToScroll }) => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -72,11 +73,7 @@ const Nav = ({ isHome, contentToScroll }) => {
               {isMounted &&
                 navLinks &&
                 navLinks.map(({ name, id }, i) => (
-                  <CSSTransition
-                    key={i}
-                    classNames={fadeDownClass}
-                    timeout={timeout}
-                  >
+                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                     <StyledNavLink
                       style={{
                         transitionDelay: `${isHome ? i * 100 : 0}ms`,
@@ -92,16 +89,27 @@ const Nav = ({ isHome, contentToScroll }) => {
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                  <HireMeBtn
+                  <HireMeBtnWrapper
                     style={{
-                      transitionDelay: `${
-                        isHome ? (navLinks.length + 1) * 100 : 0
-                      }ms`,
+                      transitionDelay: `${isHome ? (navLinks.length + 1) * 100 : 0}ms`,
                     }}
-                    href="mailTo:charlesmariga37@gmail.com?subject=Job%20opportunity"
                   >
-                    Hire me
-                  </HireMeBtn>
+                    <HireMeBtn href="mailTo:charlesmariga37@gmail.com?subject=Job%20opportunity">Hire me</HireMeBtn>
+                  </HireMeBtnWrapper>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                  <ThemeToggleWrapper
+                    style={{
+                      transitionDelay: `${isHome ? (navLinks.length + 2) * 100 : 0}ms`,
+                    }}
+                  >
+                    <ThemeToggle closeModal={() => setModalOpen(false)} />
+                  </ThemeToggleWrapper>
                 </CSSTransition>
               )}
             </TransitionGroup>
@@ -116,10 +124,7 @@ const Nav = ({ isHome, contentToScroll }) => {
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
-                <MenuBtn
-                  aria-label="Menu button"
-                  onClick={() => setModalOpen(!modalOpen)}
-                >
+                <MenuBtn aria-label="Menu button" onClick={() => setModalOpen(!modalOpen)}>
                   <MenuIcon className={`${modalOpen ? "active" : ""}`} />
                 </MenuBtn>
               </CSSTransition>
@@ -212,7 +217,7 @@ const StyledNavLinks = styled.ul`
     width: 100%;
     max-width: 40rem;
     margin-left: auto;
-    background-color: var(--bg-dark);
+    background-color: var(--main-bg);
     height: 100%;
     transform: translateX(100%);
     transition: var(--transition);
@@ -232,7 +237,12 @@ const StyledNavLink = styled.li`
   }
 
   a {
-    color: var(--white);
+    color: var(--text-color);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--primary);
+    }
 
     @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-20);
@@ -255,18 +265,24 @@ const StyledNavLink = styled.li`
   }
 `;
 
+const HireMeBtnWrapper = styled.div`
+  @media screen and (${({ theme }) => theme.bp.tabletL}) {
+    transition: none;
+  }
+`;
+
 const HireMeBtn = styled.a`
   padding: 1.2rem 1.6rem;
   background-color: transparent;
   outline: none;
   border: 2px solid var(--primary);
-  color: var(--white);
+  color: var(--text-color);
   font-size: var(--font-18);
   font-weight: 500;
   letter-spacing: 1px;
   border-radius: var(--border-radius-default);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 250ms;
   margin-left: 1rem;
   display: inline-block;
 
@@ -277,6 +293,13 @@ const HireMeBtn = styled.a`
 
   &:hover {
     background-color: var(--primary-dark);
+    color: var(--white);
+  }
+`;
+
+const ThemeToggleWrapper = styled.div`
+  @media screen and (${({ theme }) => theme.bp.tabletL}) {
+    transition: none;
   }
 `;
 

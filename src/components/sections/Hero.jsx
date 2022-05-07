@@ -93,7 +93,7 @@ const HeroSection = styled.div`
     line-height: var(--line-height-md);
     font-weight: var(--font-weight-semi-bold);
     display: inline-block;
-    background-image: linear-gradient(to right, var(--white), var(--primary));
+    background-image: var(--text-linear-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -122,6 +122,7 @@ const HeroSection = styled.div`
     margin-top: 1.2rem;
     width: max-content;
     line-height: var(--line-height-md);
+    color: var(--text-color);
 
     @media screen and (${({ theme }) => theme.bp.tabletL}) {
       font-size: var(--font-36);
@@ -135,8 +136,8 @@ const HeroSection = styled.div`
   p {
     margin-top: 2rem;
     max-width: 54rem;
-    /* font-size: var(--font-16); */
     line-height: var(--line-height-md);
+    color: var(--text-color);
   }
 
   .btn {
@@ -162,6 +163,14 @@ const HeroTextSection = styled.div`
 const BackgroundAnimationWrapper = styled.div`
   opacity: 0;
   animation: animateBgAnim 1s ease-in-out 2.5s forwards;
+
+  svg {
+    g {
+      path {
+        /* stroke: var(--primary); */
+      }
+    }
+  }
 
   @media screen and (${({ theme }) => theme.bp.tabletS}) {
     position: absolute;

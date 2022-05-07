@@ -2,12 +2,7 @@ import React from "react";
 
 const BackgroundAnimation = () => (
   <div>
-    <svg
-      className="BgAnimation__svg"
-      viewBox="0 0 602 602"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg className="BgAnimation__svg" viewBox="0 0 602 602" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.15">
         <path
           fillRule="evenodd"
@@ -56,12 +51,7 @@ const BackgroundAnimation = () => (
         ry="1.07433"
         fill="#46737"
       >
-        <animateMotion
-          dur="15s"
-          begin="1"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="15s" begin="1" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_2" />
         </animateMotion>
       </ellipse>
@@ -70,12 +60,7 @@ const BackgroundAnimation = () => (
         transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
         stroke="url(#paint7_linear)"
       >
-        <animateMotion
-          dur="15s"
-          begin="1"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="15s" begin="1" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_2" />
         </animateMotion>
       </path>
@@ -108,12 +93,7 @@ const BackgroundAnimation = () => (
         transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
         fill="#F46737"
       >
-        <animateMotion
-          dur="20s"
-          begin="1"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="20s" begin="1" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </ellipse>
@@ -122,12 +102,7 @@ const BackgroundAnimation = () => (
         transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
         stroke="url(#paint5_linear)"
       >
-        <animateMotion
-          dur="20s"
-          begin="1"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="20s" begin="1" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </path>
@@ -139,12 +114,7 @@ const BackgroundAnimation = () => (
         transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
         fill="#F46737"
       >
-        <animateMotion
-          dur="15s"
-          begin="0"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="15s" begin="0" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_1" />
         </animateMotion>
       </ellipse>
@@ -153,12 +123,7 @@ const BackgroundAnimation = () => (
         transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
         stroke="url(#paint6_linear)"
       >
-        <animateMotion
-          dur="15s"
-          begin="0"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="15s" begin="0" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_1" />
         </animateMotion>
       </path>
@@ -170,12 +135,7 @@ const BackgroundAnimation = () => (
         transform="translate(-165.524 -93.9596)"
         fill="#F46737"
       >
-        <animateMotion
-          dur="20s"
-          begin="3"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="20s" begin="3" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </ellipse>
@@ -184,12 +144,7 @@ const BackgroundAnimation = () => (
         transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
         stroke="url(#paint7_linear)"
       >
-        <animateMotion
-          dur="20s"
-          begin="3"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="20s" begin="3" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </path>
@@ -201,12 +156,7 @@ const BackgroundAnimation = () => (
         transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
         fill="#fae5d3"
       >
-        <animateMotion
-          dur="12s"
-          begin="4"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="12s" begin="4" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </ellipse>
@@ -215,12 +165,7 @@ const BackgroundAnimation = () => (
         transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
         stroke="url(#paint11_linear)"
       >
-        <animateMotion
-          dur="12s"
-          begin="4"
-          repeatCount="indefinite"
-          rotate="auto"
-        >
+        <animateMotion dur="12s" begin="4" repeatCount="indefinite" rotate="auto">
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </path>
@@ -233,8 +178,8 @@ const BackgroundAnimation = () => (
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(301 301) rotate(90) scale(300)"
         >
-          <stop offset="0.333333" stopColor="#FBFBFB" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
+          <stop offset="0.333333" stopColor="var(--svg-stroke)" />
+          <stop offset="1" stopColor="var(--svg-strop-color)" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint1_radial"
@@ -244,8 +189,8 @@ const BackgroundAnimation = () => (
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(301 301) rotate(90) scale(300)"
         >
-          <stop offset="0.333333" stopColor="#FBFBFB" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
+          <stop offset="0.333333" stopColor="var(--svg-stroke)" />
+          <stop offset="1" stopColor="var(--svg-strop-color)" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint2_radial"
@@ -255,8 +200,8 @@ const BackgroundAnimation = () => (
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(301 301) rotate(90) scale(300)"
         >
-          <stop offset="0.333333" stopColor="#FBFBFB" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
+          <stop offset="0.333333" stopColor="var(--svg-stroke)" />
+          <stop offset="1" stopColor="var(--svg-strop-color)" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint3_linear"

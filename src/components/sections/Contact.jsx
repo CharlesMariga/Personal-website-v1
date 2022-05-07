@@ -12,14 +12,10 @@ const Contact = () => {
           <TextBox>
             <Heading>Get in touch</Heading>
             <Text>
-              Whether you want to ask me a question, or you just want to buy me
-              a coffee ☕😄, don't hesitate to get in touch. My inbox is always
-              open and I will try as much as possible to get back to you.
+              Whether you want to ask me a question, or you just want to buy me a coffee ☕😄, don't hesitate to get in
+              touch. My inbox is always open and I will try as much as possible to get back to you.
             </Text>
-            <Button
-              className="btn btn--full"
-              href="mailTo:charlesmariga37@gmail.com"
-            >
+            <Button className="btn btn--full" href="mailTo:charlesmariga37@gmail.com">
               Contact Me
             </Button>
           </TextBox>
@@ -35,7 +31,7 @@ const ContactSection = styled.div`
 
 const Card = styled.div`
   padding: 6rem 9rem;
-  background-color: var(--bg-primary-light);
+  background-color: var(--card-background-color);
   backdrop-filter: blur(120px);
   border-radius: var(--border-radius-md);
 

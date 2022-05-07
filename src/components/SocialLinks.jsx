@@ -10,12 +10,7 @@ const SocialLinks = ({ isHome }) => {
         {socialLinks &&
           socialLinks.map(({ url, name }, index) => (
             <SocialLinkItem key={index}>
-              <SocialLink
-                href={url}
-                aria-label={name}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <SocialLink href={url} aria-label={name} target="_blank" rel="noreferrer">
                 <Icon name={name} width={20} height={20} />
               </SocialLink>
             </SocialLinkItem>
@@ -37,7 +32,7 @@ const SocialLinkList = styled.ul`
     width: 1px;
     height: 9rem;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--text-color);
   }
 `;
 
@@ -50,7 +45,7 @@ const SocialLinkItem = styled.li`
 `;
 
 const SocialLink = styled.a`
-  color: var(--white);
+  color: var(--text-color);
   display: inline-block;
   transition: var(--transition);
   letter-spacing: var(--letter-spacing-md);

@@ -14,24 +14,14 @@ const ProjectCard = ({ project, delay }) => {
         </IconContainer>
         <CardProjectLinks>
           {github && (
-            <CardProjectLink
-              href={github}
-              aria-label="GitHub Link"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <CardProjectLink href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
               <IconContainer className="github">
                 <Icon name="GitHub" />
               </IconContainer>
             </CardProjectLink>
           )}
           {external && (
-            <CardProjectLink
-              href={external}
-              aria-label="GitHub Link"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <CardProjectLink href={external} aria-label="GitHub Link" target="_blank" rel="noreferrer">
               <IconContainer className="external">
                 <Icon name="External" />
               </IconContainer>
@@ -40,22 +30,14 @@ const ProjectCard = ({ project, delay }) => {
         </CardProjectLinks>
       </CardHeader>
       <ProjectTitle>
-        <ProjectTitleLink
-          href={external || github}
-          target="_blank"
-          rel="noreferrer"
-          className="project-title-link"
-        >
+        <ProjectTitleLink href={external || github} target="_blank" rel="noreferrer" className="project-title-link">
           {title}
         </ProjectTitleLink>
       </ProjectTitle>
       <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
       <CardFooter>
         <ProjectTechList>
-          {tech.length &&
-            tech.map((tech, index) => (
-              <ProjectTechListItem key={index}>{tech}</ProjectTechListItem>
-            ))}
+          {tech.length && tech.map((tech, index) => <ProjectTechListItem key={index}>{tech}</ProjectTechListItem>)}
         </ProjectTechList>
       </CardFooter>
     </Card>
@@ -65,9 +47,9 @@ const ProjectCard = ({ project, delay }) => {
 const Card = styled.div`
   position: relative;
   padding: 3.2rem 2.8rem;
-  background-color: var(--bg-primary-light);
   backdrop-filter: blur(120px);
   border-radius: var(--border-radius-md);
+  background-color: var(--card-background-color);
   display: flex;
   flex-direction: column;
   box-shadow: var(--box-shadow-sm);
@@ -126,14 +108,14 @@ const CardProjectLinks = styled.div`
 
 const CardProjectLink = styled.a`
   display: inline-flex;
-  color: var(--white);
+  color: var(--second-text-color);
 `;
 
 const ProjectTitle = styled.h4`
   font-size: var(--font-24);
   line-height: var(--line-height-sm);
   margin-bottom: 1rem;
-  color: var(--primary-light);
+  color: var(--second-text-color);
 `;
 
 const ProjectTitleLink = styled.a`
@@ -151,7 +133,7 @@ const ProjectTitleLink = styled.a`
   &:link,
   &:visited,
   &:active {
-    color: var(--primary-light);
+    color: var(--second-text-color);
   }
 `;
 
@@ -167,7 +149,7 @@ const ProjectDescription = styled.div`
       &:link,
       &:visited,
       &:active {
-        color: var(--primary-light);
+        color: var(--second-text-color);
       }
 
       &:hover {
@@ -191,7 +173,7 @@ const ProjectTechList = styled.ul`
 const ProjectTechListItem = styled.li`
   font-size: var(--font-14);
   font-weight: lighter;
-  color: var(--primary-light);
+  color: var(--second-text-color);
 `;
 
 export default ProjectCard;

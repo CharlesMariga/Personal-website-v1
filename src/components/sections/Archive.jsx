@@ -5,10 +5,14 @@ import { motion } from "framer-motion";
 import { SectionHeading, TertiaryHeading } from "../global";
 import Icon from "../Icon";
 import { Link } from "gatsby";
+import { ThemeToggle } from "..";
 
 const Archive = ({ data }) => {
   return (
     <Wrapper>
+      <ThemeToggleContainer>
+        <ThemeToggle />
+      </ThemeToggleContainer>
       <ArchiveSection>
         <motion.div
           whileInView={{ opacity: [0, 1], y: [40, 0] }}
@@ -128,6 +132,13 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+`;
+
+const ThemeToggleContainer = styled.div`
+  position: absolute;
+  top: 5rem;
+  right: 0;
 `;
 
 const ArchiveSection = styled.div`

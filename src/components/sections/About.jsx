@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 import { SectionHeading } from "../global";
 import { SectionWrap } from "../layouts";
-import signature from "../../assets/images/image2vector.svg";
 import { usePreferredReducedMotion } from "../../hooks";
 import { StaticImage } from "gatsby-plugin-image";
+import { Signature } from "..";
 
 const About = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -19,48 +19,32 @@ const About = () => {
             <SectionHeading title="About Me" number="02" />
             <AboutContainer>
               <AvaterFigure>
-                <StaticImage
-                  src="../../assets/images/avater.jpg"
-                  alt="Charles Mariga"
-                  className="avater-img"
-                />
+                <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" />
               </AvaterFigure>
               <div>
                 <AboutText>
-                  Hello! My name is Charles and I enjoy building things that
-                  reside on the internet. My interest in programming started
-                  back in 2017 after I finished high school, and I wanted to
-                  learn about how the internet works. That's what led me to
-                  discovering what web-pages are and knowing that they are made
-                  using HTML, CSS &amp; JavaScript. This sparked my interest in
-                  programming which led me to pursue a Bachelor's degree in
-                  Information Technology.
+                  Hello! My name is Charles and I enjoy building things that reside on the internet. My interest in
+                  programming started back in 2017 after I finished high school, and I wanted to learn about how the
+                  internet works. That's what led me to discovering what web-pages are and knowing that they are made
+                  using HTML, CSS &amp; JavaScript. This sparked my interest in programming which led me to pursue a
+                  Bachelor's degree in Information Technology.
                 </AboutText>
                 <AboutText>
-                  I've since been building note-worthy websites and webapps that
-                  comply with the latest web design trends. I help convert a
-                  vision or an idea into a meaningful and useful product. I am
-                  passionate about developing excelent software that helps to
-                  improve the world around me.
+                  I've since been building note-worthy websites and webapps that comply with the latest web design
+                  trends. I help convert a vision or an idea into a meaningful and useful product. I am passionate about
+                  developing excelent software that helps to improve the world around me.
                 </AboutText>
                 <AboutText>
-                  My main focus these days is building accessible, inclusive
-                  products and digital experiences at{" "}
-                  <a
-                    href="https://soop.co.nz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  My main focus these days is building accessible, inclusive products and digital experiences at{" "}
+                  <a href="https://soop.co.nz/" target="_blank" rel="noopener noreferrer">
                     SOOP (Software Operations), NZ
                   </a>
-                  . I also have a great interest on blockchain technology and I
-                  am working on creating an arbitrage crypto bot on the ethereum
-                  main network using Solidity for smart contracts, aave for
-                  flashloans, uniswap and pancake for swapping tokens and
-                  The-graph for fetching data.
+                  . I also have a great interest on blockchain technology and I am working on creating an arbitrage
+                  crypto bot on the ethereum main network using Solidity for smart contracts, aave for flashloans,
+                  uniswap and pancake for swapping tokens and The-graph for fetching data.
                 </AboutText>
                 <SignatureContainer>
-                  <Signature src={signature} alt="Signature" />
+                  <Signature />
                 </SignatureContainer>
               </div>
             </AboutContainer>
@@ -79,48 +63,32 @@ const About = () => {
             <SectionHeading title="About Me" number="02" />
             <AboutContainer>
               <AvaterFigure>
-                <StaticImage
-                  src="../../assets/images/avater.jpg"
-                  alt="Charles Mariga"
-                  className="avater-img"
-                />
+                <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" />
               </AvaterFigure>
               <div>
                 <AboutText>
-                  Hello! My name is Charles and I enjoy building things that
-                  reside on the internet. My interest in programming started
-                  back in 2017 after I finished high school, and I wanted to
-                  learn about how the internet works. That's what led me to
-                  discovering what web-pages are and knowing that they are made
-                  using HTML, CSS &amp; JavaScript. This sparked my interest in
-                  programming which led me to pursue a Bachelor's degree in
-                  Information Technology.
+                  Hello! My name is Charles and I enjoy building things that reside on the internet. My interest in
+                  programming started back in 2017 after I finished high school, and I wanted to learn about how the
+                  internet works. That's what led me to discovering what web-pages are and knowing that they are made
+                  using HTML, CSS &amp; JavaScript. This sparked my interest in programming which led me to pursue a
+                  Bachelor's degree in Information Technology.
                 </AboutText>
                 <AboutText>
-                  I've since been building note-worthy websites and webapps that
-                  comply with the latest web design trends. I help convert a
-                  vision or an idea into a meaningful and useful product. I am
-                  passionate about developing excelent software that helps to
-                  improve the world around me.
+                  I've since been building note-worthy websites and webapps that comply with the latest web design
+                  trends. I help convert a vision or an idea into a meaningful and useful product. I am passionate about
+                  developing excelent software that helps to improve the world around me.
                 </AboutText>
                 <AboutText>
-                  My main focus these days is building accessible, inclusive
-                  products and digital experiences at{" "}
-                  <a
-                    href="https://soop.co.nz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  My main focus these days is building accessible, inclusive products and digital experiences at{" "}
+                  <a href="https://soop.co.nz/" target="_blank" rel="noopener noreferrer">
                     SOOP (Software Operations), NZ
                   </a>
-                  . I also have a great interest on blockchain technology and I
-                  am working on creating an arbitrage crypto bot on the ethereum
-                  main network using Solidity for smart contracts, aave for
-                  flashloans, uniswap and pancake for swapping tokens and
-                  The-graph for fetching data.
+                  . I also have a great interest on blockchain technology and I am working on creating an arbitrage
+                  crypto bot on the ethereum main network using Solidity for smart contracts, aave for flashloans,
+                  uniswap and pancake for swapping tokens and The-graph for fetching data.
                 </AboutText>
                 <SignatureContainer>
-                  <Signature src={signature} alt="Signature" />
+                  <Signature />
                 </SignatureContainer>
               </div>
             </AboutContainer>
@@ -199,22 +167,29 @@ const AboutText = styled.p`
     &:visited {
       color: var(--primary);
     }
+
+    &:hover,
+    &:active {
+      color: var(--primary-dark);
+    }
   }
 `;
 
 const SignatureContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
 
-const Signature = styled.img`
-  margin-top: 4rem;
-  width: 35%;
+  svg {
+    margin-top: 4rem;
+    width: 35%;
+    fill: var(--text-color);
+    opacity: 0.9;
 
-  @media screen and (${({ theme }) => theme.bp.tabletS}) {
-    display: flex;
-    width: 60%;
-    margin: 4rem auto;
+    @media screen and (${({ theme }) => theme.bp.tabletS}) {
+      display: flex;
+      width: 60%;
+      margin: 4rem auto;
+    }
   }
 `;
 

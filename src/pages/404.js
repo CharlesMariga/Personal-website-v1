@@ -12,8 +12,7 @@ export default function Error({ location }) {
         <PageContent>
           <PageHeading>Oops! Page not found</PageHeading>
           <Text>
-            The page you were looking for doesn't exist. You may have mistyped
-            the address or the page may have moved.
+            The page you were looking for doesn't exist. You may have mistyped the address or the page may have moved.
           </Text>
           <Link to="/" className="btn btn--full">
             &larr; Back to home
@@ -34,7 +33,7 @@ const PageNotFoundSection = styled.div`
 const PageHeading = styled.h1`
   font-weight: 200;
   margin-bottom: 3rem;
-  color: var(--primary-light);
+  color: var(--second-text-color);
 `;
 
 const PageContent = styled.div`

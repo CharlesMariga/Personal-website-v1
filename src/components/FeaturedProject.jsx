@@ -11,18 +11,13 @@ const FeaturedProject = ({ project }) => {
   return (
     <StyledProject>
       <ProjectContent className="project-content">
-        <ProjectOverline className="project-overline">
-          Featured Project
-        </ProjectOverline>
+        <ProjectOverline className="project-overline">Featured Project</ProjectOverline>
         <ProjectTitle className="project-title">
           <a href={external} target="_blank" rel="noreferrer">
             {title}
           </a>
         </ProjectTitle>
-        <ProjectDescription
-          dangerouslySetInnerHTML={{ __html: html }}
-          className="project-description"
-        />
+        <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} className="project-description" />
         {tech.length && (
           <ProjectTechList className="project-tech-list">
             {tech.map((item, i) => (
@@ -155,7 +150,7 @@ const ProjectOverline = styled.p`
   color: var(--primary);
   font-weight: 400;
 
-  @media screen and (${({ theme }) => theme.bp.desktopS}) {
+  @media screen and (${({ theme }) => theme.bp.desktopXS}) {
     color: var(--white);
     ${({ theme }) => theme.mixins.lightSelection}
   }
@@ -169,7 +164,7 @@ const ProjectTitle = styled.h3`
   a {
     &:link,
     &:visited {
-      color: var(--white);
+      color: var(--text-color);
       letter-spacing: var(--letter-spacing-md);
     }
 
@@ -186,9 +181,10 @@ const ProjectDescription = styled.div`
   line-height: var(--line-height-md);
   font-size: var(--font-16);
   opacity: 0.95;
-  background-color: var(--bg-primary-light);
+  background-color: var(--card-background-color);
   backdrop-filter: blur(120px);
   overflow: hidden;
+  box-shadow: var(--box-shadow-sm);
 
   a {
     &:link,
@@ -199,14 +195,16 @@ const ProjectDescription = styled.div`
 
     &:hover,
     &:active {
-      color: var(--primary);
+      color: var(--primary-dark);
     }
   }
 
   @media screen and (${({ theme }) => theme.bp.desktopXS}) {
+    box-shadow: none;
     background-color: transparent;
     padding: 0;
     border-radius: 0;
+    backdrop-filter: unset;
 
     p {
       ${({ theme }) => theme.mixins.lightSelection}
@@ -240,7 +238,7 @@ const ProjectLinks = styled.div`
 const CtaLink = styled.a``;
 
 const GithubLink = styled.a`
-  color: var(--white);
+  color: var(--text-color);
   margin-top: 1rem;
   transition: var(--transition);
 
@@ -279,7 +277,7 @@ const ProjectImageLink = styled.a`
   height: 100%;
   display: flex;
   align-items: center;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: var(--transition);
 
   &:hover {

@@ -23,7 +23,7 @@ const StyledSectionHeading = styled.div`
     font-size: var(--font-44);
     letter-spacing: 2px;
     display: inline-flex;
-    background-image: linear-gradient(to left, var(--white), var(--primary));
+    background-image: var(--section-heading-linear-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
