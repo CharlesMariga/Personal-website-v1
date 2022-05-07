@@ -10,9 +10,7 @@ const NavigationDots = ({ idName }) => {
         <NavDot
           key={item.name + index}
           href={`#${item.id}`}
-          style={
-            idName === item.id ? { backgroundColor: "var(--primary)" } : {}
-          }
+          style={idName === item.id ? { backgroundColor: "var(--primary)" } : { opacity: 0.5 }}
         >
           {""}
         </NavDot>
@@ -49,7 +47,7 @@ const NavDot = styled.a`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: var(--text-color);
 
   &:hover {
     background-color: var(--primary);

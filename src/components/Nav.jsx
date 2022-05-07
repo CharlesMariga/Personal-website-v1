@@ -99,7 +99,20 @@ const Nav = ({ isHome, contentToScroll }) => {
                 </CSSTransition>
               )}
             </TransitionGroup>
-            <ThemeToggle />
+
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                  <ThemeToggleWrapper
+                    style={{
+                      transitionDelay: `${isHome ? (navLinks.length + 2) * 100 : 0}ms`,
+                    }}
+                  >
+                    <ThemeToggle closeModal={() => setModalOpen(false)} />
+                  </ThemeToggleWrapper>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
           </StyledNavLinks>
         </StyledHeaderNavLinkContainer>
 
@@ -204,7 +217,7 @@ const StyledNavLinks = styled.ul`
     width: 100%;
     max-width: 40rem;
     margin-left: auto;
-    background-color: var(--bg-dark);
+    background-color: var(--main-bg);
     height: 100%;
     transform: translateX(100%);
     transition: var(--transition);
@@ -281,6 +294,12 @@ const HireMeBtn = styled.a`
   &:hover {
     background-color: var(--primary-dark);
     color: var(--white);
+  }
+`;
+
+const ThemeToggleWrapper = styled.div`
+  @media screen and (${({ theme }) => theme.bp.tabletL}) {
+    transition: none;
   }
 `;
 

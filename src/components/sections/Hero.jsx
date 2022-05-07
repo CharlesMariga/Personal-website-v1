@@ -166,7 +166,7 @@ const BackgroundAnimationWrapper = styled.div`
   svg {
     g {
       path {
-        stroke: var(--primary);
+        /* stroke: var(--primary); */
       }
     }
   }

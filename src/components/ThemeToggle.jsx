@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { selectMode, setMode } from "../features/theme/themeSlice";
 import Icon from "./Icon";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ closeModal }) => {
   const mode = useSelector(selectMode);
 
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const ThemeToggle = () => {
     const newMode = mode === "light" ? "dark" : "light";
     localStorage.setItem("themeMode", newMode);
     dispatch(setMode(newMode));
+    closeModal();
   };
 
   return (

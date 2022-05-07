@@ -49,6 +49,8 @@ const variables = css`
     --primary-dark: #cf711f;
     --primary-dark-2: #5c320e;
     --black: #16171b;
+    --grey-white: #fbfbfb;
+    --pure-white: #ffffff;
 
     --light-text-liner-gradient: linear-gradient(to right, var(--white), var(--primary));
     --dark-text-liner-gradient: linear-gradient(to right, var(--primary-dark-2), var(--primary));
