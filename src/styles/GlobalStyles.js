@@ -71,14 +71,9 @@ const GlobalStyle = createGlobalStyle`
   
   /* Handle */
   body::-webkit-scrollbar-thumb {
-    background: var(--white); 
+    background: var(--second-text-color); 
     border-radius: 1rem;
     transition: var(--transition);
-  }
-
-  /* Handle on hover */
-  body::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-light); 
   }
 
   /* Selection */

@@ -78,14 +78,9 @@ const Content = styled.main`
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: var(--white);
+    background: var(--second-text-color);
     border-radius: 1rem;
     transition: var(--transition);
-  }
-
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-light);
   }
 
   @media (${({ theme }) => theme.bp.tabletL}) {
