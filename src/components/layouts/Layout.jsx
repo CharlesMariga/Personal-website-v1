@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { setMode, selectMode } from "../../features/theme/themeSlice";
 
 import { GlobalStyles, theme } from "../../styles";
-// import { Footer } from "../sections";
+import { Footer } from "../sections";
 import { SocialLinks, Email, Head, StyledBackgroundImage, Loader, Nav } from "..";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -49,7 +49,7 @@ const Layout = ({ location, children, page }) => {
               <Content ref={scrollContent}>
                 <div id="home"></div>
                 {children}
-                {/* {page !== "404" && page !== "archive" && <Footer />} */}
+                {page !== "404" && page !== "archive" && <Footer />}
               </Content>
             </StyledBackgroundImage>
           )}

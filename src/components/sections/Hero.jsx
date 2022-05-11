@@ -25,8 +25,8 @@ const Hero = () => {
   const three = <h2>I build things for the web</h2>;
   const four = (
     <p>
-      I'm a full stack software engineer specializing in creating goal-driven products that provide exceptional
-      experiences to their users.
+      I'm a software developer specializing in creating goal-driven products that provide exceptional experiences to
+      their users.
     </p>
   );
   const five = (

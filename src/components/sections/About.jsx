@@ -19,9 +19,9 @@ const About = () => {
             <SectionHeading title="About Me" number="02" />
             <AboutContainer>
               <AvaterFigure>
-                <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" />
+                {/* <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" /> */}
               </AvaterFigure>
-              <div>
+              {/* <div>
                 <AboutText>
                   Hello! My name is Charles and I enjoy building things that reside on the internet. My interest in
                   programming started back in 2017 after I finished high school, and I wanted to learn about how the
@@ -39,14 +39,12 @@ const About = () => {
                   <a href="https://soop.co.nz/" target="_blank" rel="noopener noreferrer">
                     SOOP (Software Operations), NZ
                   </a>
-                  . I also have a great interest on blockchain technology and I am working on creating an arbitrage
-                  crypto bot on the ethereum main network using Solidity for smart contracts, aave for flashloans,
-                  uniswap and pancake for swapping tokens and The-graph for fetching data.
+                  . I also have a great interest in blockchain technology.
                 </AboutText>
                 <SignatureContainer>
                   <Signature />
                 </SignatureContainer>
-              </div>
+              </div> */}
             </AboutContainer>
           </div>
         ) : (
@@ -83,9 +81,8 @@ const About = () => {
                   <a href="https://soop.co.nz/" target="_blank" rel="noopener noreferrer">
                     SOOP (Software Operations), NZ
                   </a>
-                  . I also have a great interest on blockchain technology and I am working on creating an arbitrage
-                  crypto bot on the ethereum main network using Solidity for smart contracts, aave for flashloans,
-                  uniswap and pancake for swapping tokens and The-graph for fetching data.
+                  . I also have a great interest in blockchain technology, and take time to build personal projects on
+                  the ethereum network.
                 </AboutText>
                 <SignatureContainer>
                   <Signature />
