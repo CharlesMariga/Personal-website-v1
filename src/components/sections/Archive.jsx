@@ -25,7 +25,10 @@ const Archive = ({ data }) => {
         >
           <SectionHeading title="Archive" />
           <FlexContainer>
-            <TertiaryHeading title="My long list of projects" className="tertiary-heading" />
+            <TertiaryHeading
+              title="My long list of projects"
+              className="tertiary-heading"
+            />
             <Link to="/" className="back-link">
               <span>&larr;</span>
               <span>Back to home</span>
@@ -61,7 +64,16 @@ const Archive = ({ data }) => {
             </TableHeader>
             <TableBody>
               {data.map((project, index) => {
-                const { date, title, company, tech, external, github, ios, playstore } = project.frontmatter;
+                const {
+                  date,
+                  title,
+                  company,
+                  tech,
+                  external,
+                  github,
+                  ios,
+                  playstore,
+                } = project.frontmatter;
 
                 return (
                   <motion.tr
@@ -74,7 +86,9 @@ const Archive = ({ data }) => {
                     viewport={{ once: true }}
                     key={index}
                   >
-                    <TableData className="year">{new Date(date).getFullYear()}</TableData>
+                    <TableData className="year">
+                      {new Date(date).getFullYear()}
+                    </TableData>
                     <TableData className="title">{title}</TableData>
                     <TableData className="made-at hide-on-mobile">
                       {company ? <span>{company}</span> : <span>--</span>}
@@ -84,23 +98,39 @@ const Archive = ({ data }) => {
                         tech.map((item, i) => (
                           <span key={i}>
                             {" "}
-                            {item} {i !== tech.length - 1 && <span>&middot;</span>}
+                            {item}{" "}
+                            {i !== tech.length - 1 && <span>&middot;</span>}
                           </span>
                         ))}
                     </TableData>
                     <TableData className="link">
                       {external && (
-                        <a href={external} aria-label="External link" target="_blank" rel="noreferrer">
+                        <a
+                          href={external}
+                          aria-label="External link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Icon name="External" />
                         </a>
                       )}
                       {github && (
-                        <a href={github} aria-label="GitHub link" target="_blank" rel="noreferrer">
+                        <a
+                          href={github}
+                          aria-label="GitHub link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Icon name="GitHub" />
                         </a>
                       )}
                       {ios && (
-                        <a href={ios} aria-label="GitHub link" target="_blank" rel="noreferrer">
+                        <a
+                          href={ios}
+                          aria-label="GitHub link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Icon name="AppStore" />
                         </a>
                       )}
@@ -174,7 +204,7 @@ const Table = styled.table`
 `;
 
 const TableHeader = styled.thead`
-  color: var(--primary-light);
+  color: var(--second-text-color);
 `;
 
 const TableBody = styled.tbody``;
@@ -201,7 +231,7 @@ const TableData = styled.td`
   }
 
   &.year {
-    color: var(--primary-light);
+    color: var(--second-text-color);
   }
 
   &.title {
@@ -232,7 +262,7 @@ const TableData = styled.td`
     }
 
     svg {
-      color: var(--primary-light);
+      color: var(--second-text-color);
       width: 2.5rem;
       width: 2.5rem;
       transition: var(--transition);

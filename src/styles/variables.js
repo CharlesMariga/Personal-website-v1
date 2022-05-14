@@ -1,46 +1,5 @@
 import { css } from "styled-components";
 
-/* 
---- 01 TYPOGRAPNY SYSTEM
-
-- Font sizes (px): 
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- Font weight:
-Default: 400
-Medium: 500
-Semi-bold: 600
-Bold: 700
-
-- Line height:
-Default: 1
-Small: 1.05
-Paragraph default: 1.6 
-Large: 1.8
-
-- Letter spacing: 
-Default: 1
-Small: -0.5
-Medium: 1.2
-Paragraph default: 1.6
-
-- Spacing system (px):
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-
---- 02 COLORS
-- primary: #e67e22
-- tints: #fdf2e9, #fae5d3, , #45260a
-- shades: #cf711f
-- accents:
-- greys: #888, #767676 (lightest grey allowed on #fff, #6f6f6f (lightest grey allowed on #fdf2e9 #555, #333
-
---- 03 SHADOWS
-box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-
---- 05 WHITESPACE
-*/
-
 const variables = css`
   :root {
     --white: #fae5d3;
@@ -53,10 +12,26 @@ const variables = css`
     --pure-white: #ffffff;
     --Secondary-light: #cf711f;
 
-    --to-right-light-text-linear-gradient: linear-gradient(to right, var(--white), var(--primary));
-    --to-left-light-text-linear-gradient: linear-gradient(to left, var(--white), var(--primary));
-    --to-right-dark-text-linear-gradient: linear-gradient(to right, var(--primary-dark-2), var(--primary));
-    --to-left-dark-text-linear-gradient: linear-gradient(to left, var(--primary-dark-2), var(--primary));
+    --to-right-light-text-linear-gradient: linear-gradient(
+      to right,
+      var(--white),
+      var(--primary)
+    );
+    --to-left-light-text-linear-gradient: linear-gradient(
+      to left,
+      var(--white),
+      var(--primary)
+    );
+    --to-right-dark-text-linear-gradient: linear-gradient(
+      to right,
+      var(--primary-dark-2),
+      var(--primary)
+    );
+    --to-left-dark-text-linear-gradient: linear-gradient(
+      to left,
+      var(--primary-dark-2),
+      var(--primary)
+    );
 
     /* Bg colors */
     --bg-dark: #16171b;
@@ -109,8 +84,10 @@ const variables = css`
     --border-radius-md: 1.1rem;
 
     /* Box-shadow */
-    --box-shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --box-shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --box-shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --box-shadow-md: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0px 10px 10px -5px rgba(0, 0, 0, 0.04);
     --box-shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 `;
