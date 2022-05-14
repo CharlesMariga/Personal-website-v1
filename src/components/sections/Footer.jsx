@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { selectMode } from "../../features/theme/themeSlice";
+import { usePreferredReducedMotion } from "../../hooks";
 
 import bgImage from "../../assets/images/footer-bg.png";
 import { navLinks } from "../../config";
@@ -11,81 +13,173 @@ import { Icon } from "..";
 
 const Footer = () => {
   const mode = useSelector(selectMode);
+  const prefersReducedMotion = usePreferredReducedMotion();
 
   return (
     <FooterSection mode={mode}>
-      <TopContainer>
-        <FirstColumn>
-          <Text>
-            If you might be interested in what I might have to say in topics
-            such as software development, productivity, and tech in general,
-            please consider subscribing to my monthly newsletter, which I am
-            looking starting soon.
-          </Text>
-          <NewsLetterContainer>
-            <ColumnHeading>Join my newsletter</ColumnHeading>
-            <SubscriptionForm
-              action="https://app.convertkit.com/forms/3269940/subscriptions"
-              method="post"
-            >
-              <input
-                type="text"
-                placeholder="Name"
-                aria-label="Name"
-                name="fields[name]"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                aria-label="Email Address"
-                name="email_address"
-                required
-              />
-              <input type="submit" value="Join" className="btn btn--full" />
-            </SubscriptionForm>
-            <p>I respect your privacy. Unsubscribe at any time.</p>
-          </NewsLetterContainer>
-        </FirstColumn>
-        <SecondColumn>
-          <ColumnHeading>Site menu</ColumnHeading>
-          <ul>
-            {navLinks.length &&
-              navLinks.map(({ name, id }, index) => (
-                <li key={index}>
-                  <Link to={`/#${id}`}>{name}</Link>
-                </li>
-              ))}
-          </ul>
-        </SecondColumn>
-        <ThridColumn>
-          <ColumnHeading>Contact me</ColumnHeading>
-          <address>
-            <p>Email: charlesmariga37@gmail.com</p>
-          </address>
-          <SocialIconsContainer>
-            <ColumnHeading>Social links</ColumnHeading>
-            <SocialLinksList>
-              {socialLinks &&
-                socialLinks.map(({ url, name }, index) => (
-                  <SocialLinkItem key={index}>
-                    <SocialLink
-                      href={url}
-                      aria-label={name}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name={name} width={20} height={20} />
-                    </SocialLink>
-                  </SocialLinkItem>
-                ))}
-            </SocialLinksList>
-          </SocialIconsContainer>
-        </ThridColumn>
-      </TopContainer>
-      <BottomContainer>
-        <p>Copyright &copy; {new Date().getFullYear()}. All rights reserved.</p>
-      </BottomContainer>
+      {prefersReducedMotion ? (
+        <>
+          <TopContainer>
+            <FirstColumn>
+              <Text>
+                If you might be interested in what I might have to say in topics
+                such as software development, productivity, and tech in general,
+                please consider subscribing to my monthly newsletter, which I am
+                looking starting soon.
+              </Text>
+              <NewsLetterContainer>
+                <ColumnHeading>Join my newsletter</ColumnHeading>
+                <SubscriptionForm
+                  action="https://app.convertkit.com/forms/3269940/subscriptions"
+                  method="post"
+                >
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    aria-label="Name"
+                    name="fields[name]"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    aria-label="Email Address"
+                    name="email_address"
+                    required
+                  />
+                  <input type="submit" value="Join" className="btn btn--full" />
+                </SubscriptionForm>
+                <p>I respect your privacy. Unsubscribe at any time.</p>
+              </NewsLetterContainer>
+            </FirstColumn>
+            <SecondColumn>
+              <ColumnHeading>Site menu</ColumnHeading>
+              <ul>
+                {navLinks.length &&
+                  navLinks.map(({ name, id }, index) => (
+                    <li key={index}>
+                      <Link to={`/#${id}`}>{name}</Link>
+                    </li>
+                  ))}
+              </ul>
+            </SecondColumn>
+            <ThridColumn>
+              <ColumnHeading>Contact me</ColumnHeading>
+              <address>
+                <p>Email: charlesmariga37@gmail.com</p>
+              </address>
+              <SocialIconsContainer>
+                <ColumnHeading>Social links</ColumnHeading>
+                <SocialLinksList>
+                  {socialLinks &&
+                    socialLinks.map(({ url, name }, index) => (
+                      <SocialLinkItem key={index}>
+                        <SocialLink
+                          href={url}
+                          aria-label={name}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name={name} width={20} height={20} />
+                        </SocialLink>
+                      </SocialLinkItem>
+                    ))}
+                </SocialLinksList>
+              </SocialIconsContainer>
+            </ThridColumn>
+          </TopContainer>
+          <BottomContainer>
+            <p>
+              Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+            </p>
+          </BottomContainer>
+        </>
+      ) : (
+        <motion.div
+          whileInView={{ opacity: [0, 1], y: [40, 0] }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+            ease: [0.645, 0.045, 0.355, 1],
+          }}
+          viewport={{ once: true }}
+        >
+          <TopContainer>
+            <FirstColumn>
+              <Text>
+                If you might be interested in what I might have to say in topics
+                such as software development, productivity, and tech in general,
+                please consider subscribing to my monthly newsletter, which I am
+                looking starting soon.
+              </Text>
+              <NewsLetterContainer>
+                <ColumnHeading>Join my newsletter</ColumnHeading>
+                <SubscriptionForm
+                  action="https://app.convertkit.com/forms/3269940/subscriptions"
+                  method="post"
+                >
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    aria-label="Name"
+                    name="fields[name]"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    aria-label="Email Address"
+                    name="email_address"
+                    required
+                  />
+                  <input type="submit" value="Join" className="btn btn--full" />
+                </SubscriptionForm>
+                <p>I respect your privacy. Unsubscribe at any time.</p>
+              </NewsLetterContainer>
+            </FirstColumn>
+            <SecondColumn>
+              <ColumnHeading>Site menu</ColumnHeading>
+              <ul>
+                {navLinks.length &&
+                  navLinks.map(({ name, id }, index) => (
+                    <li key={index}>
+                      <Link to={`/#${id}`}>{name}</Link>
+                    </li>
+                  ))}
+              </ul>
+            </SecondColumn>
+            <ThridColumn>
+              <ColumnHeading>Contact me</ColumnHeading>
+              <address>
+                <p>Email: charlesmariga37@gmail.com</p>
+              </address>
+              <SocialIconsContainer>
+                <ColumnHeading>Social links</ColumnHeading>
+                <SocialLinksList>
+                  {socialLinks &&
+                    socialLinks.map(({ url, name }, index) => (
+                      <SocialLinkItem key={index}>
+                        <SocialLink
+                          href={url}
+                          aria-label={name}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name={name} width={20} height={20} />
+                        </SocialLink>
+                      </SocialLinkItem>
+                    ))}
+                </SocialLinksList>
+              </SocialIconsContainer>
+            </ThridColumn>
+          </TopContainer>
+          <BottomContainer>
+            <p>
+              Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+            </p>
+          </BottomContainer>
+        </motion.div>
+      )}
     </FooterSection>
   );
 };
