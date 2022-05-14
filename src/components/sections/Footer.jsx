@@ -6,6 +6,8 @@ import { selectMode } from "../../features/theme/themeSlice";
 import bgImage from "../../assets/images/footer-bg.png";
 import { navLinks } from "../../config";
 import { Link } from "gatsby";
+import { socialLinks } from "../../config";
+import { Icon } from "..";
 
 const Footer = () => {
   const mode = useSelector(selectMode);
@@ -52,6 +54,19 @@ const Footer = () => {
           <address>
             <p>Email: charlesmariga37@gmail.com</p>
           </address>
+          <SocialIconsContainer>
+            <ColumnHeading>Social links</ColumnHeading>
+            <SocialLinksList>
+              {socialLinks &&
+                socialLinks.map(({ url, name }, index) => (
+                  <SocialLinkItem key={index}>
+                    <SocialLink href={url} aria-label={name} target="_blank" rel="noreferrer">
+                      <Icon name={name} width={20} height={20} />
+                    </SocialLink>
+                  </SocialLinkItem>
+                ))}
+            </SocialLinksList>
+          </SocialIconsContainer>
         </ThridColumn>
       </TopContainer>
       <BottomContainer>
@@ -181,6 +196,38 @@ const BottomContainer = styled.div`
 const ThridColumn = styled.div`
   address {
     opacity: 0.6;
+    margin-bottom: 3rem;
+  }
+`;
+
+const SocialIconsContainer = styled.div`
+  display: none;
+
+  @media screen and (${({ theme }) => theme.bp.tabletL}) {
+    display: block;
+  }
+`;
+
+const SocialLinksList = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+`;
+
+const SocialLinkItem = styled.li`
+  padding: 1rem 1rem;
+`;
+
+const SocialLink = styled.a`
+  color: var(--text-color);
+  display: inline-block;
+  transition: var(--transition);
+  letter-spacing: var(--letter-spacing-md);
+
+  &:hover {
+    transform: translateY(-3px);
+    color: var(--primary);
   }
 `;
 
