@@ -1,10 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Layout } from "../components/layouts";
+import { Thanks } from "../components/sections";
 
 const newsletterThanks = ({ location }) => {
   return (
     <Layout location={location} page="newsletter-thanks">
-      <h1>Welcome aboard</h1>
+      <Helmet title="Newsletter Thanks" />
+      <Thanks />
     </Layout>
   );
 };
