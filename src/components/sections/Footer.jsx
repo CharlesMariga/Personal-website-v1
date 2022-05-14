@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { selectMode } from "../../features/theme/themeSlice";
+
 import bgImage from "../../assets/images/footer-bg.png";
 import { navLinks } from "../../config";
 import { Link } from "gatsby";
 
 const Footer = () => {
+  const mode = useSelector(selectMode);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -16,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <FooterSection>
+    <FooterSection mode={mode}>
       <TopContainer>
         <FirstColumn>
           <Text>
@@ -58,7 +62,7 @@ const Footer = () => {
 };
 
 const FooterSection = styled.footer`
-  background-image: ${`url(${bgImage})`};
+  background-image: ${({ mode }) => (mode === "dark" ? `url(${bgImage})` : "")};
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: -16rem;

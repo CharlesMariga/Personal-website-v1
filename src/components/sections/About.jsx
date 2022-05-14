@@ -19,9 +19,9 @@ const About = () => {
             <SectionHeading title="About Me" number="02" />
             <AboutContainer>
               <AvaterFigure>
-                {/* <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" /> */}
+                <StaticImage src="../../assets/images/avater.jpg" alt="Charles Mariga" className="avater-img" />
               </AvaterFigure>
-              {/* <div>
+              <div>
                 <AboutText>
                   Hello! My name is Charles and I enjoy building things that reside on the internet. My interest in
                   programming started back in 2017 after I finished high school, and I wanted to learn about how the
@@ -44,7 +44,7 @@ const About = () => {
                 <SignatureContainer>
                   <Signature />
                 </SignatureContainer>
-              </div> */}
+              </div>
             </AboutContainer>
           </div>
         ) : (
