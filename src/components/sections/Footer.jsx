@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { selectMode } from "../../features/theme/themeSlice";
@@ -11,31 +11,40 @@ import { Icon } from "..";
 
 const Footer = () => {
   const mode = useSelector(selectMode);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
-  const submitForm = e => {
-    e.preventDefault();
-
-    console.log("Name: ", name);
-    console.log("Email: ", email);
-  };
 
   return (
     <FooterSection mode={mode}>
       <TopContainer>
         <FirstColumn>
           <Text>
-            If you might be interested in what I might have to say in topics such as software development, productivity,
-            and tech in general, please consider subscribing to my monthly newsletter, which I am looking starting soon.
+            If you might be interested in what I might have to say in topics
+            such as software development, productivity, and tech in general,
+            please consider subscribing to my monthly newsletter, which I am
+            looking starting soon.
           </Text>
           <NewsLetterContainer>
             <ColumnHeading>Join my newsletter</ColumnHeading>
-            <SubscriptionForm onSubmit={e => submitForm(e)}>
-              <input type="text" placeholder="Name" onChange={e => setName(e.target.value)} />
-              <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} />
+            <SubscriptionForm
+              action="https://app.convertkit.com/forms/3269940/subscriptions"
+              method="post"
+            >
+              <input
+                type="text"
+                placeholder="Name"
+                aria-label="Name"
+                name="fields[name]"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                aria-label="Email Address"
+                name="email_address"
+                required
+              />
               <input type="submit" value="Join" className="btn btn--full" />
             </SubscriptionForm>
+            <p>I respect your privacy. Unsubscribe at any time.</p>
           </NewsLetterContainer>
         </FirstColumn>
         <SecondColumn>
@@ -60,7 +69,12 @@ const Footer = () => {
               {socialLinks &&
                 socialLinks.map(({ url, name }, index) => (
                   <SocialLinkItem key={index}>
-                    <SocialLink href={url} aria-label={name} target="_blank" rel="noreferrer">
+                    <SocialLink
+                      href={url}
+                      aria-label={name}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Icon name={name} width={20} height={20} />
                     </SocialLink>
                   </SocialLinkItem>
@@ -86,7 +100,7 @@ const FooterSection = styled.footer`
 `;
 
 const TopContainer = styled.div`
-  padding: 9rem 0;
+  padding: 3rem 0;
   padding-top: 0;
   display: grid;
   grid-template-columns: 5fr 1fr 2fr;
@@ -112,7 +126,14 @@ const FirstColumn = styled.div`
   }
 `;
 
-const NewsLetterContainer = styled.div``;
+const NewsLetterContainer = styled.div`
+  p {
+    line-height: var(--line-height-md);
+    margin-top: 2rem;
+    font-size: var(--font-16);
+    opacity: 0.6;
+  }
+`;
 
 const ColumnHeading = styled.h4`
   color: var(--second-text-color);
@@ -217,6 +238,7 @@ const SocialLinksList = styled.ul`
 
 const SocialLinkItem = styled.li`
   padding: 1rem 1rem;
+  opacity: 0.6;
 `;
 
 const SocialLink = styled.a`
