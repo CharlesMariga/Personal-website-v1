@@ -5,13 +5,21 @@ import { setMode, selectMode } from "../../features/theme/themeSlice";
 
 import { GlobalStyles, theme } from "../../styles";
 import { Footer } from "../sections";
-import { SocialLinks, Email, Head, StyledBackgroundImage, Loader, Nav } from "..";
+import {
+  SocialLinks,
+  Email,
+  Head,
+  StyledBackgroundImage,
+  Loader,
+  Nav,
+} from "..";
 import { useDispatch, useSelector } from "react-redux";
 
 const Layout = ({ location, children, page }) => {
   const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
   const scrollContent = useRef(null);
+  const excludePages = ["404", "archive", "newsletter-thanks"];
 
   const mode = useSelector(selectMode);
 
@@ -45,11 +53,13 @@ const Layout = ({ location, children, page }) => {
             <StyledBackgroundImage mode={mode}>
               {page !== "404" && <SocialLinks isHome={isHome} />}
               {page !== "404" && <Email isHome={isHome} />}
-              {page !== "404" && page !== "archive" && <Nav isHome={isHome} contentToScroll={scrollContent} />}
+              {!excludePages.includes(page) && (
+                <Nav isHome={isHome} contentToScroll={scrollContent} />
+              )}
               <Content ref={scrollContent}>
                 <div id="home"></div>
                 {children}
-                {page !== "404" && page !== "archive" && <Footer />}
+                {!excludePages.includes(page) && <Footer />}
               </Content>
             </StyledBackgroundImage>
           )}
