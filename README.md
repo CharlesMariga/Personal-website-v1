@@ -1,4 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c24f24b2-e5a1-4494-b097-c203397b4af2/deploy-status)](https://app.netlify.com/sites/precious-lokum-3cd133/deploys)
+
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
