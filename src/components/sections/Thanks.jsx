@@ -8,8 +8,6 @@ import { ThemeToggle } from "..";
 const Thanks = () => {
   const { width, height } = useWindowSize();
 
-  console.log(width, height);
-
   return (
     <>
       <ConfettiWrapper>
@@ -101,7 +99,6 @@ const TextContainer = styled.div`
   line-height: var(--line-height-md);
   max-width: 72rem;
   margin: 0 auto;
-  padding: 4rem;
   text-align: center;
 `;
 
