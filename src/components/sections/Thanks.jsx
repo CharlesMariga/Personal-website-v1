@@ -49,6 +49,7 @@ const Wrapper = styled.div`
 const ConfettiWrapper = styled.div`
   position: absolute;
   margin-left: -16rem;
+  margin-right: -16rem;
 `;
 
 const ThemeToggleContainer = styled.div`
@@ -71,7 +72,6 @@ const SecondHeading = styled.h2`
   margin-top: 2rem;
   font-size: var(--font-24);
   font-weight: 300;
-  line-height: var(--line-height-lg);
 `;
 
 const Divider = styled.div`
