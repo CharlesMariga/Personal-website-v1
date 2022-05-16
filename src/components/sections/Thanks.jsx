@@ -8,40 +8,47 @@ import { ThemeToggle } from "..";
 const Thanks = () => {
   const { width, height } = useWindowSize();
 
+  console.log(width, height);
+
   return (
     <>
-      <ConfettiWrapper>
-        <Confetti
-          numberOfPieces={1200}
-          recycle={false}
-          width={width}
-          height={height}
-        />
-      </ConfettiWrapper>
-      <Wrapper>
-        <ThemeToggleContainer>
-          <ThemeToggle />
-        </ThemeToggleContainer>
-        <Heading>Welcome aboard!</Heading>
-        <SecondHeading>
-          Thanks for joing my newsletter. I am glad to have you on board.
-        </SecondHeading>
-        <Divider />
-        <TextContainer>
-          <Text>
-            One last thing - before we can make things official, you'll need to
-            click the confirmation button in the emial I just sent you.
-          </Text>
-          <Text>
-            As soon as you do that, you'll be a valued member of my newsletter
-            and you'll hear from me once a month(ish) by email. I'll be sharing
-            about tech, programming and productivity. If you ever need to get in
-            touch with me, you can always reply to those emails and we can chat.
-          </Text>
-          <Gratitude>Thanks!</Gratitude>
-          <Name>Charles</Name>
-        </TextContainer>
-      </Wrapper>
+      {width && height && (
+        <>
+          <ConfettiWrapper>
+            <Confetti
+              numberOfPieces={1200}
+              recycle={false}
+              width={width}
+              height={height}
+            />
+          </ConfettiWrapper>
+          <Wrapper>
+            <ThemeToggleContainer>
+              <ThemeToggle />
+            </ThemeToggleContainer>
+            <Heading>Welcome aboard!</Heading>
+            <SecondHeading>
+              Thanks for joing my newsletter. I am glad to have you on board.
+            </SecondHeading>
+            <Divider />
+            <TextContainer>
+              <Text>
+                One last thing - before we can make things official, you'll need
+                to click the confirmation button in the emial I just sent you.
+              </Text>
+              <Text>
+                As soon as you do that, you'll be a valued member of my
+                newsletter and you'll hear from me once a month(ish) by email.
+                I'll be sharing about tech, programming and productivity. If you
+                ever need to get in touch with me, you can always reply to those
+                emails and we can chat.
+              </Text>
+              <Gratitude>Thanks!</Gratitude>
+              <Name>Charles</Name>
+            </TextContainer>
+          </Wrapper>
+        </>
+      )}
     </>
   );
 };
