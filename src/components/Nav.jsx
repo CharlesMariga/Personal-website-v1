@@ -73,7 +73,11 @@ const Nav = ({ isHome, contentToScroll }) => {
               {isMounted &&
                 navLinks &&
                 navLinks.map(({ name, id }, i) => (
-                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                  <CSSTransition
+                    key={i}
+                    classNames={fadeDownClass}
+                    timeout={timeout}
+                  >
                     <StyledNavLink
                       style={{
                         transitionDelay: `${isHome ? i * 100 : 0}ms`,
@@ -91,10 +95,14 @@ const Nav = ({ isHome, contentToScroll }) => {
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <HireMeBtnWrapper
                     style={{
-                      transitionDelay: `${isHome ? (navLinks.length + 1) * 100 : 0}ms`,
+                      transitionDelay: `${
+                        isHome ? (navLinks.length + 1) * 100 : 0
+                      }ms`,
                     }}
                   >
-                    <HireMeBtn href="mailTo:charlesmariga37@gmail.com?subject=Job%20opportunity">Hire me</HireMeBtn>
+                    <HireMeBtn href="mailTo:charlesmariga37@gmail.com?subject=Job%20opportunity">
+                      Hire me
+                    </HireMeBtn>
                   </HireMeBtnWrapper>
                 </CSSTransition>
               )}
@@ -105,7 +113,9 @@ const Nav = ({ isHome, contentToScroll }) => {
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <ThemeToggleWrapper
                     style={{
-                      transitionDelay: `${isHome ? (navLinks.length + 2) * 100 : 0}ms`,
+                      transitionDelay: `${
+                        isHome ? (navLinks.length + 2) * 100 : 0
+                      }ms`,
                     }}
                   >
                     <ThemeToggle closeModal={() => setModalOpen(false)} />
@@ -124,7 +134,10 @@ const Nav = ({ isHome, contentToScroll }) => {
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
-                <MenuBtn aria-label="Menu button" onClick={() => setModalOpen(!modalOpen)}>
+                <MenuBtn
+                  aria-label="Menu button"
+                  onClick={() => setModalOpen(!modalOpen)}
+                >
                   <MenuIcon className={`${modalOpen ? "active" : ""}`} />
                 </MenuBtn>
               </CSSTransition>
@@ -192,7 +205,6 @@ const StyledHeaderNavLinkContainer = styled.div`
     left: 0;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
