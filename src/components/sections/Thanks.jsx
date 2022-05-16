@@ -58,8 +58,9 @@ const Wrapper = styled.div`
 
 const ConfettiWrapper = styled.div`
   position: absolute;
-  margin-left: -16rem;
-  margin-right: -16rem;
+  margin: 0 -16rem;
+  width: 100%;
+  height: 100%;
 `;
 
 const ThemeToggleContainer = styled.div`
