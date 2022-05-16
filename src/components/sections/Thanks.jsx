@@ -1,14 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-// import useWindowSize from "react-use/lib/useWindowSize";
+import { useWindowSize } from "../../hooks";
+
 import Confetti from "react-confetti";
 import { ThemeToggle } from "..";
 
 const Thanks = () => {
+  const { width, height } = useWindowSize();
+
+  console.log(width, height);
+
   return (
     <>
       <ConfettiWrapper>
-        <Confetti numberOfPieces={1200} recycle={false} />
+        <Confetti
+          numberOfPieces={1200}
+          recycle={false}
+          width={width}
+          height={height}
+        />
       </ConfettiWrapper>
       <Wrapper>
         <ThemeToggleContainer>
