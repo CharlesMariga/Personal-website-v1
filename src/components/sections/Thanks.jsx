@@ -58,7 +58,10 @@ const Wrapper = styled.div`
 
 const ConfettiWrapper = styled.div`
   position: absolute;
-  margin: 0 -16rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   width: 100%;
   height: 100%;
 `;
