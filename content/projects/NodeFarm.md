@@ -7,9 +7,7 @@ ios: ""
 android: ""
 tech:
   - HTML
-  - CSS
-  - JavaScript
-  - Parcel
+  - NodeJs
 company: "SOOP"
 showInProjects: false
 ---
