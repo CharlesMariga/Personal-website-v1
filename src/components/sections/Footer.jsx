@@ -110,7 +110,7 @@ const Footer = () => {
                 If you might be interested in what I might have to say in topics
                 such as software development, productivity, and tech in general,
                 please consider subscribing to my monthly newsletter, which I am
-                looking starting soon.
+                looking forward to starting soon.
               </Text>
               <NewsLetterContainer>
                 <ColumnHeading>Join my newsletter</ColumnHeading>
