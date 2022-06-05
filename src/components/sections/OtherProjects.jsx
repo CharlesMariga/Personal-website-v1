@@ -63,6 +63,7 @@ const OtherProjects = () => {
             ease: [0.645, 0.045, 0.355, 1],
           }}
           viewport={{ once: true }}
+          style={{ opacity: 0 }}
         >
           <SecondaryHeading title="Other projects worth a mention" />
           <ArchiveLinkContainer>
@@ -95,6 +96,7 @@ const OtherProjects = () => {
                   }}
                   key={index}
                   viewport={{ once: true }}
+                  style={{ opacity: 0 }}
                 >
                   <ProjectCard project={project} />
                 </motion.div>

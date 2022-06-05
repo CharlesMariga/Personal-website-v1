@@ -17,10 +17,15 @@ const Contact = () => {
             <TextBox>
               <Heading>Get in touch</Heading>
               <Text>
-                Whether you want to ask me a question, or you just want to buy me a coffee ☕😄, don't hesitate to get
-                in touch. My inbox is always open and I will try as much as possible to get back to you.
+                Whether you want to ask me a question, or you just want to buy
+                me a coffee ☕😄, don't hesitate to get in touch. My inbox is
+                always open and I will try as much as possible to get back to
+                you.
               </Text>
-              <Button className="btn btn--full" href="mailTo:charlesmariga37@gmail.com">
+              <Button
+                className="btn btn--full"
+                href="mailTo:charlesmariga37@gmail.com"
+              >
                 Contact Me
               </Button>
             </TextBox>
@@ -35,6 +40,7 @@ const Contact = () => {
             ease: [0.645, 0.045, 0.355, 1],
           }}
           viewport={{ once: true }}
+          style={{ opacity: 0 }}
         >
           <ContactSection id="contact">
             <Card>
@@ -42,10 +48,15 @@ const Contact = () => {
               <TextBox>
                 <Heading>Get in touch</Heading>
                 <Text>
-                  Whether you want to ask me a question, or you just want to buy me a coffee ☕😄, don't hesitate to get
-                  in touch. My inbox is always open and I will try as much as possible to get back to you.
+                  Whether you want to ask me a question, or you just want to buy
+                  me a coffee ☕😄, don't hesitate to get in touch. My inbox is
+                  always open and I will try as much as possible to get back to
+                  you.
                 </Text>
-                <Button className="btn btn--full" href="mailTo:charlesmariga37@gmail.com">
+                <Button
+                  className="btn btn--full"
+                  href="mailTo:charlesmariga37@gmail.com"
+                >
                   Contact Me
                 </Button>
               </TextBox>

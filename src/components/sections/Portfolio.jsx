@@ -61,6 +61,7 @@ const Portfolio = () => {
             ease: [0.645, 0.045, 0.355, 1],
           }}
           viewport={{ once: true }}
+          style={{ opacity: 0 }}
         >
           <PortfolioSection id="portfolio">
             <SectionHeading title="Portfolio" number="03" />
