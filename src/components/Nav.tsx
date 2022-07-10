@@ -11,7 +11,7 @@ import { ThemeToggle } from ".";
 
 interface Props {
   isHome: boolean;
-  contentToScroll: React.ReactNode;
+  contentToScroll: React.RefObject<HTMLElement>;
 }
 
 const Nav: React.FC<Props> = ({ isHome, contentToScroll }) => {
@@ -29,7 +29,7 @@ const Nav: React.FC<Props> = ({ isHome, contentToScroll }) => {
     if (prefersReducedMotion) return;
 
     let timeout: NodeJS.Timeout;
-    const element = contentToScroll.current;
+    const element = contentToScroll.current! as HTMLElement;
     timeout = setTimeout(() => {
       setIsMounted(true);
     }, 500);
@@ -51,8 +51,8 @@ const Nav: React.FC<Props> = ({ isHome, contentToScroll }) => {
     };
   });
 
-  const closeModal = (e: MouseEventHandler<Element>) => {
-    (e.target! as HTMLElement).classList.contains("navLinksContainer") &&
+  const closeModal = (e: React.MouseEvent<HTMLDivElement>) => {
+    (e.target as HTMLDivElement).classList.contains("navLinksContainer") &&
       setModalOpen(false);
   };
 
@@ -72,7 +72,7 @@ const Nav: React.FC<Props> = ({ isHome, contentToScroll }) => {
         </TransitionGroup>
         <StyledHeaderNavLinkContainer
           className={`navLinksContainer ${modalOpen ? "active" : ""}`}
-          onClick={(e: MouseEventHandler<HTMLDivElement>) => closeModal(e)}
+          onClick={closeModal}
         >
           <StyledNavLinks className={`${modalOpen ? "active" : ""}`}>
             <TransitionGroup component={null}>

@@ -58,16 +58,18 @@ const Layout: React.FC<Props> = ({ location, children, page }) => {
             <Loader mode={mode} finishedLoading={() => setIsLoading(false)} />
           ) : (
             <StyledBackgroundImage mode={mode}>
-              {page !== "404" && <SocialLinks isHome={isHome} />}
-              {page !== "404" && <Email isHome={isHome} />}
-              {!excludePages.includes(page) && (
-                <Nav isHome={isHome} contentToScroll={scrollContent} />
-              )}
-              <Content ref={scrollContent}>
-                <div id="home"></div>
-                {children}
-                {!excludePages.includes(page) && <Footer />}
-              </Content>
+              <>
+                {page !== "404" && <SocialLinks isHome={isHome} />}
+                {page !== "404" && <Email isHome={isHome} />}
+                {!excludePages.includes(page) && (
+                  <Nav isHome={isHome} contentToScroll={scrollContent} />
+                )}
+                <Content ref={scrollContent}>
+                  <div id="home"></div>
+                  {children}
+                  {!excludePages.includes(page) && <Footer />}
+                </Content>
+              </>
             </StyledBackgroundImage>
           )}
         </ThemeProvider>

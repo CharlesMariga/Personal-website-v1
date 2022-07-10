@@ -143,7 +143,7 @@ const AboutText = styled.p`
   line-height: var(--line-height-md);
   margin-top: 2rem;
 
-  @media screen and (${({ theme }) => theme.bp.tabletS}) {
+  @media screen and (${({ theme }) => theme.bp.tabletXS}) {
     text-align: center;
   }
 
@@ -170,7 +170,7 @@ const SignatureContainer = styled.div`
     fill: var(--text-color);
     opacity: 0.9;
 
-    @media screen and (${({ theme }) => theme.bp.tabletS}) {
+    @media screen and (${({ theme }) => theme.bp.tabletXS}) {
       display: flex;
       width: 60%;
       margin: 4rem auto;

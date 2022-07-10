@@ -1,6 +1,6 @@
 import React from "react";
 
-const Signature = () => {
+const Signature: React.FC = () => {
   return (
     <svg
       id="svg"

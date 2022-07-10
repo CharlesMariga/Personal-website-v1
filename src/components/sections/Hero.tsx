@@ -87,7 +87,7 @@ const HeroSection = styled.div`
   align-items: center;
   padding: 6rem 0;
 
-  @media screen and (${({ theme }) => theme.bp.tabletS}) {
+  @media screen and (${({ theme }) => theme.bp.tabletXS}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
@@ -173,15 +173,7 @@ const BackgroundAnimationWrapper = styled.div`
   opacity: 0;
   animation: animateBgAnim 1s ease-in-out 2.5s forwards;
 
-  svg {
-    g {
-      path {
-        /* stroke: var(--primary); */
-      }
-    }
-  }
-
-  @media screen and (${({ theme }) => theme.bp.tabletS}) {
+  @media screen and (${({ theme }) => theme.bp.tabletXS}) {
     position: absolute;
     top: 27%;
     right: -39%;

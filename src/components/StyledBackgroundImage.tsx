@@ -1,18 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import bgImage from "../assets/images/orange_circle.png";
+import { themeInterface } from "../interfaces/ThemeStyle.Interface";
 
-const StyledBackgroundImage = ({ children, mode }) => {
-  return <BackgroundContentContainer mode={mode}>{children}</BackgroundContentContainer>;
+interface Props {
+  children: React.ReactElement;
+  mode: string;
+}
+
+const StyledBackgroundImage: React.FC<Props> = ({ children, mode }) => {
+  return (
+    <BackgroundContentContainer mode={mode}>
+      {children}
+    </BackgroundContentContainer>
+  );
 };
 
-const BackgroundContentContainer = styled.div`
+const BackgroundContentContainer = styled.div<{
+  mode: string;
+  theme: themeInterface;
+}>`
   position: relative;
   max-height: 100vh;
   overflow: hidden;
   color: var(--text-color);
 
-  ${({ mode, theme }) => (mode === "light" ? theme.mixins.lightMode : theme.mixins.darkMode)}
+  ${({ mode, theme }) =>
+    mode === "light" ? theme.mixins.lightMode : theme.mixins.darkMode}
 
   &::before {
     content: "";

@@ -1,3 +1,5 @@
+import { FlattenSimpleInterpolation } from "styled-components";
+
 export interface themeInterface {
   bp: {
     mobileS: string;
@@ -10,5 +12,9 @@ export interface themeInterface {
     desktopM: string;
     desktopL: string;
   };
-  mixins: object;
+  mixins: {
+    lightMode: FlattenSimpleInterpolation;
+    darkMode: FlattenSimpleInterpolation;
+    lightSelection: FlattenSimpleInterpolation;
+  };
 }

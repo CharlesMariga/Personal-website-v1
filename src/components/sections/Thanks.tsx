@@ -8,8 +8,6 @@ import { ThemeToggle } from "..";
 const Thanks: React.FC = () => {
   const { width, height } = useWindowSize();
 
-  console.log(width, height);
-
   return (
     <>
       {width && height && (

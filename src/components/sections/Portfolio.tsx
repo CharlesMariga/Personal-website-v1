@@ -9,7 +9,7 @@ import { FeaturedProject } from "..";
 import { OtherProjects } from ".";
 import { usePreferredReducedMotion } from "../../hooks";
 
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
 
   const { allMarkdownRemark } = useStaticQuery(graphql`

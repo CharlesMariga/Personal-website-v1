@@ -1,6 +1,6 @@
 import mixins from "./mixins";
 
-import { themeInterface } from "../interfaces/Theme.Interface";
+import { themeInterface } from "../interfaces/ThemeStyle.Interface";
 
 const theme: themeInterface = {
   bp: {
@@ -14,7 +14,6 @@ const theme: themeInterface = {
     desktopM: `min-width: 1200px`,
     desktopL: `min-width: 1400px`,
   },
-
   mixins,
 };
 

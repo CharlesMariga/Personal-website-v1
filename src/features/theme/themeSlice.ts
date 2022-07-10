@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface StateInterface {
-  theme: {
-    mode: string;
-  };
+interface State {
+  mode: string;
 }
+
+const initialState: State = { mode: "" };
 
 export const themeSlice = createSlice({
   name: "theme",
-  initialState: {},
+  initialState,
   reducers: {
     setMode: (state, action: PayloadAction<string>) => {
       state.mode = action.payload;

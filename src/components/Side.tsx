@@ -4,7 +4,13 @@ import { usePreferredReducedMotion } from "../hooks";
 import { loaderDelay } from "../utils";
 import styled from "styled-components";
 
-const Side = ({ children, orientation, isHome }) => {
+interface Props {
+  children: React.ReactNode;
+  orientation: string;
+  isHome: boolean;
+}
+
+const Side: React.FC<Props> = ({ children, orientation, isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const prefersReducedMotion = usePreferredReducedMotion();
 
@@ -38,7 +44,7 @@ const Side = ({ children, orientation, isHome }) => {
   );
 };
 
-const StyledSide = styled.div`
+const StyledSide = styled.div<{ orientation: string }>`
   width: 4rem;
   position: fixed;
   bottom: 0;

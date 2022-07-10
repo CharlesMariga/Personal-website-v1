@@ -3,14 +3,22 @@ import styled from "styled-components";
 
 import { navLinks } from "../config";
 
-const NavigationDots = ({ idName }) => {
+interface Props {
+  idName: string;
+}
+
+const NavigationDots: React.FC<Props> = ({ idName }) => {
   return (
     <NavDots>
       {navLinks.map((item, index) => (
         <NavDot
           key={item.name + index}
           href={`#${item.id}`}
-          style={idName === item.id ? { backgroundColor: "var(--primary)" } : { opacity: 0.5 }}
+          style={
+            idName === item.id
+              ? { backgroundColor: "var(--primary)" }
+              : { opacity: 0.5 }
+          }
         >
           {""}
         </NavDot>
