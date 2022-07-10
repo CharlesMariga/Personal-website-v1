@@ -1,0 +1,21 @@
+import mixins from "./mixins";
+
+import { themeInterface } from "../interfaces/Theme.Interface";
+
+const theme: themeInterface = {
+  bp: {
+    mobileS: "max-width: 330px",
+    mobileM: `max-width: 400px`,
+    mobileL: `max-width: 480px`,
+    tabletXS: `max-width: 600px`,
+    tabletL: `max-width: 768px`,
+    desktopXS: `max-width: 900px`,
+    desktopS: `max-width: 1080px`,
+    desktopM: `min-width: 1200px`,
+    desktopL: `min-width: 1400px`,
+  },
+
+  mixins,
+};
+
+export default theme;
