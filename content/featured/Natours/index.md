@@ -3,7 +3,7 @@ date: "1"
 title: "Natours"
 cover: "./natours.png"
 github: "https://github.com/CharlesMariga/Forkify-redesigned"
-external: "https://tranquil-bastion-37136.herokuapp.com/"
+external: "https://appnatours.herokuapp.com/"
 tech:
   - Pug
   - Express
