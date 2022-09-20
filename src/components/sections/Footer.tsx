@@ -29,21 +29,23 @@ const Footer: React.FC = () => {
           <NewsLetterContainer>
             <ColumnHeading>Join my newsletter</ColumnHeading>
             <SubscriptionForm
-              action="https://app.convertkit.com/forms/3269940/subscriptions"
+              action="https://buttondown.email/api/emails/embed-subscribe/mariga"
               method="post"
+              target="popupwindow"
+              className="embeddable-buttondown-form"
             >
               <input
                 type="text"
                 placeholder="Name"
                 aria-label="Name"
-                name="fields[name]"
+                name="name"
                 required
               />
               <input
                 type="email"
                 placeholder="Email"
                 aria-label="Email Address"
-                name="email_address"
+                name="email"
                 required
               />
               <input type="submit" value="Join" className="btn btn--full" />
