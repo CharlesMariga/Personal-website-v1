@@ -29,7 +29,6 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
-          company
           date
           external
           tech

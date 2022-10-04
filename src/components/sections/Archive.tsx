@@ -28,9 +28,6 @@ const Archive: React.FC<Props> = ({ data }) => {
     <>
       <TableData className="year">{new Date(date).getFullYear()}</TableData>
       <TableData className="title">{title}</TableData>
-      <TableData className="made-at hide-on-mobile">
-        {company ? <span>{company}</span> : <span>--</span>}
-      </TableData>
       <TableData className="build-with hide-on-mobile">
         {tech.length &&
           tech.map((item, i) => (
@@ -135,7 +132,6 @@ const Archive: React.FC<Props> = ({ data }) => {
               >
                 <TableHead>Year</TableHead>
                 <TableHead>Title</TableHead>
-                <TableHead className="hide-on-mobile">Made while at</TableHead>
                 <TableHead className="hide-on-mobile">Build with</TableHead>
                 <TableHead>Link</TableHead>
               </motion.tr>
