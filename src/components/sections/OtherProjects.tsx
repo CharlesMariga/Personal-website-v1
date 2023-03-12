@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
-import styled from "styled-components";
 import { motion } from "framer-motion";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
-import { SecondaryHeading } from "../global";
 import { ProjectCard } from "..";
 import { usePreferredReducedMotion } from "../../hooks";
+import { Project } from "../../interfaces/Project.interface";
+import { SecondaryHeading } from "../global";
 
 const OtherProjects: React.FC = () => {
   const [showMore, setShowMore] = useState(false);
@@ -35,9 +36,9 @@ const OtherProjects: React.FC = () => {
   `);
 
   const gridLimit = 6;
-  const projects = allMarkdownRemark.nodes;
+  const projects = allMarkdownRemark.nodes as Project[];
   const firstSixProjects = projects.slice(0, gridLimit);
-  const projectsToShow: any[] = showMore ? projects : firstSixProjects;
+  const projectsToShow = showMore ? projects : firstSixProjects;
 
   useEffect(() => {
     if (prefersReducedMotion) return;

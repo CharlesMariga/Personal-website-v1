@@ -1,9 +1,9 @@
-import React from "react";
 import { Link, PageProps } from "gatsby";
+import React from "react";
 
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { Layout } from "../components/layouts";
-import { Helmet } from "react-helmet";
 
 export default function Error({ location }: PageProps) {
   return (
@@ -14,8 +14,8 @@ export default function Error({ location }: PageProps) {
         <PageContent>
           <PageHeading>Oops! Page not found</PageHeading>{" "}
           <Text>
-            The page you were looking for doesn't exist. You may have mistyped
-            the address or the page may have moved. //{" "}
+            The page you were looking for doesn&apos;t exist. You may have
+            mistyped the address or the page may have moved.{" "}
           </Text>{" "}
           <Link to="/" className="btn btn--full">
             &larr; Back to home //{" "}

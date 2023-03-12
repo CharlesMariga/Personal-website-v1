@@ -1,0 +1,8 @@
+.eslintignore
+.eslintrc.js
+.cache
+commitlint.config.js
+node_modules
+public
+src/interfaces
+src/styled.d.ts 

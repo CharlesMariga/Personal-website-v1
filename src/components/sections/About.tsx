@@ -1,12 +1,12 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-import { SectionHeading } from "../global";
-import { SectionWrap } from "../layouts";
-import { usePreferredReducedMotion } from "../../hooks";
 import { StaticImage } from "gatsby-plugin-image";
 import { Signature } from "..";
+import { usePreferredReducedMotion } from "../../hooks";
+import { SectionHeading } from "../global";
+import { SectionWrap } from "../layouts";
 
 const About: React.FC = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -27,13 +27,13 @@ const About: React.FC = () => {
             Hello! My name is Charles and I enjoy building things that reside on
             the internet. My interest in programming started back in 2017 after
             I finished high school, and I wanted to learn about how the internet
-            works. That's what led me to discovering what web-pages are and
+            works. That&apos;s what led me to discovering what web-pages are and
             knowing that they are made using HTML, CSS &amp; JavaScript. This
             sparked my interest in programming which led me to pursue a
-            Bachelor's degree in Information Technology.
+            Bachelor&apos;s degree in Information Technology.
           </AboutText>
           <AboutText>
-            I've since been building note-worthy websites and webapps that
+            I&apos;ve since been building note-worthy websites and webapps that
             comply with the latest web design trends. I help convert a vision or
             an idea into a meaningful and useful product. I am passionate about
             developing excelent software that helps to improve the world around

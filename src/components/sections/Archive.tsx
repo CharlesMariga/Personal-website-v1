@@ -1,12 +1,12 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-import { SectionHeading, TertiaryHeading } from "../global";
-import Icon from "../Icon";
 import { Link } from "gatsby";
 import { ThemeToggle } from "..";
 import { Project } from "../../interfaces/Project.interface";
+import { SectionHeading, TertiaryHeading } from "../global";
+import Icon from "../Icon";
 
 interface Props {
   data: Project[];
@@ -14,16 +14,7 @@ interface Props {
 
 const Archive: React.FC<Props> = ({ data }) => {
   const TableRowData = ({
-    frontmatter: {
-      date,
-      title,
-      company,
-      tech,
-      external,
-      github,
-      ios,
-      playstore,
-    },
+    frontmatter: { date, title, tech, external, github, ios, playstore },
   }: Project) => (
     <>
       <TableData className="year">{new Date(date).getFullYear()}</TableData>

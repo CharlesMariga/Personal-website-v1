@@ -1,13 +1,13 @@
 import { Link } from "gatsby";
-import React, { MouseEventHandler, useEffect, useState } from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import React, { useEffect, useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled, { css } from "styled-components";
 
+import { ThemeToggle } from ".";
 import { navLinks } from "../config";
+import { usePreferredReducedMotion } from "../hooks";
 import { loaderDelay } from "../utils";
 import { IconLogo } from "./icons";
-import { usePreferredReducedMotion } from "../hooks";
-import { ThemeToggle } from ".";
 
 interface Props {
   isHome: boolean;
@@ -28,14 +28,13 @@ const Nav: React.FC<Props> = ({ isHome, contentToScroll }) => {
   useEffect(() => {
     if (prefersReducedMotion) return;
 
-    let timeout: NodeJS.Timeout;
     const element = contentToScroll.current! as HTMLElement;
-    timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       setIsMounted(true);
     }, 500);
 
     const handleScroll = (e: Event) => {
-      let scrollTop = (e.target as HTMLElement).scrollTop;
+      const scrollTop = (e.target as HTMLElement).scrollTop;
 
       if (scrollTop > oldScrollTop) setScrollDirection("down");
       else setScrollDirection("up");

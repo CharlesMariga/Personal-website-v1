@@ -6,3 +6,4 @@ export { default as Hero } from "./Hero";
 export { default as OtherProjects } from "./OtherProjects";
 export { default as Portfolio } from "./Portfolio";
 export { default as Thanks } from "./Thanks";
+export { default as WorkHistory } from "./WorkHistory";

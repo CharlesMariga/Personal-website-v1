@@ -1,7 +1,7 @@
-import { createGlobalStyle, DefaultTheme } from "styled-components";
-import variables from "./variables";
+import { createGlobalStyle } from "styled-components";
 import animations from "./animations";
 import TransitionStyles from "./transitionTyles";
+import variables from "./variables";
 
 const GlobalStyle = createGlobalStyle`  
   ${variables}

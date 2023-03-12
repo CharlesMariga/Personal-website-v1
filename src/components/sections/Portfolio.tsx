@@ -1,13 +1,14 @@
+import { motion } from "framer-motion";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
-import { motion } from "framer-motion";
 
-import { SectionWrap } from "../layouts";
-import { SectionHeading } from "../global";
-import { FeaturedProject } from "..";
 import { OtherProjects } from ".";
+import { FeaturedProject } from "..";
 import { usePreferredReducedMotion } from "../../hooks";
+import { Project } from "../../interfaces/Project.interface";
+import { SectionHeading } from "../global";
+import { SectionWrap } from "../layouts";
 
 const Portfolio: React.FC = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -40,13 +41,13 @@ const Portfolio: React.FC = () => {
     }
   `);
 
-  const data: any[] = allMarkdownRemark.nodes;
+  const data = allMarkdownRemark.nodes as Project[];
 
   return (
     <SectionWrap idName="portfolio">
       {prefersReducedMotion ? (
         <PortfolioSection id="portfolio">
-          <SectionHeading title="Portfolio" number="03" />
+          <SectionHeading title="Portfolio" number="04" />
           {data.map((node, index) => (
             <FeaturedProject project={node} key={index} />
           ))}
@@ -64,7 +65,7 @@ const Portfolio: React.FC = () => {
           style={{ opacity: 0 }}
         >
           <PortfolioSection id="portfolio">
-            <SectionHeading title="Portfolio" number="03" />
+            <SectionHeading title="Portfolio" number="04" />
             {data.map((node, index) => (
               <FeaturedProject project={node} key={index} />
             ))}

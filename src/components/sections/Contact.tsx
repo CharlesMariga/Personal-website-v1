@@ -1,9 +1,9 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-import { SectionWrap } from "../layouts";
 import { usePreferredReducedMotion } from "../../hooks";
+import { SectionWrap } from "../layouts";
 
 const Contact: React.FC = () => {
   const prefersReducedMotion = usePreferredReducedMotion();
@@ -13,13 +13,13 @@ const Contact: React.FC = () => {
       {prefersReducedMotion ? (
         <ContactSection id="contact">
           <Card>
-            <Number>04.</Number>
+            <Number>05.</Number>
             <TextBox>
               <Heading>Get in touch</Heading>
               <Text>
                 Whether you want to ask me a question, or you just want to buy
-                me a coffee ☕😄, don't hesitate to get in touch. My inbox is
-                always open and I will try as much as possible to get back to
+                me a coffee ☕😄, don&apos;t hesitate to get in touch. My inbox
+                is always open and I will try as much as possible to get back to
                 you.
               </Text>
               <Button
@@ -37,21 +37,21 @@ const Contact: React.FC = () => {
           transition={{
             delay: 0.5,
             duration: 0.5,
-            ease: [0.645, 0.045, 0.355, 1],
+            ease: [0.645, 0.55, 0.355, 1],
           }}
           viewport={{ once: true }}
           style={{ opacity: 0 }}
         >
           <ContactSection id="contact">
             <Card>
-              <Number>04.</Number>
+              <Number>05.</Number>
               <TextBox>
                 <Heading>Get in touch</Heading>
                 <Text>
                   Whether you want to ask me a question, or you just want to buy
-                  me a coffee ☕😄, don't hesitate to get in touch. My inbox is
-                  always open and I will try as much as possible to get back to
-                  you.
+                  me a coffee ☕😄, don&apos;t hesitate to get in touch. My
+                  inbox isalways open and I will try as much as possible to get
+                  back to you.
                 </Text>
                 <Button
                   className="btn btn--full"

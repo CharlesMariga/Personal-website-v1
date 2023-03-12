@@ -1,24 +1,25 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-import { ThemeProvider } from "styled-components";
-import styled from "styled-components";
-import { setMode, selectMode } from "../../features/theme/themeSlice";
+import styled, { ThemeProvider } from "styled-components";
+import { selectMode, setMode } from "../../features/theme/themeSlice";
 
-import { GlobalStyles, theme } from "../../styles";
-import { Footer } from "../sections";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  SocialLinks,
   Email,
   Head,
-  StyledBackgroundImage,
   Loader,
   Nav,
+  SocialLinks,
+  StyledBackgroundImage,
 } from "..";
-import { useDispatch, useSelector } from "react-redux";
+import { GlobalStyles, theme } from "../../styles";
+import { Footer } from "../sections";
 
 interface Props {
   page: string;
-  location: any;
+  location: {
+    pathname: string;
+  };
   children: React.ReactNode;
 }
 

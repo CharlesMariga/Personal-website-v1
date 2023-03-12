@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { CSSTransition } from "react-transition-group";
-import { TransitionGroup } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 
+import resume from "../../assets/documents/resume.pdf";
 import { usePreferredReducedMotion } from "../../hooks";
 import { loaderDelay, navDelay } from "../../utils";
-import resume from "../../assets/documents/resume.pdf";
 import { BackgroundAnimation } from "../index";
 import { SectionWrap } from "../layouts";
 
@@ -20,13 +19,13 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
 
-  const one = <h3>Hi, I'm</h3>;
+  const one = <h3>Hi, I&apos;m</h3>;
   const two = <h1>Charles Mariga</h1>;
   const three = <h2>I build things for the web</h2>;
   const four = (
     <p>
-      I'm a software developer specializing in creating goal-driven products
-      that provide exceptional experiences to their users.
+      I&apos;m a software developer specializing in creating goal-driven
+      products that provide exceptional experiences to their users.
     </p>
   );
   const five = (

@@ -3,9 +3,6 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-
-const path = require("path");
-
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -39,6 +36,13 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/content/featured`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/jobs`,
       },
     },
     {

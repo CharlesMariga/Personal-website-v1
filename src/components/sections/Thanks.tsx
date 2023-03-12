@@ -31,15 +31,16 @@ const Thanks: React.FC = () => {
             <Divider />
             <TextContainer>
               <Text>
-                One last thing - before we can make things official, you'll need
-                to click the confirmation button in the emial I just sent you.
+                One last thing - before we can make things official, you&apos;ll
+                need to click the confirmation button in the emial I just sent
+                you.
               </Text>
               <Text>
-                As soon as you do that, you'll be a valued member of my
-                newsletter and you'll hear from me once a month(ish) by email.
-                I'll be sharing about tech, programming and productivity. If you
-                ever need to get in touch with me, you can always reply to those
-                emails and we can chat.
+                As soon as you do that, you&apos;ll be a valued member of my
+                newsletter and you&apos;ll hear from me once a month(ish) by
+                email. I&apos;ll be sharing about tech, programming and
+                productivity. If you ever need to get in touch with me, you can
+                always reply to those emails and we can chat.
               </Text>
               <Gratitude>Thanks!</Gratitude>
               <Name>Charles</Name>
