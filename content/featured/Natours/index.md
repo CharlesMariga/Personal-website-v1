@@ -2,8 +2,8 @@
 date: "1"
 title: "Natours"
 cover: "./natours.png"
-github: "https://github.com/CharlesMariga/Forkify-redesigned"
-external: "https://appnatours.herokuapp.com/"
+github: "https://github.com/CharlesMariga/Natours-nodejs"
+external: "https://natours-nodejs-c73a.onrender.com/"
 tech:
   - Pug
   - Express

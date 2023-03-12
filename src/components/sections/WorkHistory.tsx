@@ -207,6 +207,7 @@ const TabPanel = styled.div`
       color: var(--primary);
 
       a {
+        &:link,
         &:active,
         &:hover,
         &:visited {
