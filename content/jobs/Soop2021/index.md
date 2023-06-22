@@ -3,7 +3,7 @@ date: "2021-01-01"
 title: "Full Stack Developer"
 company: "Soop"
 location: "Auckland 1021, New Zealand"
-range: "January 2021 - Present"
+range: "January 2021 - April 2023"
 url: "https://soop.co.nz/"
 ---
 

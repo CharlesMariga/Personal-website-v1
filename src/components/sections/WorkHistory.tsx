@@ -146,36 +146,36 @@ const TabList = styled.div`
   @media screen and (${({ theme }) => theme.bp.tabletXS}) {
     flex-direction: row;
     margin-bottom: 25px;
-    width: 100%;
     border-bottom: 2px solid var(--primary-light);
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 12px;
   }
 `;
 
 const Tab = styled.button`
   padding: 0px 20px 2px;
   background-color: transparent;
-  width: 100%;
+  width: auto;
   color: var(--text-color);
   font-size: var(--font-18);
   border: none;
   height: 42px;
-  width: 120px;
   text-align: left;
   border-left: 2px solid var(--primary-light);
   transition: all 250ms;
   color: ${({ isActive }: { isActive: boolean }) =>
     isActive ? "var(--primary-dark)" : "var(--text-color)"};
 
-  &:hover,
-  &:focus {
-    background-color: var(--primary);
-    color: var(--pure-white);
-    border-left: 2px solid var(--primary);
+  &:hover {
+    color: var(--primary-dark);
   }
 
   @media screen and (${({ theme }) => theme.bp.tabletXS}) {
     border-left: 0;
     width: 120px;
+    height: auto;
+    flex-shrink: 0;
   }
 `;
 
@@ -257,5 +257,23 @@ const StyledHighlight = styled.div`
           ${({ activeTabId }: { activeTabId: number }) => activeTabId} * 120px
         )
       );
+  }
+
+  @media screen and (${({ theme }) => theme.bp.tabletXS}) {
+    top: 100%;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 2px;
+    transform: translateY(0)
+      translateX(
+        calc(
+          ${({ activeTabId }: { activeTabId: number }) => activeTabId} * 120px
+        )
+      );
+  }
+
+  @media screen and (${({ theme }) => theme.bp.tabletXS}) {
+    display: none;
   }
 `;

@@ -3,7 +3,7 @@ date: "2022-10-11"
 title: "Mid-level Software Engineer"
 company: "Identigate"
 location: "Nairobi, Kenya"
-range: "October 2022 - Present"
+range: "October 2022 - March 2023"
 url: "https://www.identigate.co.ke/"
 ---
 

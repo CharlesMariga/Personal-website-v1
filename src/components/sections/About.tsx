@@ -43,11 +43,11 @@ const About: React.FC = () => {
             My main focus these days is building accessible, inclusive products
             and digital experiences at{" "}
             <a
-              href="https://soop.co.nz/"
+              href="https://inisev.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              SOOP (Software Operations), NZ
+              Inisev, Malta
             </a>
             . I also have a great interest in blockchain technology.
           </AboutText>
