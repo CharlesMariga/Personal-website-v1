@@ -1,5 +1,5 @@
 ---
-date: "1"
+date: "2"
 title: "Natours"
 cover: "./natours.png"
 github: "https://github.com/CharlesMariga/Natours-nodejs"

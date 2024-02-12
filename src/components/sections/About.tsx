@@ -49,7 +49,7 @@ const About: React.FC = () => {
             >
               Inisev, Malta
             </a>
-            . I also have a great interest in blockchain technology.
+            . I also have a great interest in AI technology.
           </AboutText>
           <SignatureContainer>
             <Signature />

@@ -1,5 +1,5 @@
 ---
-date: "2"
+date: "3"
 title: "Omnifood (Redesigned)"
 cover: "./omnifood-redesigned.png"
 github: "https://github.com/CharlesMariga/Omnifood-redesigned"
