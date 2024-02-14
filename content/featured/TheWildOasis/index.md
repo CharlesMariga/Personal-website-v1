@@ -1,5 +1,5 @@
 ---
-date: "1"
+date: "2"
 title: "The Wild Oasis"
 cover: "./the-wild-oasis.png"
 github: "https://github.com/CharlesMariga/the-wild-oasis"
